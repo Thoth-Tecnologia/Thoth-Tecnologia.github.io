@@ -1,0 +1,3070 @@
+<!doctype html>
+<html lang="pt-br" class="menon">
+
+<head>
+    
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#E93D25">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="description" content="O seu cardápio digital">
+
+    <title>Menon - Painel Administrativo</title>
+    
+    <!-- Icones / Favicon -->
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="icon" href="img/favicon.png">
+
+    <!-- Icones CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap-4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-4.3.1/css/bootstrap-select.css">
+
+    <!-- Swiper Slide CSS -->
+    <link rel="stylesheet" href="vendor/swiper/css/swiper.min.css">
+    
+     <!-- Progress Wizard CSS -->
+    <link rel="stylesheet" href="vendor/progress-wizard/css/progress-wizard.min.css">
+    
+    <!-- DateRange CSS -->
+	<link rel="stylesheet" href="vendor/datarange/daterange.css">
+    
+    <!-- Datatables CSS -->
+	<link rel="stylesheet" href="vendor/datatables/datatables.min.css">
+    <link rel="stylesheet" href="vendor/datatables/responsive.dataTables.min.css">
+    
+    <!-- Lobipanel css -->
+    <link rel="stylesheet" href="vendor/lobipanel/lobipanel.css">
+
+    <!-- Estilo CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="row no-gutters vh-100 loader-screen">
+        <div class="col align-self-center text-white text-center">
+            <img src="img/logo.svg" alt="logo">
+            <div></div>
+            <div class="laoderhorizontal"><div></div><div></div><div></div><div></div></div>
+        </div>
+    </div>
+    
+    <!-- Menu Lateral -->
+    <div class="sidebar">
+        <div class="text-center">
+            <div class="figure-menu shadow">
+                <figure><img src="img/usuario.svg" alt=""></figure>
+            </div>
+            <h5 class="mb-1 ">Nome Sobrenome</h5>
+            <p class="text-mute small">Função | Restaurante</p>
+        </div>
+        <div class="row mx-0">
+            <div class="col">
+                <div class="list-group main-menu">
+                    <a href="painel.html" class="list-group-item list-group-item-action"><i class="material-icons">multiline_chart</i> Painel</a>
+                    <a href="cardapios.html" class="list-group-item list-group-item-action"><i class="material-icons">fastfood</i> Cardápios</a>
+                    <a href="pedidos.html" class="list-group-item list-group-item-action"><i class="material-icons">receipt_long</i> Pedidos</a>
+                    <a href="mesas.html" class="list-group-item list-group-item-action"><i class="material-icons">view_module</i> Mesas</a>
+                    <a href="cupom.html" class="list-group-item list-group-item-action"><i class="material-icons">local_activity</i> Cupom</a>
+                    <a href="usuarios.html" class="list-group-item list-group-item-action"><i class="material-icons">account_circle</i> Usuários</a>
+                    <a href="financeiro.html" class="list-group-item list-group-item-action"><i class="material-icons">payments</i> Financeiro</a>
+                    <a href="relatorios.html" class="list-group-item list-group-item-action active"><i class="material-icons">bar_chart</i> Relatórios</a>
+                    <a href="configuracoes.html" class="list-group-item list-group-item-action"><i class="material-icons">settings</i> Configurações</a>
+                    <a href="index.html" class="list-group-item list-group-item-action"><i class="material-icons">exit_to_app</i> Sair</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="wrapper">
+        
+        <!-- Cabeçalho -->
+        <div class="header">
+            <div class="row no-gutters">
+                <div class="col text-left">
+                    <button class="btn btn-link text-secondary menu-btn"><i class="material-icons">apps</i></button>
+                </div>
+                <div class="col text-center"><img src="img/logo-menon-h.svg" alt="" class="header-logo"></div>
+                <div class="col text-right">
+                    <a href="" class="btn-link text-secondary table-btn small" data-toggle="modal" data-target="#notificacoes"><i class="material-icons">notifications_active</i></a> 
+                    <a href="" class="btn-link text-secondary table-btn small" data-toggle="modal" data-target="#notificacoes-garcom"><i class="material-icons">emoji_people</i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Relatórios -->
+        <div class="container-fluid">
+            <div class="mb-2">
+                <div class="row">
+                    <div class="col-auto align-self-center pr-0">
+                         <i class="material-icons md-48 text-default">bar_chart</i>
+                    </div>
+                    <div class="col-auto align-self-center px-2">
+                        <h6 class="mb-0">Relatórios</h6>
+                        <span id="calendario-filtro" class="cursor text-secondary small">
+                            <span></span>
+                            <i class="material-icons md-16">expand_more</i>	
+                        </span>
+                    </div>
+                    <div class="col align-self-center text-right pl-0">
+                        <span class="d-inline-block mr-1" data-toggle="tooltip" data-placement="top" title="Configurar Relatório">
+                            <button class="btn btn-light button-rounded-36" data-toggle="modal" data-target="#configurar-relatorio"><i class="material-icons md-20">settings</i></button>
+                        </span>
+                        <span class="d-inline-block" data-toggle="tooltip" data-placement="top" title="Gerar Relatório">
+                            <button class="btn btn-default button-rounded-36" data-toggle="modal" data-target="#gerar-relatorio"><i class="material-icons md-20">picture_as_pdf</i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row text-center">
+                <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                    <div class="swiper-container indicadores-01 mb-2">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide px-0">
+                                <div class="card shadow-sm border-0">
+                                    <div class="card-body">
+                                        <h3 class="mb-0">39</h3>
+                                        <p class="text-secondary text-mute small mb-2">Pedido(s)</p>
+                                        <div class="row">
+                                            <div class="col pr-0">
+                                                <p class="text-bold small mb-0">03</p>
+                                                <p class="text-secondary text-mute small">Aberto(s)</p>
+                                            </div>
+                                            <div class="col pl-0">
+                                                <p class="text-bold small mb-0">36</p>
+                                                <p class="text-secondary text-mute small">Pagos(s)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide px-0">
+                                <div class="card shadow-sm border-0">
+                                    <div class="card-body">
+                                        <h3 class="mb-0"><sup>R$</sup> 28<sup>,90</sup></h3>
+                                        <p class="text-secondary text-mute small mb-2">Delivery (iFood)</p>
+                                        <div class="row">
+                                            <div class="col pr-0">
+                                                <p class="text-bold small mb-0">01</p>
+                                                <p class="text-secondary text-mute small">Pedido(s)</p>
+                                            </div>
+                                            <div class="col px-0">
+                                                <p class="text-bold small mb-0">00</p>
+                                                <p class="text-secondary text-mute small">Cancelados(s)</p>
+                                            </div>
+                                            <div class="col pl-0">
+                                                <p class="text-bold small mb-0">01</p>
+                                                <p class="text-secondary text-mute small">Entregue(s)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-6 col-xl-3 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <h3 class="mb-0"><sup>R$</sup> 115<sup>,89</sup></h3>
+                            <p class="text-secondary text-mute small mb-2">Ticket Médio</p>
+                            <div class="row">
+                                <div class="col pr-0">
+                                    <p class="text-bold small mb-0">08</p>
+                                    <p class="text-secondary text-mute small">Clientes</p>
+                                </div>
+                                <div class="col pl-0">
+                                    <p class="text-bold small mb-0">R$ 927,13</p>
+                                    <p class="text-secondary text-mute small">Vendas</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-12 col-lg-6 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <h3 class="mb-0"><sup>R$</sup> 1.030<sup>,14</sup></h3>
+                            <p class="text-secondary text-mute small mb-2">Recebimentos</p>
+                            <div class="row">
+                                <div class="col pr-0">
+                                    <p class="text-bold small mb-0">R$ 927,13</p>
+                                    <p class="text-secondary text-mute small">Vendas</p>
+                                </div>
+                                <div class="col px-0">
+                                    <p class="text-bold small mb-0">R$ 103,01</p>
+                                    <p class="text-secondary text-mute small">Tx./Serviço</p>
+                                </div>
+                                <div class="col px-0">
+                                    <p class="text-bold small mb-0">R$ 0,00</p>
+                                    <p class="text-secondary text-mute small">Tx./Entrega</p>
+                                </div>
+                                <div class="col px-0">
+                                    <p class="text-bold small mb-0">R$ 0,00</p>
+                                    <p class="text-secondary text-mute small">Couvert</p>
+                                </div>
+                                <div class="col pl-0">
+                                    <p class="text-bold small mb-0">R$ 20,00</p>
+                                    <p class="text-secondary text-mute small">Descontos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-12 col-lg-6">
+                    <div class="swiper-container indicadores-02 mb-2">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide px-0">
+                                <div class="card shadow-sm border-0">
+                                    <div class="card-body">
+                                        <h3 class="mb-0"><sup>R$</sup> 390<sup>,94</sup></h3>
+                                        <p class="text-secondary text-mute small mb-2">Pagamentos no Caixa</p>
+                                        <div class="row">
+                                            <div class="col pr-0">
+                                                <p class="text-bold small mb-0">R$ 120,00</p>
+                                                <p class="text-secondary text-mute small">Dinheiro</p>
+                                            </div>
+                                            <div class="col px-0">
+                                                <p class="text-bold small mb-0">R$ 200,94</p>
+                                                <p class="text-secondary text-mute small">Crédito</p>
+                                            </div>
+                                            <div class="col px-0">
+                                                <p class="text-bold small mb-0">R$ 60,00</p>
+                                                <p class="text-secondary text-mute small">Débito</p>
+                                            </div>
+                                            <div class="col pl-0">
+                                                <p class="text-bold small mb-0">R$ 10,00</p>
+                                                <p class="text-secondary text-mute small">Pix</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide px-0">
+                                <div class="card shadow-sm border-0">
+                                    <div class="card-body">
+                                        <h3 class="mb-0"><sup>R$</sup> 30<sup>,00</sup></h3>
+                                        <p class="text-secondary text-mute small mb-2">Ticket/Vale Alimentação <button class="btn btn-link p-0 text-secondary" data-toggle="modal" data-target="#info-pagamentos-v-alimentacao"><i class="material-icons md-14">help_outline</i></button></p>
+                                        <div class="row">
+                                            <div class="col pr-0">
+                                                <p class="text-bold small mb-0">R$ 10,00</p>
+                                                <p class="text-secondary text-mute small">Ticket</p>
+                                            </div>
+                                            <div class="col px-0">
+                                                <p class="text-bold small mb-0">R$ 10,00</p>
+                                                <p class="text-secondary text-mute small">Sodexo</p>
+                                            </div>
+                                            <div class="col px-0">
+                                                <p class="text-bold small mb-0">R$ 10,00</p>
+                                                <p class="text-secondary text-mute small">VR</p>
+                                            </div>
+                                            <div class="col px-0">
+                                                <p class="text-bold small mb-0">R$ 0,00</p>
+                                                <p class="text-secondary text-mute small">AR</p>
+                                            </div>
+                                            <div class="col px-0">
+                                                <p class="text-bold small mb-0">R$ 0,00</p>
+                                                <p class="text-secondary text-mute small">Alelo</p>
+                                            </div>
+                                            <div class="col pl-0">
+                                                <p class="text-bold small mb-0">R$ 0,00</p>
+                                                <p class="text-secondary text-mute small">Outros</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-12 col-lg-6 col-xl-3 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <h3 class="mb-0"><sup>R$</sup> 619<sup>,20</sup></h3>
+                            <p class="text-secondary text-mute small mb-2">App Crédito/Débito</p>
+                            <div class="row">
+                                <div class="col pr-0">
+                                    <p class="text-bold small mb-0">R$ 250,00</p>
+                                    <p class="text-secondary text-mute small">Crédito</p>
+                                </div>
+                                <div class="col pl-0">
+                                    <p class="text-bold small mb-0">R$ 369,20</p>
+                                    <p class="text-secondary text-mute small">Débito</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-12 col-lg-6 col-xl-3 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <h3 class="mb-0"><sup>R$</sup> 1.039<sup>,04</sup></h3>
+                            <p class="text-secondary text-mute small mb-2">Faturamento Total</p>
+                            <div class="row">
+                                <div class="col pr-0">
+                                    <p class="text-bold small mb-0">R$ 120,00</p>
+                                    <p class="text-secondary text-mute small">Dinheiro</p>
+                                </div>
+                                <div class="col px-0">
+                                    <p class="text-bold small mb-0">R$ 890,14</p>
+                                    <p class="text-secondary text-mute small">Cartão</p>
+                                </div>
+                                <div class="col px-0">
+                                    <p class="text-bold small mb-0">R$ 10,00</p>
+                                    <p class="text-secondary text-mute small">Pix</p>
+                                </div>
+                                <div class="col pl-0">
+                                    <p class="text-bold small mb-0">R$ 28,90</p>
+                                    <p class="text-secondary text-mute small">Delivery</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-lg-4 mb-4 mb-md-4 mb-lg-0">
+                                    <h6 class="subtitle mt-1">Clientes</h6>
+                                    <div id="grafico-clientes"></div>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-4 mb-4 mb-md-4 mb-lg-0">
+                                    <h6 class="subtitle mt-1">Canais de venda</h6>
+                                    <div id="grafico-ocupacao-mesas"></div>
+                                </div>
+                                
+                                <div class="col-12 col-md-12 col-lg-4 mb-4 mb-md-4 mb-lg-0">
+                                    <h6 class="subtitle mt-1">Cupons/Desc.</h6>
+                                    <div id="grafico-cupons"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 col-md-12 col-lg-4 mb-4 mb-md-4 mb-lg-0">
+                                    <h6 class="subtitle mt-1">Pedidos por categoria</h6>
+                                    <div id="grafico-pedidos-categoria"></div>
+                                </div>
+                                
+                                <div class="col-12 col-md-6 col-lg-4 mb-4 mb-md-4 mb-lg-0">
+                                    <h6 class="subtitle mt-1">Formas de Recebimento</h6>
+                                    <div id="grafico-recebimento-quantidade"></div>
+                                </div>
+                                
+                                <div class="col-12 col-md-6 col-lg-4 mb-4 mb-md-4 mb-lg-0">
+                                    <h6 class="subtitle mt-1">Taxas</h6>
+                                    <div id="grafico-taxas"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-lg-6 mb-4 mb-md-0 mb-lg-0">
+                                    <h6 class="subtitle mt-1">Pedidos</h6>
+                                    <div id="grafico-pedidos"></div>
+                                </div>
+                                
+                                <div class="col-12 col-md-6 col-lg-6">
+                                    <h6 class="subtitle mt-1">Faturamento</h6>
+                                    <div id="grafico-faturamento"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+            
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto align-self-center">
+                                    <h6 class="subtitle mt-1"><span class="text-secondary font-weight-normal">Fechamentos |</span> Caixa</h6>
+                                </div>
+                            </div>
+                            
+                            <table id="lista-fechamento-caixa" class="table nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>Cód:</th>
+                                        <th>Operador:</th>
+                                        <th>Abertura em:</th>
+                                        <th>Fechamento em:</th>
+                                        <th>Sangrias/Qtde:</th>
+                                        <th>Reforços/Qtde:</th>
+                                        <th>Total de Abertura:</th>
+                                        <th>Total em Gaveta:</th>
+                                        <th>Ações:</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="badge badge-primary text-white dtr-block"><b>0004</b></span></td>
+                                        <td>Luiza</td>
+                                        <td>01/09/2021 - 16:31:27</td>
+                                        <td>01/09/2021 - 23:59:00</td>
+                                        <td><b>R$ 200,00</b> <b class="small">(2)</b></td>
+                                        <td><b>R$ 300,00</b> <b class="small">(1)</b></td>
+                                        <td><b>R$ 1.200,00</b></td>
+                                        <td><b>R$ 1.420,00</b></td>
+                                        <td>
+                                            <div class="btn-group w-125 py-1">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#visualizar-fechamento-caixa"><i class="material-icons">visibility</i></button>
+                                                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="sr-only">Toggle Dropdown</span>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-right rounded my-2">
+                                                    <button class="btn btn-link text-secondary text-capitalize font-weight-normal dropdown-item" id="btn-print"><i class="material-icons">print</i> Imprimir Fechamento Caixa</button>
+                                                    <div class="dropdown-divider"></div>
+                                                    <button class="btn btn-link text-secondary text-capitalize font-weight-normal dropdown-item" data-toggle="modal" data-target="#visualizar-fechamento-caixa"><i class="material-icons">key</i> Reabrir Caixa Fechado</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto align-self-center">
+                                    <h6 class="subtitle mt-1"><span class="text-secondary font-weight-normal">Produtos |</span> Vendidos</h6>
+                                </div>
+                            </div>
+                            
+                            <table id="lista-produtos-vendidos" class="table nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>Categoria:</th>
+                                        <th>Subcategoria:</th>
+                                        <th>Item:</th>
+                                        <th>Valor Unit:</th>
+                                        <th>Quantidade:</th>
+                                        <th>Valor:</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Entradas</td>
+                                        <td>Diversos</td>
+                                        <td>Ceviche</td>
+                                        <td><span class="small">R$ 24,00</span></td>
+                                        <td><b>4</b></td>
+                                        <td><b>R$ 96,00</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Saladas</td>
+                                        <td>Diversos</td>
+                                        <td>Metropolitana</td>
+                                        <td><span class="small">R$ 20,00</span></td>
+                                        <td><b>9</b></td>
+                                        <td><b>R$ 180,00</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Pratos Quentes</td>
+                                        <td>Frango</td>
+                                        <td>Filés de Frango</td>
+                                        <td><span class="small">R$ 22,00</span></td>
+                                        <td><b>12</b></td>
+                                        <td><b>R$ 264,00</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Pratos Quentes</td>
+                                        <td>Peixe</td>
+                                        <td>Badejo Grelhado</td>
+                                        <td><span class="small">R$ 28,00</span></td>
+                                        <td><b>8</b></td>
+                                        <td><b>R$ 224,00</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Pratos Quentes</td>
+                                        <td>Peixe</td>
+                                        <td>Linguado Assado</td>
+                                        <td><span class="small">R$ 32,00</span></td>
+                                        <td><b>4</b></td>
+                                        <td><b>R$ 128,00</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Bebidas</td>
+                                        <td>Refrigerante</td>
+                                        <td>PEPSI Lata</td>
+                                        <td><span class="small">R$ 3,50</span></td>
+                                        <td><b>15</b></td>
+                                        <td><b>R$ 52,50</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Bebidas</td>
+                                        <td>Refrigerante</td>
+                                        <td>Guaraná Antarctica Lata</td>
+                                        <td><span class="small">R$ 3,50</span></td>
+                                        <td><b>10</b></td>
+                                        <td><b>R$ 35,00</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Bebidas</td>
+                                        <td>Cerveja</td>
+                                        <td>Brahma Chopp 600ml</td>
+                                        <td><span class="small">R$ 6,00</span></td>
+                                        <td><b>7</b></td>
+                                        <td><b>R$ 42,00</b></td>
+                                    </tr>
+                                </tbody>
+                            </table>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto align-self-center">
+                                    <h6 class="subtitle mt-1"><span class="text-secondary font-weight-normal">Pedido |</span> Autorizados</h6>
+                                </div>
+                            </div>
+                            
+                            <table id="lista-pedidos" class="table nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>Comanda:</th>
+                                        <th>Tipo:</th>
+                                        <th>Nº:</th>
+                                        <th>Pedidos:</th>
+                                        <th>Cliente:</th>
+                                        <th>Status Pag:</th>
+                                        <th>Formas Pag:</th>
+                                        <th>Data/Hora:</th>
+                                        <th>Valor:</th>
+                                        <th>Ações:</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="badge badge-primary text-white dtr-block"><b>0009</b></span></td>
+                                        <td><span class="badge badge-success text-white dtr-block"><b>Mesa</b></span></td>
+                                        <td><span class="badge badge-success text-white dtr-block"><b>01</b></span></td>
+                                        <td>
+                                            <span class="badge badge-light text-secondary"><b>00481</b></span>
+                                            <span class="badge badge-light text-secondary"><b>00479</b></span>
+                                            <span class="badge badge-light text-secondary"><b>00475</b></span>
+                                        </td>
+                                        <td>Jefferson Soares Antunes</td>
+                                        <td><span class="badge badge-info text-white">Pago App</span></td>
+                                        <td><b class="text-success">Crédito</b></td>
+                                        <td>30/07/2020 - 21:02:37</td>
+                                        <td><b>R$ 122,60</b></td>
+                                        <td>
+                                            <div class="btn-group w-125 py-1">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#visualizar-comanda"><i class="material-icons">visibility</i></button>
+                                                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="sr-only">Toggle Dropdown</span>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-right rounded my-2">
+                                                    <button class="btn btn-link text-secondary text-capitalize font-weight-normal dropdown-item" id="btn-print"><i class="material-icons">print</i> Imprimir Comanda</button>
+                                                    <div class="dropdown-divider"></div>
+                                                    <button class="btn btn-link text-secondary text-capitalize font-weight-normal dropdown-item" data-toggle="modal" data-target="#editar-comanda"><i class="material-icons">edit</i> Editar Comanda</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><span class="badge badge-primary text-white dtr-block"><b>0010</b></span></td>
+                                        <td><span class="badge badge-success text-white dtr-block"><b>Mesa</b></span></td>
+                                        <td><span class="badge badge-success text-white dtr-block"><b>10</b></span></td>
+                                        <td>
+                                            <span class="badge badge-light text-secondary"><b>00480</b></span>
+                                            <span class="badge badge-light text-secondary"><b>00478</b></span>
+                                        </td>
+                                        <td>Carlos Eduardo Souza Filho</td>
+                                        <td><span class="badge badge-primary text-white">Caixa</span></td>
+                                        <td><b class="text-default">Nenhum</b></td>
+                                        <td>30/07/2020 - 21:00:14</td>
+                                        <td><b>R$ 87,00</b></td>
+                                        <td>
+                                            <div class="btn-group w-125 py-1">
+                                                <button type="button" class="btn btn-sm btn-default border border-default" data-toggle="modal" data-target="#finalizar-pagamento"><i class="material-icons">move_to_inbox</i></button>
+                                                <button type="button" class="btn btn-sm btn-outline-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="sr-only">Toggle Dropdown</span>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-right rounded my-2">
+                                                    <button class="btn btn-link text-secondary text-capitalize font-weight-normal dropdown-item" data-toggle="modal" data-target="#visualizar-comanda"><i class="material-icons">visibility</i> Visualizar Comanda</button>
+                                                    <div class="dropdown-divider"></div>
+                                                    <button class="btn btn-link text-secondary text-capitalize font-weight-normal dropdown-item" data-toggle="modal" data-target="#editar-comanda"><i class="material-icons">edit</i> Editar Comanda</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto align-self-center">
+                                    <h6 class="subtitle mt-1"><span class="text-secondary font-weight-normal">Pedidos |</span> Delivery</h6>
+                                </div>
+                            </div>
+                            
+                            <table id="lista-pedidos-delivery" class="table nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>Delivery:</th>
+                                        <th>Pedidos:</th>
+                                        <th>Cliente:</th>
+                                        <th>Status Pag:</th>
+                                        <th>Formas Pag:</th>
+                                        <th>Data/Hora:</th>
+                                        <th>Status Ped:</th>
+                                        <th>Valor:</th>
+                                        <th>Ações:</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="badge badge-default text-white dtr-block"><b>iFood</b></span></td>
+                                        <td>
+                                            <span class="badge badge-light text-secondary"><b>00499</b></span>
+                                        </td>
+                                        <td>Leandro Silva Martins Peron</td>
+                                        <td><span class="badge badge-info text-white">Pago App</span></td>
+                                        <td><b class="text-success">Crédito</b></td>
+                                        <td>28/10/2021 - 23:30:24</td>
+                                        <td><span class="badge badge-success text-white">Confirmado</span></td>
+                                        <td><b>R$ 28,90</b></td>
+                                        <td>
+                                            <div class="btn-group w-125 py-1">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#visualizar-comanda-ifood"><i class="material-icons">visibility</i></button>
+                                                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="sr-only">Toggle Dropdown</span>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-right rounded my-2">
+                                                    <button class="btn btn-link text-secondary text-capitalize font-weight-normal dropdown-item" id="btn-print"><i class="material-icons">print</i> Imprimir Comanda</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto align-self-center">
+                                    <h6 class="subtitle mt-1"><span class="text-secondary font-weight-normal">Pedido |</span> Cancelados</h6>
+                                </div>
+                            </div>
+                            
+                            <table id="lista-pedidos-cancelados" class="table nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>Comanda:</th>
+                                        <th>Tipo:</th>
+                                        <th>Nº:</th>
+                                        <th>Pedidos:</th>
+                                        <th>Cliente:</th>
+                                        <th>Status Pag:</th>
+                                        <th>Data/Hora:</th>
+                                        <th>Valor:</th>
+                                        <th>Ações:</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="badge badge-primary text-white dtr-block"><b>0009</b></span></td>
+                                        <td><span class="badge badge-success text-white dtr-block"><b>Mesa</b></span></td>
+                                        <td><span class="badge badge-success text-white dtr-block"><b>01</b></span></td>
+                                        <td>
+                                            <span class="badge badge-light text-secondary"><b>00482</b></span>
+                                        </td>
+                                        <td>Jefferson Soares Antunes</td>
+                                        <td><span class="badge badge-default text-white">Cancelado</span></td>
+                                        <td>30/07/2020 - 21:15:45</td>
+                                        <td><b>R$ 4,00</b></td>
+                                        <td>
+                                            <div class="btn-group w-125 py-1">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#visualizar-pedidos-cancelados"><i class="material-icons">visibility</i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto align-self-center">
+                                    <h6 class="subtitle mt-1"><span class="text-secondary font-weight-normal">Lista |</span> Clientes</h6>
+                                </div>
+                            </div>
+                            
+                            <table id="lista-clientes" class="table nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>Nome:</th>
+                                        <th>E-mail:</th>
+                                        <th>Telefone:</th>
+                                        <th>CPF:</th>
+                                        <th>Endereço:</th>
+                                        <th>UF:</th>
+                                        <th>Cidade:</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Jefferson Soares Antunes</td>
+                                        <td>jefferson.soares@gmail.com</td>
+                                        <td>43 99856-3456</td>
+                                        <td>036.889.354-20</td>
+                                        <td>Rua Luiz Vargas, 1054, Centro</td>
+                                        <td>PR</td>
+                                        <td>Londrina</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Carlos Eduardo Souza Filho</td>
+                                        <td>carlos.souza@gmail.com</td>
+                                        <td>43 98898-1254</td>
+                                        <td>144.020.345-90</td>
+                                        <td>Avenida Bandeiras, 4032, Centro</td>
+                                        <td>PR</td>
+                                        <td>Londrina</td>
+                                    </tr>
+                                </tbody>
+                            </table>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Configurar Relatório -->
+    <div class="modal fade" id="configurar-relatorio" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full modal-xl" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header clean">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body clean text-center p-4">
+                    <h5 class="my-3 mt-2">Configurar Relatório</h5> 
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <div class="form-group float-label mb-0">
+                                                <p class="text-left mt-2 mb-0">Resumo do Movimento</p>
+                                                <label class="form-control-label">Tipo de Função</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-7">
+                                            <div class="form-group float-label mb-0">
+                                                <div class="custom-control custom-checkbox text-left mt-2">
+                                                    <input type="checkbox" class="custom-control-input" id="pedidos-transacoes" checked>
+                                                    <label class="custom-control-label" for="pedidos-transacoes">Pedidos</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="pedidos-delivery" checked>
+                                                    <label class="custom-control-label" for="pedidos-delivery">Pedidos/Delivery</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="ticket-medio" checked>
+                                                    <label class="custom-control-label" for="ticket-medio">Ticket Médio</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="recebimentos" checked>
+                                                    <label class="custom-control-label" for="recebimentos">Recebimentos</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="pagamentos-caixa" checked>
+                                                    <label class="custom-control-label" for="pagamentos-caixa">Pagamentos no Caixa</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="pagamentos-v-alimentacao" checked>
+                                                    <label class="custom-control-label" for="pagamentos-v-alimentacao">Ticket/Vale Alimentação</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="pagamentos-app" checked>
+                                                    <label class="custom-control-label" for="pagamentos-app">Pagamentos pelo App</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="faturamento-total" checked>
+                                                    <label class="custom-control-label" for="faturamento-total">Faturamento Total</label>
+                                                </div>
+                                                <label class="form-control-label">Ações Extras</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="col-12 col-lg-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <div class="form-group float-label mb-0">
+                                                <p class="text-left mt-2 mb-0">Gráficos</p>
+                                                <label class="form-control-label">Tipo de Função</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-7">
+                                            <div class="form-group float-label mb-0">
+                                                <div class="custom-control custom-checkbox text-left mt-2">
+                                                    <input type="checkbox" class="custom-control-input" id="clientes" checked>
+                                                    <label class="custom-control-label" for="clientes">Clientes</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="canais-venda" checked>
+                                                    <label class="custom-control-label" for="canais-venda">Canais de Venda</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="cupons-descontos" checked>
+                                                    <label class="custom-control-label" for="cupons-descontos">Cupons/Descontos</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="pedidos-categoria" checked>
+                                                    <label class="custom-control-label" for="pedidos-categoria">Pedidos por Categoria</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="formas-recebimento" checked>
+                                                    <label class="custom-control-label" for="formas-recebimento">Formas de Recebimento</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="taxas" checked>
+                                                    <label class="custom-control-label" for="taxas">Taxas</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="pedidos" checked>
+                                                    <label class="custom-control-label" for="pedidos">Pedidos</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="faturamento" checked>
+                                                    <label class="custom-control-label" for="faturamento">Faturamento</label>
+                                                </div>
+                                                <label class="form-control-label">Ações Extras</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="col-12 col-lg-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <div class="form-group float-label mb-0">
+                                                <p class="text-left mt-2 mb-0">Relação de Produtos Vendidos, Pedidos e Lista de Clientes</p>
+                                                <label class="form-control-label">Tipo de Função</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-7">
+                                            <div class="form-group float-label mb-0">
+                                                <div class="custom-control custom-checkbox text-left mt-2">
+                                                    <input type="checkbox" class="custom-control-input" id="produtos-vendidos" checked>
+                                                    <label class="custom-control-label" for="produtos-vendidos">Produtos Vendidos</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="pedidos-autorizados" checked>
+                                                    <label class="custom-control-label" for="pedidos-autorizados">Pedidos Autorizados</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="pedidos-delivery" checked>
+                                                    <label class="custom-control-label" for="pedidos-delivery">Pedidos Delivery</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="pedidos-cancelados" checked>
+                                                    <label class="custom-control-label" for="pedidos-cancelados">Pedidos Cancelados</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="lista-clientes" checked>
+                                                    <label class="custom-control-label" for="lista-clientes">Lista de Clientes</label>
+                                                </div>
+                                                <label class="form-control-label">Ações Extras</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button class="btn btn-lg btn-secondary btn-rounded" data-dismiss="modal">Fechar</button>
+                        <button class="btn btn-lg btn-success btn-rounded" data-dismiss="modal">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Gerar PDF Relatório -->
+    <div class="modal fade" id="gerar-relatorio" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full modal-xl" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header clean">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body clean text-center p-4">
+                    <h5 class="my-3 mt-2">Gerar Arquivo do Relatório</h5> 
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <div class="form-group float-label mb-0">
+                                                <p class="text-left mt-2 mb-0">Resumo do Movimento</p>
+                                                <label class="form-control-label">Tipo de Função</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-7">
+                                            <div class="form-group float-label mb-0">
+                                                <div class="custom-control custom-checkbox text-left mt-2">
+                                                    <input type="checkbox" class="custom-control-input" id="pedidos-transacoes2" checked>
+                                                    <label class="custom-control-label" for="pedidos-transacoes2">Pedidos</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="pedidos-delivery2" checked>
+                                                    <label class="custom-control-label" for="pedidos-delivery2">Pedidos/Delivery</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="ticket-medio2" checked>
+                                                    <label class="custom-control-label" for="ticket-medio2">Ticket Médio</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="recebimentos2" checked>
+                                                    <label class="custom-control-label" for="recebimentos2">Recebimentos</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="pagamentos-caixa2" checked>
+                                                    <label class="custom-control-label" for="pagamentos-caixa2">Pagamentos no Caixa</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="pagamentos-v-alimentacao2" checked>
+                                                    <label class="custom-control-label" for="pagamentos-v-alimentacao2">Ticket/Vale Alimentação</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="pagamentos-app2" checked>
+                                                    <label class="custom-control-label" for="pagamentos-app2">Pagamentos pelo App</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="faturamento-total2" checked>
+                                                    <label class="custom-control-label" for="faturamento-total2">Faturamento Total</label>
+                                                </div>
+                                                <label class="form-control-label">Ações Extras</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="col-12 col-lg-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <div class="form-group float-label mb-0">
+                                                <p class="text-left mt-2 mb-0">Gráficos</p>
+                                                <label class="form-control-label">Tipo de Função</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-7">
+                                            <div class="form-group float-label mb-0">
+                                                <div class="custom-control custom-checkbox text-left mt-2">
+                                                    <input type="checkbox" class="custom-control-input" id="clientes2" checked>
+                                                    <label class="custom-control-label" for="clientes2">Clientes</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="canais-venda2" checked>
+                                                    <label class="custom-control-label" for="canais-venda2">Canais de Venda</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="cupons-descontos2" checked>
+                                                    <label class="custom-control-label" for="cupons-descontos2">Cupons/Descontos</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="pedidos-categoria2" checked>
+                                                    <label class="custom-control-label" for="pedidos-categoria2">Pedidos por Categoria</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="formas-recebimento2" checked>
+                                                    <label class="custom-control-label" for="formas-recebimento2">Formas de Recebimento</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="taxas2" checked>
+                                                    <label class="custom-control-label" for="taxas2">Taxas</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="pedidos2" checked>
+                                                    <label class="custom-control-label" for="pedidos2">Pedidos</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="faturamento2" checked>
+                                                    <label class="custom-control-label" for="faturamento2">Faturamento</label>
+                                                </div>
+                                                <label class="form-control-label">Ações Extras</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="col-12 col-lg-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <div class="form-group float-label mb-0">
+                                                <p class="text-left mt-2 mb-0">Relação de Produtos Vendidos, Pedidos e Lista de Clientes</p>
+                                                <label class="form-control-label">Tipo de Função</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-7">
+                                            <div class="form-group float-label mb-0">
+                                                <div class="custom-control custom-checkbox text-left mt-2">
+                                                    <input type="checkbox" class="custom-control-input" id="produtos-vendidos2" checked>
+                                                    <label class="custom-control-label" for="produtos-vendidos2">Produtos Vendidos</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="pedidos-autorizados2" checked>
+                                                    <label class="custom-control-label" for="pedidos-autorizados2">Pedidos Autorizados</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="pedidos-delivery2" checked>
+                                                    <label class="custom-control-label" for="pedidos-delivery2">Pedidos Delivery</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="pedidos-cancelados2" checked>
+                                                    <label class="custom-control-label" for="pedidos-cancelados2">Pedidos Cancelados</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox text-left">
+                                                    <input type="checkbox" class="custom-control-input" id="lista-clientes2" checked>
+                                                    <label class="custom-control-label" for="lista-clientes2">Lista de Clientes</label>
+                                                </div>
+                                                <label class="form-control-label">Ações Extras</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button class="btn btn-lg btn-success btn-rounded" data-dismiss="modal">Gerar Arquivo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Fechamento de Caixa -->
+    <div class="modal fade" id="visualizar-fechamento-caixa" role="dialog" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-lg modal-full" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header clean">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body clean p-4">
+                    <div class="row">
+                        <div class="col-9 align-self-center text-left pl-2">
+                            <h5 class="mt-2">Fechamento de Caixa</h5>
+                            <span class="text-uppercase mb-0">Operador: <b>Luiza</b></span>
+                            <div class="row">
+                                <div class="col-auto pr-0">
+                                    <span class="d-block">Abertura em:</span>
+                                    <span class="badge badge-success text-white"><b>01/09/2021 - 16:31:27</b></span>
+                                </div>
+                                <div class="col">
+                                    <span class="d-block">Fechamento em:</span>
+                                    <span class="badge badge-default text-white"><b>01/09/2021 - 23:59:00</b></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 align-self-center text-right">
+                            <button class="btn btn-secondary button-rounded-42" id="btn-print" type="button"><i class="material-icons md-24">print</i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <h6>Pedidos</h6>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="form-group float-label">
+                                <p class="h5 mt-2">39</p>
+                                <label class="form-control-label">Total Pedidos</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="form-group float-label">
+                                <p class="h5 text-default mt-2">03</p>
+                                <label class="form-control-label">Pedidos Abertos</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="form-group float-label">
+                                <p class="h5 text-success mt-2">36</p>
+                                <label class="form-control-label">Pedidos Pagos</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="form-group float-label">
+                                <p class="h5 text-default mt-2">01</p>
+                                <label class="form-control-label">Pedidos Cancelados</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr class="mt-0">
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <h6>Ticket Médio</h6>
+                        </div>
+                        <div class="col-4 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 mt-2">R$ 115,89</p>
+                                <label class="form-control-label">Ticket Médio</label>
+                            </div>
+                        </div>
+                        <div class="col-3 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 mt-2">08</p>
+                                <label class="form-control-label">Clientes</label>
+                            </div>
+                        </div>
+                        <div class="col-5 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 mt-2">R$ 927,13</p>
+                                <label class="form-control-label">Vendas</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr class="mt-0">
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <h6>Recebimentos</h6>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 text-info mt-2">R$ 1.030,14</p>
+                                <label class="form-control-label">Total de Recebimentos</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 text-success mt-2">R$ 927,13</p>
+                                <label class="form-control-label">Vendas</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 mt-2">R$ 103,01</p>
+                                <label class="form-control-label">Taxa Serviço</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 mt-2">R$ 0,00</p>
+                                <label class="form-control-label">Taxa Entrega</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 mt-2">R$ 0,00</p>
+                                <label class="form-control-label">Couvert</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 text-default mt-2">R$ 20,00</p>
+                                <label class="form-control-label">Descontos</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr class="mt-0">
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <h6>Pagamentos no Caixa</h6>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 mt-2">R$ 120,00</p>
+                                <label class="form-control-label">Dinheiro</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 mt-2">R$ 200,94</p>
+                                <label class="form-control-label">Crédito</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 mt-2">R$ 60,00</p>
+                                <label class="form-control-label">Débito<b>*</b></label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 mt-2">R$ 10,00</p>
+                                <label class="form-control-label">Pix</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 mt-2">R$ 30,00<b>*</b></p>
+                                <label class="form-control-label">Ticket/Vale Alimentação</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 text-info mt-2">R$ 390,94</p>
+                                <label class="form-control-label">Pagamentos Recebidos</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 text-default mt-2">R$ 232,00</p>
+                                <label class="form-control-label">Pagamentos em Aberto</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 text-success mt-2">R$ 630,14</p>
+                                <label class="form-control-label">Total Pagamentos no Caixa</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr class="mt-0">
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <h6>Fundo de Caixa <span class="badge badge-secondary text-white">Gaveta</span></h6>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 mt-2">R$ 1.200,00</p>
+                                <label class="form-control-label">Total de Abertura</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="form-group float-label">
+                                        <p class="h5 text-default mt-2">R$ 200,00</p>
+                                        <label class="form-control-label">Sangrias</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group float-label">
+                                        <p class="h5 text-default mt-2">02</p>
+                                        <label class="form-control-label">Qtde</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="form-group float-label">
+                                        <p class="h5 text-info mt-2">R$ 300,00</p>
+                                        <label class="form-control-label">Reforços</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group float-label">
+                                        <p class="h5 text-info mt-2">01</p>
+                                        <label class="form-control-label">Qtde</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 mt-2">R$ 120,00</p>
+                                <label class="form-control-label">Pagamentos em Dinheiro</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 mt-2">R$ 60,00<b>*</b></p>
+                                <label class="form-control-label">Troco</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 text-success mt-2">R$ 1.420,00</p>
+                                <label class="form-control-label">Total em Gaveta</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr class="mt-0">
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <h6>Pagamentos no App</h6>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 mt-2">R$ 250,00</p>
+                                <label class="form-control-label">Crédito</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 mt-2">R$ 369,20</p>
+                                <label class="form-control-label">Débito</label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 text-success mt-2">R$ 619,20</p>
+                                <label class="form-control-label">Total Pagamentos no App</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr class="mt-0">
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <h6>Delivery | iFood</h6>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 mt-2">01</p>
+                                <label class="form-control-label">Total Pedidos</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 text-default mt-2">00</p>
+                                <label class="form-control-label">Pedidos Cancelados</label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 text-success mt-2">R$ 28,90</p>
+                                <label class="form-control-label">Total Pagamentos On-line</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-0">
+                    
+                    <div class="row bg-light pt-3 mx-0">
+                        <div class="col-12">
+                            <h6>Faturamento Total</h6>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 mt-2">R$ 120,00</p>
+                                <label class="form-control-label">Total em Dinheiro</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 mt-2">R$ 890,14</p>
+                                <label class="form-control-label">Total em Cartão</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 mt-2">R$ 10,00</p>
+                                <label class="form-control-label">Total em Pix</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-8">
+                            <div class="form-group float-label">
+                                <p class="h5 mt-2">R$ 28,90</p>
+                                <label class="form-control-label">Total em Delivery</label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="form-group float-label">
+                                <p class="h5 text-success mt-2">R$ 1.039,04</p>
+                                <label class="form-control-label">Total Faturado</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr class="mt-0">
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <h6>Ocorrências</h6>
+                        </div>
+                        <div class="col-12">
+                            <div class="table-responsive">
+                                <table class="table text-left">
+                                    <thead>
+                                        <tr>
+                                            <th>Operação</th>
+                                            <th>Data/Hora</th>
+                                            <th>Motivo</th>
+                                            <th>Observações</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="badge badge-default text-white d-block"><b>Sangria</b></span></td>
+                                            <td><span class="small d-block">01/09/2021 - 19:15:45</span></td>
+                                            <td>Despesa</td>
+                                            <td>Compra de gelo para o bar</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="badge badge-info text-white d-block"><b>Reforço</b></span></td>
+                                            <td><span class="small d-block">01/09/2021 - 20:47:10</span></td>
+                                            <td>Reforço</td>
+                                            <td>Gerente pediu para adicionar no caixa para reforçar</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="badge badge-default text-white d-block"><b>Sangria</b></span></td>
+                                            <td><span class="small d-block">01/09/2021 - 22:00:05</span></td>
+                                            <td>Adiantamento</td>
+                                            <td>Vale para o garçom colocar gasolina na moto para entrega</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr class="mt-0">
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <h6>Observações</h6>
+                        </div>
+                        <div class="col-12">
+                            <p>Nenhuma observação.</p>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Visualizar Comanda -->
+    <div class="modal fade" id="visualizar-comanda" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full modal-lg" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header clean">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div id="imprimir">
+                    <div class="modal-body clean p-4">
+                        <div class="row">
+                            <div class="col-auto align-self-center text-left">
+                                <h5 class="mt-2 mb-0">Nome do Restaurante</h5>
+                                <span class="small d-block">CNPJ: 99.999.999/9999-99</span>
+                                <h6 class="mb-0">Comanda: <b>0009</b> | MESA: <b>01</b></h6>
+                                <span class="d-block">Jefferson Soares Antunes</span>
+                                <span class="small d-block">CPF: 999.999.99-99</span>
+                                <span class="badge badge-info text-white">Pago App</span>
+                                <span class="badge badge-light text-success"><b>Crédito</b></span>
+                                <img class="mw-35 mr-1" src="img/cartao-visa.svg" alt="">
+                            </div>
+                            <div class="col align-self-center text-right">
+                                <button class="btn btn-secondary button-rounded-42" id="btn-nf" type="button"><i class="material-icons md-24">receipt_long</i></button>
+                                <button class="btn btn-secondary button-rounded-42" id="btn-print" type="button"><i class="material-icons md-24">print</i></button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mt-4">
+                                <ul class="list-group list-group-flush mb-4">
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col text-left align-self-center pl-0">
+                                                <h6 class="mb-0">30 de Julho 2020</h6>
+                                                <span class="small">às 21:02:37</span>
+                                            </div>
+                                            <div class="col-auto text-right align-self-center pr-0">
+                                                <h6 class="text-success font-weight-normal mb-0">Pedido: <b>00481</b></h6>
+                                                <span class="badge badge-success text-white">Servido</span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col align-self-center pl-0">
+                                                <h6 class="my-1">1x - Filés de Frango</h6>
+                                                <p class="small mb-0">1x - Molho Rosê</p>
+                                                <p class="small mb-0">1x - Molho Barbecue</p>
+                                                <p class="text-bold small mb-0">Obs.: Sem pimenta e bem passado os filés.</p>
+                                            </div>
+                                            <div class="col-auto align-self-center pr-0">
+                                                <h5 class="text-success font-weight-normal small my-1">R$ 22,00</h5>
+                                                <p class="text-success small mb-0">R$ 4,00</p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col align-self-center pl-0">
+                                                <h6 class="my-1">1x - Badejo Grelhado</h6>
+                                                <p class="small mb-0">1x - Molho Rosê</p>
+                                                <p class="small mb-0">1x - Molho Ervas Finas</p>
+                                                <p class="small mb-0">Obs.: Sem cebola.</p>
+                                            </div>
+                                            <div class="col-auto align-self-center pr-0">
+                                                <h5 class="text-success font-weight-normal small my-1">R$ 28,00</h5>
+                                                <p class="text-success small mb-0">R$ 4,00</p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col align-self-center pl-0">
+                                                <p class="mb-0 small">Subtotal:</p>
+                                            </div>
+                                            <div class="col text-right align-self-center pr-0">
+                                                <p class="text-bold mb-0 small">R$ 58,00</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <ul class="list-group list-group-flush mb-4">
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col text-left align-self-center pl-0">
+                                                <h6 class="mb-0">30 de Julho 2020</h6>
+                                                <span class="small">às 21:00:14</span>
+                                            </div>
+                                            <div class="col-auto text-right align-self-center pr-0">
+                                                <h6 class="text-success font-weight-normal mb-0">Pedido: <b>00479</b></h6>
+                                                <span class="badge badge-success text-white">Servido</span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col align-self-center pl-0">
+                                                <h6 class="my-1">1x - Filés de Frango</h6>
+                                                <p class="small mb-0">1x - Molho Rosê</p>
+                                                <p class="small mb-0">1x - Molho Barbecue</p>
+                                                <p class="text-bold small mb-0">Obs.: Sem pimenta e bem passado os filés.</p>
+                                            </div>
+                                            <div class="col-auto align-self-center pr-0">
+                                                <h5 class="text-success font-weight-normal small my-1">R$ 22,00</h5>
+                                                <p class="text-success small mb-0">R$ 4,00</p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col align-self-center pl-0">
+                                                <h6 class="my-1">1x - Badejo Grelhado</h6>
+                                                <p class="small mb-0">1x - Molho Rosê</p>
+                                                <p class="small mb-0">1x - Molho Ervas Finas</p>
+                                                <p class="text-bold small mb-0">Obs.: Sem cebola.</p>
+                                            </div>
+                                            <div class="col-auto align-self-center pr-0">
+                                                <h5 class="text-success font-weight-normal small my-1">R$ 28,00</h5>
+                                                <p class="text-success small mb-0">R$ 4,00</p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col align-self-center pl-0">
+                                                <p class="mb-0 small">Subtotal:</p>
+                                            </div>
+                                            <div class="col text-right align-self-center pr-0">
+                                                <p class="text-bold mb-0 small">R$ 58,00</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <ul class="list-group list-group-flush mb-2">
+                                    <li class="list-group-item border-0">
+                                        <div class="row">
+                                            <div class="col align-self-center pl-0">
+                                                <p class="mb-0 small">Subtotal:</p>
+                                                <p class="mb-0 small">Taxa/Serviço:</p>
+                                                <p class="mb-0 small">Couvert:</p>
+                                                <p class="mb-0 small">Descontos:</p>
+                                                <h6 class="mb-0">Total Pedido(s):</h6>
+                                            </div>
+                                            <div class="col text-right align-self-center pr-0">
+                                                <p class="mb-0 small">R$ 116,00</p>
+                                                <p class="mb-0 small">10% (R$11,60)</p>
+                                                <p class="mb-0 small">R$ 5,00</p>
+                                                <p class="mb-0 small">R$ 10,00</p>
+                                                <h6 class="mb-0">R$ 122,60</h6>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Visualizar Comanda iFood -->
+    <div class="modal fade" id="visualizar-comanda-ifood" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full modal-lg" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header clean">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body clean p-4">
+                     
+                    <div class="row">
+                        <div class="col-auto align-self-center text-right">
+                            <figure class="avatar avatar-120 mt-2">
+                                <img src="img/pedidos.svg" alt="">
+                            </figure>
+                        </div>
+                        <div class="col align-self-center text-left pl-2">
+                            <h5 class="mt-2">Pedido: <b>0001</b> 
+                                <span class="badge badge-success text-white text-bold">Confirmado</span>
+                                <span class="badge badge-light text-default text-bold">Delivery</span>
+                                <span class="badge badge-light text-secondary text-bold">Imediato</span>
+                            </h5>
+                            <span class="d-block">Leandro Silva Martins Peron</span>
+                            <span class="d-block small">CPF: 108.990.479-71</span>
+                            <p class="mb-0">End.: Ramal Bujari, 100 - 00.000-000</p>
+                            <span class="badge badge-info text-white">Pago App</span>
+                            <span class="badge badge-light text-success"><b>Crédito</b></span>
+                            <img class="mw-35 mr-1" src="img/cartao-mastercard.svg" alt="">
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mt-4">
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col text-left align-self-center pl-0">
+                                            <h6 class="mb-0">28 de Setembro 2021</h6>
+                                            <span class="text-mute small">às 23:30:24</span>
+                                        </div>
+                                        <div class="col-auto text-right align-self-center pr-0">
+                                            <h6 class="text-success font-weight-normal mb-0"><b>2021-08-29 00:10:24</b></h6>
+                                            <span class="badge badge-light text-secondary text-bold d-block">Previsão de Entrega!</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col align-self-center px-0">
+                                            <h6 class="text-dark my-1">1x - Sanduíche</h6>
+                                            <p class="text-secondary text-mute small mb-0">1x - Complemento 7</p>
+                                        </div>
+                                        <div class="col-auto align-self-center pr-0">
+                                            <h5 class="text-success font-weight-normal small my-1">R$ 20,00</h5>
+                                            <p class="text-success small mb-0">R$ 0,00</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col text-left align-self-center pl-0">
+                                            <h6 class="mb-1">Alguma observação?</h6>
+                                            <p class="text-secondary text-bold small mb-0">Obs.:</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                            <ul class="list-group list-group-flush mb-2">
+                                <li class="list-group-item border-0">
+                                    <div class="row">
+                                        <div class="col align-self-center pl-0">
+                                            <p class="text-secondary mb-0 small">Subtotal:</p>
+                                            <p class="text-secondary mb-0 small">Descontos:</p>
+                                            <p class="text-secondary mb-0 small">Taxa/entrega:</p>
+
+                                            <h6 class="text-secondary mb-0">Total:</h6>
+                                        </div>
+                                        <div class="col text-right align-self-center pr-0">
+                                            <h6 class="mb-0">R$ 20,00</h6>
+                                            <p class="text-secondary mb-0 small">0,00</p>
+                                            <p class="text-secondary mb-0 small">R$ 8,90</p>
+
+                                            <h3 class="text-success mb-0">R$ 28,90</h3>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Editar Comanda -->
+    <div class="modal fade" id="editar-comanda" role="dialog" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-full modal-lg" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header clean">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body clean p-4">
+                    <div class="row">
+                        <div class="col-auto align-self-center text-right">
+                            <figure class="avatar avatar-120 mt-2">
+                                <img src="img/pedidos.svg" alt="">
+                            </figure>
+                        </div>
+                        <div class="col align-self-center text-left pl-2">
+                            <h5 class="mt-2">Comanda: <b>0009</b></h5>
+                            <h6 class="mb-0">MESA: <b>01</b></h6>
+                            <span class="d-block">Jefferson Soares Antunes</span>
+                            <span class="badge badge-info text-white">Pago App</span>
+                            <span class="badge badge-light text-success"><b>Crédito</b></span>
+                            <img class="mw-35 mr-1" src="img/cartao-visa.svg" alt="">
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mt-4">
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col text-left align-self-center pl-0">
+                                            <h6 class="mb-0">30 de Julho 2020</h6>
+                                            <span class="text-mute small">às 21:02:37</span>
+                                        </div>
+                                        <div class="col-auto text-right align-self-center pr-0">
+                                            <h6 class="text-success font-weight-normal mb-0">Pedido: <b>00481</b></h6>
+                                            <div class="form-group float-label w-35 m-0 p-0">
+                                                <select class="custom-select selectpicker" required>
+                                                    <option value="Aguardando..." selected>Aguardando...</option>
+                                                    <option value="Em Preparação">Em Preparação</option>
+                                                    <option value="Finalizado">Finalizado</option>
+                                                    <option value="Servido">Servido</option>
+                                                    <option value="Cancelado">Cancelado</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center pl-0">
+                                            <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">remove_circle</i></button>
+                                        </div>
+                                        <div class="col-auto align-self-center pl-0">
+                                            <figure class="product-image h-auto"><img src="img/prato-01.png" alt="" class="vm list-crop"></figure>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h6 class="text-dark my-1">1x - Filés de Frango</h6>
+                                            <p class="text-secondary text-mute small mb-0">1x - Molho Rosê</p>
+                                            <p class="text-secondary text-mute small mb-0">1x - Molho Barbecue</p>
+                                        </div>
+                                        <div class="col-auto align-self-center pr-0">
+                                            <h5 class="text-success font-weight-normal small my-1">R$ 22,00</h5>
+                                            <p class="text-success small mb-0">R$ 4,00</p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center pl-0">
+                                            <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">remove_circle</i></button>
+                                        </div>
+                                        <div class="col-auto align-self-center pl-0">
+                                            <figure class="product-image h-auto"><img src="img/prato-02.png" alt="" class="vm list-crop"></figure>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h6 class="text-dark my-1">1x - Badejo Grelhado</h6>
+                                            <p class="text-secondary text-mute small mb-0">1x - Molho Rosê</p>
+                                            <p class="text-secondary text-mute small mb-0">1x - Molho Ervas Finas</p>
+                                        </div>
+                                        <div class="col-auto align-self-center pr-0">
+                                            <h5 class="text-success font-weight-normal small my-1">R$ 28,00</h5>
+                                            <p class="text-success small mb-0">R$ 4,00</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col text-left align-self-center pl-0">
+                                            <h6 class="mb-1">Alguma observação?</h6>
+                                            <p class="text-secondary text-bold small mb-0">Obs.: Filés de Frango sem pimenta e bem passado os filés. Badejo Grelhado sem cebola.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col align-self-center pl-0">
+                                            <p class="text-secondary mb-0 small">Subtotal:</p>
+                                        </div>
+                                        <div class="col text-right align-self-center pr-0">
+                                            <p class="text-secondary mb-0 small">R$ 58,00</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col text-left align-self-center pl-0">
+                                            <h6 class="mb-0">30 de Julho 2020</h6>
+                                            <span class="text-mute small">às 21:00:14</span>
+                                        </div>
+                                        <div class="col-auto text-right align-self-center pr-0">
+                                            <h6 class="text-success font-weight-normal mb-0">Pedido: <b>00479</b></h6>
+                                            <div class="form-group float-label w-35 m-0 p-0">
+                                                <select class="custom-select selectpicker" required>
+                                                    <option value="Aguardando..." selected>Aguardando...</option>
+                                                    <option value="Em Preparação">Em Preparação</option>
+                                                    <option value="Finalizado">Finalizado</option>
+                                                    <option value="Servido">Servido</option>
+                                                    <option value="Cancelado">Cancelado</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center pl-0">
+                                            <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">remove_circle</i></button>
+                                        </div>
+                                        <div class="col-auto align-self-center pl-0">
+                                            <figure class="product-image h-auto"><img src="img/prato-01.png" alt="" class="vm list-crop"></figure>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h6 class="text-dark my-1">1x - Filés de Frango</h6>
+                                            <p class="text-secondary text-mute small mb-0">1x - Molho Rosê</p>
+                                            <p class="text-secondary text-mute small mb-0">1x - Molho Barbecue</p>
+                                        </div>
+                                        <div class="col-auto align-self-center pr-0">
+                                            <h5 class="text-success font-weight-normal small my-1">R$ 22,00</h5>
+                                            <p class="text-success small mb-0">R$ 4,00</p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center pl-0">
+                                            <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">remove_circle</i></button>
+                                        </div>
+                                        <div class="col-auto align-self-center pl-0">
+                                            <figure class="product-image h-auto"><img src="img/prato-02.png" alt="" class="vm list-crop"></figure>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h6 class="text-dark my-1">1x - Badejo Grelhado</h6>
+                                            <p class="text-secondary text-mute small mb-0">1x - Molho Rosê</p>
+                                            <p class="text-secondary text-mute small mb-0">1x - Molho Ervas Finas</p>
+                                        </div>
+                                        <div class="col-auto align-self-center pr-0">
+                                            <h5 class="text-success font-weight-normal small my-1">R$ 28,00</h5>
+                                            <p class="text-success small mb-0">R$ 4,00</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col text-left align-self-center pl-0">
+                                            <h6 class="mb-1">Alguma observação?</h6>
+                                            <p class="text-secondary text-bold small mb-0">Obs.: Filés de Frango sem pimenta e bem passado os filés. Badejo Grelhado sem cebola.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col align-self-center pl-0">
+                                            <p class="text-secondary mb-0 small">Subtotal:</p>
+                                        </div>
+                                        <div class="col text-right align-self-center pr-0">
+                                            <p class="text-secondary mb-0 small">R$ 58,00</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                            <ul class="list-group list-group-flush mb-2">
+                                <li class="list-group-item border-0">
+                                    <div class="row">
+                                        <div class="col align-self-center pl-0">
+                                            <p class="text-secondary mb-0 small">Subtotal:</p>
+                                            <p class="text-secondary mb-0 small">Taxa/Serviço:</p>
+                                            <p class="text-secondary mb-0 small">Descontos:</p>
+                                            <p class="text-secondary mb-0 small">Couvert:</p>
+
+                                            <h6 class="mb-0">Total:</h6>
+                                        </div>
+                                        <div class="col text-right align-self-center pr-0">
+                                            <p class="text-secondary mb-0 small">R$ 116,00</p>
+                                            <p class="text-secondary mb-0 small">10% (R$11,60)</p>
+                                            <p class="text-secondary mb-0 small">R$ 10,00</p>
+                                            <p class="text-secondary mb-0 small">R$ 5,00</p>
+
+                                            <h6 class="mb-0">R$ 122,60</h6>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="text-center mt-3">
+                        <button class="btn btn-lg btn-secondary btn-rounded" data-dismiss="modal">Fechar</button>
+                        <button class="btn btn-lg btn-success btn-rounded" data-dismiss="modal">Salvar</button>
+                        <button class="btn btn-default button-rounded-42 float-right" type="button"><i class="material-icons md-24">delete_forever</i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Visualizar Pedidos Cancelados -->
+    <div class="modal fade" id="visualizar-pedidos-cancelados" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full modal-lg" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header clean">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div id="imprimir">
+                    <div class="modal-body clean p-4">
+                        <div class="row">
+                            <div class="col-auto align-self-center text-left">
+                                <h5 class="mt-2 mb-0">Nome do Restaurante</h5>
+                                <span class="small d-block">CNPJ: 99.999.999/9999-99</span>
+                                <h6 class="mb-0">Comanda: <b>0009</b> | MESA: <b>01</b></h6>
+                                <span class="d-block">Jefferson Soares Antunes</span>
+                                <span class="small d-block">CPF: 999.999.99-99</span>
+                                <span class="badge badge-default text-white">Cancelado</span>
+                            </div>
+                            <div class="col align-self-center text-right">
+                                <button class="btn btn-secondary button-rounded-42" id="btn-print" type="button"><i class="material-icons md-24">print</i></button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mt-4">
+                                <ul class="list-group list-group-flush mb-4">
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col text-left align-self-center pl-0">
+                                                <h6 class="mb-0">30 de Julho 2020</h6>
+                                                <span class="text-mute small">às 21:15:45</span>
+                                            </div>
+                                            <div class="col-auto text-right align-self-center pr-0">
+                                                <h6 class="text-success font-weight-normal mb-0">Pedido: <b>00482</b></h6>
+                                                <span class="badge badge-default text-white">Cancelado</span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col align-self-center pl-0">
+                                                <h6 class="text-dark my-1">1x - Sorvete com Waffle</h6>
+                                            </div>
+                                            <div class="col-auto align-self-center pr-0">
+                                                <h5 class="text-success font-weight-normal small my-1">R$ 4,00</h5>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col align-self-center pl-0">
+                                                <p class="text-secondary mb-0 small">Subtotal:</p>
+                                            </div>
+                                            <div class="col text-right align-self-center pr-0">
+                                                <p class="text-secondary mb-0 small">R$ 4,00</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <ul class="list-group list-group-flush mb-2">
+                                    <li class="list-group-item border-0">
+                                        <div class="row">
+                                            <div class="col align-self-center pl-0">
+                                                <h6 class="mb-0">Subtotal Pedido(s):</h6>
+                                            </div>
+                                            <div class="col text-right align-self-center pr-0">
+                                                <h6 class="mb-0">R$ 4,00</h6>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Visualizar Pedidos Excluídos -->
+    <div class="modal fade" id="visualizar-pedidos-excluidos" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full modal-lg" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header clean">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div id="imprimir">
+                    <div class="modal-body clean p-4">
+                        <div class="row">
+                            <div class="col-auto align-self-center text-left">
+                                <h5 class="mt-2 mb-0">Nome do Restaurante</h5>
+                                <span class="small d-block">CNPJ: 99.999.999/9999-99</span>
+                                <h6 class="mb-0">Comanda: <b>0009</b> | MESA: <b>10</b></h6>
+                                <span class="d-block">Carlos Eduardo Souza Filho</span>
+                                <span class="small d-block">CPF: 999.999.99-99</span>
+                            </div>
+                            <div class="col align-self-center text-right">
+                                <button class="btn btn-secondary button-rounded-42" id="btn-print" type="button"><i class="material-icons md-24">print</i></button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mt-4">
+                                <ul class="list-group list-group-flush mb-4">
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col text-left align-self-center pl-0">
+                                                <h6 class="mb-0">30 de Julho 2020</h6>
+                                                <span class="text-mute small">às 21:30:15</span>
+                                            </div>
+                                            <div class="col-auto text-right align-self-center pr-0">
+                                                <h6 class="text-success font-weight-normal mb-0">Pedido: <b>00483</b></h6>
+                                                <span class="badge badge-default text-white">Excluído</span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col align-self-center pl-0">
+                                                <h6 class="text-dark my-1">2x - Sorvete com Waffle</h6>
+                                            </div>
+                                            <div class="col-auto align-self-center pr-0">
+                                                <h5 class="text-success font-weight-normal small my-1">R$ 6,00</h5>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col align-self-center pl-0">
+                                                <p class="text-secondary mb-0 small">Subtotal:</p>
+                                            </div>
+                                            <div class="col text-right align-self-center pr-0">
+                                                <p class="text-secondary mb-0 small">R$ 6,00</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <ul class="list-group list-group-flush mb-2">
+                                    <li class="list-group-item border-0">
+                                        <div class="row">
+                                            <div class="col align-self-center pl-0">
+                                                <h6 class="mb-0">Subtotal Pedido(s):</h6>
+                                            </div>
+                                            <div class="col text-right align-self-center pr-0">
+                                                <h6 class="mb-0">R$ 6,00</h6>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Informações Ticket/Vale Alimentação -->
+    <div class="modal fade" id="info-pagamentos-v-alimentacao" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-body text-center pr-4 pl-4">
+                    <h5 class="my-3">Ticket/Vale Alimentação</h5>
+                    <div class="text-center mb-4">
+                        <p class="text-secondary">O recebimento via <b>Ticket/Vale Alimentação</b> são atrelados ao pagamento no <b>Cartão de Débito</b>.</p>
+                        <p class="text-secondary small"><b>Ex.:</b> Ao receber no <b>Ticket/Vale</b>, os valores são lançados no <b>campo Cartão de Débito</b>.</p>
+                    </div>
+                    
+                    <div class="text-center mb-2">
+                        <button class="btn btn-default btn-rounded btn-block col" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Notificações Pedidos / Diversos -->
+    <div class="modal fade" id="notificacoes" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="header-title mb-0">Notificações</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                     
+                    <div class="row">
+                        <div class="col-12 px-0">
+                            <div class="modal-header">
+                                <h5 class="header-title mb-0">Pedido(s) <span class="badge badge-default">0</span></h5>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Notificações Garçom -->
+    <div class="modal fade" id="notificacoes-garcom" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full modal-lg" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="header-title mb-0">Notificações</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                     
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-6 px-0">
+                            <div class="modal-header">
+                                <h5 class="header-title mb-0">Chamando Garçom <span class="badge badge-default">0</span></h5>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-12 col-lg-6 px-0 mb-3">
+                            <div class="modal-header">
+                                <h5 class="header-title mb-0">Alteração de Mesa <span class="badge badge-default">0</span></h5>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+    
+    <!-- Jquery / Popper / Bootstrap JS -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap-select.js"></script>
+    
+    <!-- Swiper JS -->
+    <script src="vendor/swiper/js/swiper.min.js"></script>
+    
+    <!-- Moment JS -->
+    <script src="vendor/moment/moment.js"></script>
+    
+    <!-- Slimscroll JS -->
+    <script src="vendor/slimscroll/slimscroll.min.js"></script>
+    
+    <!-- Tabs Wizard JS -->
+    <script src="vendor/tabs-wizard/tabs-wizard.js"></script>
+    
+    <!-- Daterange JS -->
+    <script src="vendor/datarange/daterange.js"></script>
+    
+    <!-- Datatables JS -->
+    <script src="vendor/datatables/datatables.min.js"></script>
+    <script src="vendor/datatables/dataTables.responsive.min.js"></script>
+    
+    <!-- Lobipanel JS -->
+    <script src="vendor/lobipanel/lobipanel.js"></script>
+    
+    <!-- ApexCharts JS -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    
+    <!-- Customização JS -->
+    <script src="js/main.js"></script>
+    
+    <!-- Scripts -->
+    <script>
+        $(window).on('load', function() {
+            
+        });
+        
+        /* Filtro Calendário */
+        $(function() {
+            var start = moment();
+            var end = moment().add(1, 'days');
+            function cb(start, end) {
+                $('#calendario-filtro span').html(start.format('DD/MM/YYYY HH:mm') + ' - ' + end.format('DD/MM/YYYY HH:mm'));
+            }
+            $('#calendario-filtro').daterangepicker({
+                opens: 'center',
+                startDate: start,
+                endDate: end,
+                timePicker: true,
+                autoApply: true,
+                ranges: {
+                    'Hoje': [moment(), moment()],
+                    'Ontem': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Últimos 7 dias': [moment().subtract(6, 'days'), moment()],
+                    'Últimos 30 dias': [moment().subtract(29, 'days'), moment()],
+                    'Mês passado': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                },
+                "locale": {
+                    "format": "DD/MM/YYYY HH:mm",
+                    "separator": " - ",
+                    "applyLabel": "Aplicar",
+                    "cancelLabel": "Cancelar",
+                    "fromLabel": "De",
+                    "toLabel": "Para",
+                    "customRangeLabel": "Período",
+                    "weekLabel": "S",
+                    "daysOfWeek": [
+                      "Dom",
+                      "Seg",
+                      "Ter",
+                      "Qua",
+                      "Qui",
+                      "Sex",
+                      "Sab"
+                    ],
+                    "monthNames": [
+                      "Janeiro",	
+                      "Fevereiro",
+                      "Março",
+                      "Abril",
+                      "Maio",
+                      "Junho",
+                      "Julho",
+                      "Agosto",
+                      "Setembro",
+                      "Outubro",
+                      "Novembro",
+                      "Dezembro"
+                    ],
+                    "firstDay": 1
+                },
+            }, cb);
+            cb(start, end);
+        });
+        
+        /* Indicadores Slide */
+        $(window).on('load', function() {
+            var swiper = new Swiper('.indicadores-01', {
+                slidesPerView: '1',
+                spaceBetween: 30,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                autoplay: {
+                   delay: 5000,
+                },
+                breakpoints: {
+                    1024: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    768: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    640: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    }
+                }
+            });
+            
+            var swiper = new Swiper('.indicadores-02', {
+                slidesPerView: '1',
+                spaceBetween: 30,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                autoplay: {
+                   delay: 6000,
+                },
+                breakpoints: {
+                    1150: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    1024: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    768: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    640: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    }
+                }
+            });
+        });
+        
+        /* Gráfico Clientes */
+        var options = {
+          series: [5, 3],
+          chart: {
+          height: 270,
+          type: 'donut',
+        },
+        grid: {
+          padding: {
+            top: 0,
+            bottom: -10,
+          }
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                total: {
+                  showAlways: true,
+                  show: true
+                }
+              }
+            }
+          }
+        },    
+        colors: ['#00BE7D', '#C7D4E1'],
+        labels: ['Novos', 'Recorrentes'],
+        dataLabels: {
+          enabled: true,
+          dropShadow: {
+              enabled: false
+          }
+        },    
+        responsive: [{
+          breakpoint: 1160,
+          options: {
+            chart: {
+              height: 315,
+            },
+            dataLabels: {
+              offset: 30
+            },
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }],    
+        };
+        var chart = new ApexCharts(document.querySelector("#grafico-clientes"), options);
+        chart.render();
+        
+        /* Gráfico Canais Venda */
+        var options = {
+          series: [15, 2, 10, 12],
+          chart: {
+          height: 270,
+          type: 'donut',
+        },
+        grid: {
+          padding: {
+            top: 0,
+            bottom: -10,
+          }
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                total: {
+                  showAlways: true,
+                  show: true
+                }
+              }
+            }
+          }
+        },    
+        colors: ['#00BE7D', '#96E5C7', '#688198', '#C7D4E1'],
+        labels: ['QR Mesas', 'QR Único', 'QR Ticket', 'Link URL'],
+        dataLabels: {
+          enabled: true,
+          dropShadow: {
+              enabled: false
+          }
+        },    
+        responsive: [{
+          breakpoint: 1160,
+          options: {
+            chart: {
+              height: 315,
+            },
+            dataLabels: {
+              offset: 30
+            },
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }],    
+        };
+        var chart = new ApexCharts(document.querySelector("#grafico-ocupacao-mesas"), options);
+        chart.render();
+        
+        /* Gráfico Cupons */
+        var options = {
+          series: [3, 2, 6, 4],
+          chart: {
+          height: 270,
+          type: 'donut',
+        },
+        grid: {
+          padding: {
+            top: 0,
+            bottom: -10,
+          }
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                total: {
+                  showAlways: true,
+                  show: true
+                }
+              }
+            }
+          }
+        },    
+        colors: ['#00BE7D', '#96E5C7', '#688198', '#C7D4E1'],
+        labels: ['Ativos', 'Inativos', 'Secretos', 'Excluídos'],
+        dataLabels: {
+          enabled: true,
+          dropShadow: {
+              enabled: false
+          }
+        },    
+        responsive: [{
+          breakpoint: 1160,
+          options: {
+            chart: {
+              height: 315,
+            },
+            dataLabels: {
+              offset: 30
+            },
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }],    
+        };
+        var chart = new ApexCharts(document.querySelector("#grafico-cupons"), options);
+        chart.render();
+        
+        /* Gráfico Pedidos por Categoria */
+        var options = {
+          series: [{
+          name: 'Pedidos',      
+          data: [1, 2, 11,7,3,15]
+        }],
+          chart: {
+          type: 'bar',
+          height: 270,    
+          toolbar: {
+            show: false
+          }    
+        },
+        grid: {
+          padding: {
+            top: -20,
+            bottom: -10,
+          },
+          yaxis: {
+            lines: {
+              show: false
+            }
+          }    
+        },    
+        plotOptions: {
+          bar: {
+            horizontal: true,
+            endingShape: 'rounded'  
+          }
+        },
+        colors: ['#00BE7D'],    
+        dataLabels: {
+          enabled: true
+        },
+        xaxis: {
+          type: '',    
+          categories: ['Entradas', 'Saladas', 'Pratos Quentes', 'Porções', 'Sobremesas', 'Bebidas']
+        },
+        };
+        var chart = new ApexCharts(document.querySelector("#grafico-pedidos-categoria"), options);
+        chart.render();
+        
+        /* Gráfico Recebimento Quantidade */
+        var options = {
+          series: [1, 3, 2, 1, 1, 1],
+          chart: {
+          height: 270,
+          type: 'donut',
+        },
+        grid: {
+          padding: {
+            top: 0,
+            bottom: -10,
+          }
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                total: {
+                  showAlways: true,
+                  show: true
+                }
+              }
+            }
+          }
+        },    
+        colors: ['#00BE7D', '#96E5C7', '#688198', '#7792A9', '#A6BBCF', '#C7D4E1'],
+        labels: ['Crédito App', 'Débito App', 'Crédito Maq', 'Débito Maq', 'Dinheiro', 'Pix'],
+        dataLabels: {
+          enabled: true,
+          dropShadow: {
+              enabled: false
+          }
+        },    
+        responsive: [{
+          breakpoint: 1160,
+          options: {
+            chart: {
+              height: 315,
+            },
+            dataLabels: {
+              offset: 30
+            },
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }],    
+        };
+        var chart = new ApexCharts(document.querySelector("#grafico-recebimento-quantidade"), options);
+        chart.render();
+        
+        /* Gráfico Taxas */
+        var options = {
+          series: [{
+          name: 'Pago',
+          data: [103.01, 1.63, 80.41]
+        }],
+        chart: {
+          type: 'bar',
+          height: 270,    
+          toolbar: {
+            show: false
+          }
+        },
+        grid: {
+          padding: {
+            top: 0,
+            bottom: -5,
+          },
+          yaxis: {
+            lines: {
+              show: false
+            }
+          }    
+        },    
+        plotOptions: {
+          bar: {
+            endingShape: 'rounded'
+          },
+        },    
+        colors: ['#00BE7D'],
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          curve: 'smooth'
+        },    
+        xaxis: {
+          type: '',    
+          categories: ['Serviço', 'Couvert', 'Entrega']
+        },
+        yaxis: {
+          labels: {
+              formatter: function (val) {
+              return "R$ " + Number(val).toLocaleString();
+            }   
+          },
+        },    
+        };
+        var chart = new ApexCharts(document.querySelector("#grafico-taxas"), options);
+        chart.render();
+        
+        /* Gráfico Pedidos */
+        var options = {
+          series: [{
+          name: 'QR Mesa',
+          data: [2, 4, 6, 3, 0, 0, 0]
+        }, {
+          name: 'QR Único',
+          data: [0, 0, 0, 2, 0, 0, 0]
+        }, {
+          name: 'QR Ticket',
+          data: [10, 0, 0, 0, 0, 0, 0]
+        }, {
+          name: 'Link URL',
+          data: [1, 3, 5, 3, 0, 0, 0]
+        }],
+        chart: {
+          height: 325,
+          type: 'line',
+          toolbar: {
+            show: false
+          }
+        },
+        colors: ['#00BE7D', '#96E5C7', '#688198', '#C7D4E1'],
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          curve: 'smooth'
+        },
+        xaxis: {
+          type: '',
+          categories: ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"]
+        },
+        legend: {
+          position: 'top',
+          horizontalAlign: 'right',
+          floating: true,
+        }    
+        };
+        var chart = new ApexCharts(document.querySelector("#grafico-pedidos"), options);
+        chart.render();
+        
+        /* Gráfico Faturamento */
+        var options = {
+          series: [{
+          name: 'QR Mesa',
+          data: [50.87, 101.63, 152.41, 75.43, 0, 0, 0]
+        },{
+          name: 'QR Único',
+          data: [0, 0, 0, 40.84, 0, 0, 0]
+        },{
+          name: 'QR Ticket',
+          data: [237.28, 0, 0, 0, 0, 0, 0]
+        }, {
+          name: 'Link URL',
+          data: [27.51, 76.22, 127.35, 55.32, 0, 0, 0]
+        }],
+        chart: {
+          height: 325,
+          type: 'line',
+          toolbar: {
+            show: false
+          }
+        },
+        plotOptions: {
+          bar: {
+            endingShape: 'rounded'
+          },
+        },    
+        colors: ['#00BE7D', '#96E5C7', '#688198', '#C7D4E1'],
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          curve: 'smooth'
+        },    
+        xaxis: {
+          type: '',
+          categories: ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"]
+        },
+        yaxis: {
+          labels: {
+              formatter: function (val) {
+              return "R$ " + Number(val).toLocaleString();
+            }   
+          },
+        },    
+        legend: {
+          position: 'top',
+          horizontalAlign: 'right',
+          floating: true,
+        },
+        };
+        var chart = new ApexCharts(document.querySelector("#grafico-faturamento"), options);
+        chart.render();    
+        
+        /* Lista Tabela Produtos Vendidos, Pedidos Autorizados/Cancelados e Clientes */
+        $(document).ready(function() {
+            $('#lista-fechamento-caixa').dataTable( {
+                responsive: true,
+                "autoWidth": false,
+                "lengthChange": true,
+                "pagingType": "simple",
+                "language": {
+                    "sEmptyTable": "Nenhum registro encontrado",
+                    "sInfo": "Exibir: _START_ até _END_ de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                    "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sInfoThousands": ".",
+                    "sLengthMenu": "_MENU_",
+                    "sLoadingRecords": "Carregando...",
+                    "sProcessing": "Processando...",
+                    "sZeroRecords": "Nenhum registro encontrado",
+                    searchPlaceholder: "Pesquisar...",
+                    "oPaginate": {
+                        "sNext": "Próximo",
+                        "sPrevious": "Anterior",
+                        "sFirst": "Primeiro",
+                        "sLast": "Último"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Ordenar colunas de forma ascendente",
+                        "sSortDescending": ": Ordenar colunas de forma descendente"
+                    }
+                }
+            });
+            
+            $('#lista-produtos-vendidos').dataTable( {
+                responsive: true,
+                "autoWidth": false,
+                "lengthChange": true,
+                "pagingType": "simple",
+                "language": {
+                    "sEmptyTable": "Nenhum registro encontrado",
+                    "sInfo": "Exibir: _START_ até _END_ de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                    "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sInfoThousands": ".",
+                    "sLengthMenu": "_MENU_",
+                    "sLoadingRecords": "Carregando...",
+                    "sProcessing": "Processando...",
+                    "sZeroRecords": "Nenhum registro encontrado",
+                    searchPlaceholder: "Pesquisar...",
+                    "oPaginate": {
+                        "sNext": "Próximo",
+                        "sPrevious": "Anterior",
+                        "sFirst": "Primeiro",
+                        "sLast": "Último"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Ordenar colunas de forma ascendente",
+                        "sSortDescending": ": Ordenar colunas de forma descendente"
+                    }
+                }
+            });
+            
+            $('#lista-pedidos').dataTable( {
+                responsive: true,
+                "autoWidth": false,
+                "lengthChange": true,
+                "pagingType": "simple",
+                "language": {
+                    "sEmptyTable": "Nenhum registro encontrado",
+                    "sInfo": "Exibir: _START_ até _END_ de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                    "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sInfoThousands": ".",
+                    "sLengthMenu": "_MENU_",
+                    "sLoadingRecords": "Carregando...",
+                    "sProcessing": "Processando...",
+                    "sZeroRecords": "Nenhum registro encontrado",
+                    searchPlaceholder: "Pesquisar...",
+                    "oPaginate": {
+                        "sNext": "Próximo",
+                        "sPrevious": "Anterior",
+                        "sFirst": "Primeiro",
+                        "sLast": "Último"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Ordenar colunas de forma ascendente",
+                        "sSortDescending": ": Ordenar colunas de forma descendente"
+                    }
+                }
+            });
+            
+            $('#lista-pedidos-delivery').dataTable( {
+                responsive: true,
+                "autoWidth": false,
+                "lengthChange": true,
+                "pagingType": "simple",
+                "language": {
+                    "sEmptyTable": "Nenhum registro encontrado",
+                    "sInfo": "Exibir: _START_ até _END_ de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                    "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sInfoThousands": ".",
+                    "sLengthMenu": "_MENU_",
+                    "sLoadingRecords": "Carregando...",
+                    "sProcessing": "Processando...",
+                    "sZeroRecords": "Nenhum registro encontrado",
+                    searchPlaceholder: "Pesquisar...",
+                    "oPaginate": {
+                        "sNext": "Próximo",
+                        "sPrevious": "Anterior",
+                        "sFirst": "Primeiro",
+                        "sLast": "Último"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Ordenar colunas de forma ascendente",
+                        "sSortDescending": ": Ordenar colunas de forma descendente"
+                    }
+                }
+            });
+            
+            $('#lista-pedidos-cancelados').dataTable( {
+                responsive: true,
+                "autoWidth": false,
+                "lengthChange": true,
+                "pagingType": "simple",
+                "language": {
+                    "sEmptyTable": "Nenhum registro encontrado",
+                    "sInfo": "Exibir: _START_ até _END_ de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                    "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sInfoThousands": ".",
+                    "sLengthMenu": "_MENU_",
+                    "sLoadingRecords": "Carregando...",
+                    "sProcessing": "Processando...",
+                    "sZeroRecords": "Nenhum registro encontrado",
+                    searchPlaceholder: "Pesquisar...",
+                    "oPaginate": {
+                        "sNext": "Próximo",
+                        "sPrevious": "Anterior",
+                        "sFirst": "Primeiro",
+                        "sLast": "Último"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Ordenar colunas de forma ascendente",
+                        "sSortDescending": ": Ordenar colunas de forma descendente"
+                    }
+                }
+            });
+            
+            $('#lista-pedidos-excluidos').dataTable( {
+                responsive: true,
+                "autoWidth": false,
+                "lengthChange": true,
+                "pagingType": "simple",
+                "language": {
+                    "sEmptyTable": "Nenhum registro encontrado",
+                    "sInfo": "Exibir: _START_ até _END_ de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                    "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sInfoThousands": ".",
+                    "sLengthMenu": "_MENU_",
+                    "sLoadingRecords": "Carregando...",
+                    "sProcessing": "Processando...",
+                    "sZeroRecords": "Nenhum registro encontrado",
+                    searchPlaceholder: "Pesquisar...",
+                    "oPaginate": {
+                        "sNext": "Próximo",
+                        "sPrevious": "Anterior",
+                        "sFirst": "Primeiro",
+                        "sLast": "Último"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Ordenar colunas de forma ascendente",
+                        "sSortDescending": ": Ordenar colunas de forma descendente"
+                    }
+                }
+            });
+            
+            $('#lista-clientes').dataTable( {
+                responsive: true,
+                "autoWidth": false,
+                "lengthChange": true,
+                "pagingType": "simple",
+                "language": {
+                    "sEmptyTable": "Nenhum registro encontrado",
+                    "sInfo": "Exibir: _START_ até _END_ de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                    "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sInfoThousands": ".",
+                    "sLengthMenu": "_MENU_",
+                    "sLoadingRecords": "Carregando...",
+                    "sProcessing": "Processando...",
+                    "sZeroRecords": "Nenhum registro encontrado",
+                    searchPlaceholder: "Pesquisar...",
+                    "oPaginate": {
+                        "sNext": "Próximo",
+                        "sPrevious": "Anterior",
+                        "sFirst": "Primeiro",
+                        "sLast": "Último"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Ordenar colunas de forma ascendente",
+                        "sSortDescending": ": Ordenar colunas de forma descendente"
+                    }
+                }
+            });
+            
+        });
+        
+        /* Imprimir Cupom */
+        document.getElementById("btn-print").onclick = function () {
+            printElement(document.getElementById("imprimir"));
+        }
+        function printElement(elem) {
+            var domClone = elem.cloneNode(true);
+            var $imprimirArea = document.getElementById("imprimirArea");
+            if (!$imprimirArea) {
+                var $imprimirArea = document.createElement("div");
+                $imprimirArea.id = "imprimirArea";
+                document.body.appendChild($imprimirArea);
+            }
+            $imprimirArea.innerHTML = "";
+            $imprimirArea.appendChild(domClone);
+            window.print();
+        }
+
+    </script>
+
+</body>
+
+</html>

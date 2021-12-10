@@ -1,0 +1,829 @@
+<!doctype html>
+<html lang="pt-br" class="menon">
+
+<head>
+    
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#E93D25">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="description" content="O seu cardápio digital">
+
+    <title>Menon - Painel Administrativo</title>
+    
+    <!-- Icones / Favicon -->
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="icon" href="img/favicon.png">
+
+    <!-- Icones CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap-4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-4.3.1/css/bootstrap-select.css">
+
+    <!-- Swiper Slide CSS -->
+    <link rel="stylesheet" href="vendor/swiper/css/swiper.min.css">
+    
+     <!-- Progress Wizard CSS -->
+    <link rel="stylesheet" href="vendor/progress-wizard/css/progress-wizard.min.css">
+    
+    <!-- DateRange CSS -->
+	<link rel="stylesheet" href="vendor/datarange/daterange.css">
+    
+    <!-- Datatables CSS -->
+	<link rel="stylesheet" href="vendor/datatables/datatables.min.css">
+    <link rel="stylesheet" href="vendor/datatables/responsive.dataTables.min.css">
+    
+    <!-- Lobipanel css -->
+    <link rel="stylesheet" href="vendor/lobipanel/lobipanel.css">
+
+    <!-- Estilo CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="row no-gutters vh-100 loader-screen">
+        <div class="col align-self-center text-white text-center">
+            <img src="img/logo.svg" alt="logo">
+            <div></div>
+            <div class="laoderhorizontal"><div></div><div></div><div></div><div></div></div>
+        </div>
+    </div>
+    
+    <!-- Menu Lateral -->
+    <div class="sidebar">
+        <div class="text-center">
+            <div class="figure-menu shadow">
+                <figure><img src="img/usuario.svg" alt=""></figure>
+            </div>
+            <h5 class="mb-1 ">Nome Sobrenome</h5>
+            <p class="text-mute small">Função | Restaurante</p>
+        </div>
+        <div class="row mx-0">
+            <div class="col">
+                <div class="list-group main-menu">
+                    <a href="painel.html" class="list-group-item list-group-item-action"><i class="material-icons">multiline_chart</i> Painel</a>
+                    <a href="cardapios.html" class="list-group-item list-group-item-action"><i class="material-icons">fastfood</i> Cardápios</a>
+                    <a href="pedidos.html" class="list-group-item list-group-item-action"><i class="material-icons">receipt_long</i> Pedidos</a>
+                    <a href="mesas.html" class="list-group-item list-group-item-action"><i class="material-icons">view_module</i> Mesas</a>
+                    <a href="cupom.html" class="list-group-item list-group-item-action"><i class="material-icons">local_activity</i> Cupom</a>
+                    <a href="usuarios.html" class="list-group-item list-group-item-action"><i class="material-icons">account_circle</i> Usuários</a>
+                    <a href="financeiro.html" class="list-group-item list-group-item-action active"><i class="material-icons">payments</i> Financeiro</a>
+                    <a href="relatorios.html" class="list-group-item list-group-item-action"><i class="material-icons">bar_chart</i> Relatórios</a>
+                    <a href="configuracoes.html" class="list-group-item list-group-item-action"><i class="material-icons">settings</i> Configurações</a>
+                    <a href="index.html" class="list-group-item list-group-item-action"><i class="material-icons">exit_to_app</i> Sair</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="wrapper">
+        
+        <!-- Cabeçalho -->
+        <div class="header">
+            <div class="row no-gutters">
+                <div class="col text-left">
+                    <button class="btn btn-link text-secondary menu-btn"><i class="material-icons">apps</i></button>
+                </div>
+                <div class="col text-center"><img src="img/logo-menon-h.svg" alt="" class="header-logo"></div>
+                <div class="col text-right">
+                    <a href="" class="btn-link text-secondary table-btn small" data-toggle="modal" data-target="#notificacoes"><i class="material-icons">notifications_active</i></a> 
+                    <a href="" class="btn-link text-secondary table-btn small" data-toggle="modal" data-target="#notificacoes-garcom"><i class="material-icons">emoji_people</i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Financeiro -->
+        <div class="container-fluid">
+            <div class="mb-2">
+                <div class="row">
+                    <div class="col-auto align-self-center pr-0">
+                         <i class="material-icons md-48 text-default">payments</i>
+                    </div>
+                    <div class="col-auto align-self-center px-2">
+                        <h6 class="mb-0">Financeiro</h6>
+                        <span class="text-secondary text-bold small">Transações e Notas Fiscais</span>
+                    </div>
+                </div>
+            </div> 
+            
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <ul class="nav nav-tabs tabs-bordered d-flex nav-justified mt-4 mb-4" role="tablist">
+                                <li>
+                                    <a href="#tab1-transacoes" aria-controls="tab1-transacoes" class="active show" role="tab" data-toggle="tab">Transações Pagas Pelo App</a>
+                                </li>
+                                <li>
+                                    <a href="#tab2-nf" aria-controls="tab2-nf" role="tab" data-toggle="tab">Notas Fiscais</a>
+                                </li>
+                            </ul>
+                            
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade active show" id="tab1-transacoes">
+                                    <span id="calendario-filtro" class="cursor text-secondary small">
+                                        <span></span>
+                                        <i class="material-icons md-16">expand_more</i>	
+                                    </span>
+
+                                    <table id="lista-transacoes" class="table nowrap">
+                                        <thead>
+                                            <tr>
+                                                <th>Identificador:</th>
+                                                <th>Transação:</th>
+                                                <th>Pedido:</th>
+                                                <th>Autorização:</th>
+                                                <th>Captura:</th>
+                                                <th>NSU:</th>
+                                                <th>Cod/Autorização:</th>
+                                                <th>Valor:</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>cbda4c66-fbc4-4d23</td>
+                                                <td>
+                                                    <img class="mw-35 mr-1" src="img/cartao-mastercard.svg" alt="">
+                                                    <span class="badge badge-light text-info"><b>Crédito</b></span>
+                                                    <span class="badge badge-light text-success"><b>Capturada</b></span>
+                                                </td>
+                                                <td>5382-4</td>
+                                                <td>30/07/2020 - 20:43:12</td>
+                                                <td>30/07/2020</td>
+                                                <td>968473</td>
+                                                <td>76456</td>
+                                                <td><b>R$ 59,00</b></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>cbda4c66-fbc4-4d22</td>
+                                                <td>
+                                                    <img class="mw-35 mr-1" src="img/cartao-mastercard.svg" alt="">
+                                                    <span class="badge badge-light text-info"><b>Crédito</b></span>
+                                                    <span class="badge badge-light text-success"><b>Capturada</b></span>
+                                                </td>
+                                                <td>7361-4</td>
+                                                <td>30/07/2020 - 21:00:14</td>
+                                                <td>30/07/2020</td>
+                                                <td>234234</td>
+                                                <td>65464</td>
+                                                <td><b>R$ 87,00</b></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>cbda4c66-fbc4-4d21</td>
+                                                <td>
+                                                    <img class="mw-35 mr-1" src="img/cartao-visa.svg" alt="">
+                                                    <span class="badge badge-light text-info"><b>Débito</b></span>
+                                                    <span class="badge badge-light text-success"><b>Capturada</b></span>
+                                                </td>
+                                                <td>2382-2</td>
+                                                <td>30/07/2020 - 21:14:56</td>
+                                                <td>30/07/2020</td>
+                                                <td>436534</td>
+                                                <td>76335</td>
+                                                <td><b>R$ 116,00</b></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>cbda4c66-fbc4-4d23</td>
+                                                <td>
+                                                    <img class="mw-35 mr-1" src="img/cartao-hipercard.svg" alt="">
+                                                    <span class="badge badge-light text-info"><b>Crédito</b></span>
+                                                    <span class="badge badge-light text-success"><b>Capturada</b></span>
+                                                </td>
+                                                <td>5382-4</td>
+                                                <td>30/07/2020 - 20:43:12</td>
+                                                <td>30/07/2020</td>
+                                                <td>968473</td>
+                                                <td>76456</td>
+                                                <td><b>R$ 59,00</b></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>cbda4c66-fbc4-4d22</td>
+                                                <td>
+                                                    <img class="mw-35 mr-1" src="img/cartao-mastercard.svg" alt="">
+                                                    <span class="badge badge-light text-info"><b>Débito</b></span>
+                                                    <span class="badge badge-light text-success"><b>Capturada</b></span>
+                                                </td>
+                                                <td>7361-4</td>
+                                                <td>30/07/2020 - 21:00:14</td>
+                                                <td>30/07/2020</td>
+                                                <td>234234</td>
+                                                <td>65464</td>
+                                                <td><b>R$ 87,00</b></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>cbda4c66-fbc4-4d21</td>
+                                                <td>
+                                                    <img class="mw-35 mr-1" src="img/cartao-elo.svg" alt="">
+                                                    <span class="badge badge-light text-info"><b>Crédito</b></span>
+                                                    <span class="badge badge-light text-success"><b>Capturada</b></span>
+                                                </td>
+                                                <td>2382-2</td>
+                                                <td>30/07/2020 - 21:14:56</td>
+                                                <td>30/07/2020</td>
+                                                <td>436534</td>
+                                                <td>76335</td>
+                                                <td><b>R$ 116,00</b></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>cbda4c66-fbc4-4d23</td>
+                                                <td>
+                                                    <img class="mw-35 mr-1" src="img/cartao-mastercard.svg" alt="">
+                                                    <span class="badge badge-light text-info"><b>Débito</b></span>
+                                                    <span class="badge badge-light text-success"><b>Capturada</b></span>
+                                                </td>
+                                                <td>5382-4</td>
+                                                <td>30/07/2020 - 20:43:12</td>
+                                                <td>30/07/2020</td>
+                                                <td>968473</td>
+                                                <td>76456</td>
+                                                <td><b>R$ 59,00</b></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>cbda4c66-fbc4-4d22</td>
+                                                <td>
+                                                    <img class="mw-35 mr-1" src="img/cartao-american.svg" alt="">
+                                                    <span class="badge badge-light text-info"><b>Crédito</b></span>
+                                                    <span class="badge badge-light text-success"><b>Capturada</b></span>
+                                                </td>
+                                                <td>7361-4</td>
+                                                <td>30/07/2020 - 21:00:14</td>
+                                                <td>30/07/2020</td>
+                                                <td>234234</td>
+                                                <td>65464</td>
+                                                <td><b>R$ 87,00</b></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>cbda4c66-fbc4-4d21</td>
+                                                <td>
+                                                    <img class="mw-35 mr-1" src="img/cartao-visa.svg" alt="">
+                                                    <span class="badge badge-light text-info"><b>Crédito</b></span>
+                                                    <span class="badge badge-light text-success"><b>Capturada</b></span>
+                                                </td>
+                                                <td>2382-2</td>
+                                                <td>30/07/2020 - 21:14:56</td>
+                                                <td>30/07/2020</td>
+                                                <td>436534</td>
+                                                <td>76335</td>
+                                                <td><b>R$ 116,00</b></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>cbda4c66-fbc4-4d23</td>
+                                                <td>
+                                                    <img class="mw-35 mr-1" src="img/cartao-mastercard.svg" alt="">
+                                                    <span class="badge badge-light text-info"><b>Débito</b></span>
+                                                    <span class="badge badge-light text-success"><b>Capturada</b></span>
+                                                </td>
+                                                <td>5382-4</td>
+                                                <td>30/07/2020 - 20:43:12</td>
+                                                <td>30/07/2020</td>
+                                                <td>968473</td>
+                                                <td>76456</td>
+                                                <td><b>R$ 59,00</b></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>cbda4c66-fbc4-4d22</td>
+                                                <td>
+                                                    <img class="mw-35 mr-1" src="img/cartao-american.svg" alt="">
+                                                    <span class="badge badge-light text-info"><b>Crédito</b></span>
+                                                    <span class="badge badge-light text-success"><b>Capturada</b></span>
+                                                </td>
+                                                <td>7361-4</td>
+                                                <td>30/07/2020 - 21:00:14</td>
+                                                <td>30/07/2020</td>
+                                                <td>234234</td>
+                                                <td>65464</td>
+                                                <td><b>R$ 87,00</b></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>cbda4c66-fbc4-4d21</td>
+                                                <td>
+                                                    <img class="mw-35 mr-1" src="img/cartao-visa.svg" alt="">
+                                                    <span class="badge badge-light text-info"><b>Crédito</b></span>
+                                                    <span class="badge badge-light text-success"><b>Capturada</b></span>
+                                                </td>
+                                                <td>2382-2</td>
+                                                <td>30/07/2020 - 21:14:56</td>
+                                                <td>30/07/2020</td>
+                                                <td>436534</td>
+                                                <td>76335</td>
+                                                <td><b>R$ 116,00</b></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div role="tabpanel" class="tab-pane fade" id="tab2-nf">
+                                    <span class="text-secondary small">Lista de NFC-e</span>
+
+                                    <table id="lista-nf" class="table nowrap">
+                                        <thead>
+                                            <tr>
+                                                <th>Data:</th>
+                                                <th>Número NF:</th>
+                                                <th>Número Série:</th>
+                                                <th>Referência:</th>
+                                                <th>Valor:</th>
+                                                <th>Status SEFAZ:</th>
+                                                <th>Ações:</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>0/07/2020 - 20:43:12</td>
+                                                <td>524</td>
+                                                <td>1</td>
+                                                <td>0765MENON1234</td>
+                                                <td><b>R$ 59,00</b></td>
+                                                <td>Autorizado</td>
+                                                <td>
+                                                    <div class="btn-group w-125 py-1">
+                                                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.href='#'"><i class="material-icons">receipt_long</i></button>
+                                                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            <span class="sr-only">Toggle Dropdown</span>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right rounded my-2">
+                                                            <button class="btn btn-link text-secondary text-capitalize font-weight-normal dropdown-item" onclick="window.location.href='#'"><i class="material-icons">file_download</i> XML</button>
+                                                            <div class="dropdown-divider"></div>
+                                                            <button class="btn btn-link text-secondary text-capitalize font-weight-normal dropdown-item" data-toggle="modal" data-target="#enviar-nf-whatsapp"><i class="material-icons">whatsapp</i> Enviar </button>
+                                                            <div class="dropdown-divider"></div>
+                                                            <button class="btn btn-link text-secondary text-capitalize font-weight-normal dropdown-item" data-toggle="modal" data-target="#confirmar-cancelamento"><i class="material-icons">delete_forever</i> Cancelar</button>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </div>
+    
+    <!-- Modal Visualizar DANFE -->
+    <div class="modal fade" id="visualizar-danfe" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header clean">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body clean text-center p-4">
+                    <figure class="avatar avatar-120 mt-2">
+                        <img src="img/pedidos.svg" alt="">
+                    </figure>
+                    <h5 class="my-3">Visualizar DANFE</h5> 
+                    <div class="row">
+                        <div class="col mb-2">
+                            <a href="#">
+                                <div class="card border-1">
+                                    <div class="card-body text-center">
+                                        <i class="material-icons md-52">receipt_long</i>
+                                        <h6 class="text-secondary text-center m-0 d-block">Html</h6>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col mb-2">
+                            <a href="#">
+                                <div class="card border-1">
+                                    <div class="card-body text-center">
+                                        <i class="material-icons md-52">file_download</i>
+                                        <h6 class="text-secondary text-center m-0 d-block">XML</h6>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col mb-2">
+                            <a href="" data-toggle="modal" data-target="#enviar-nf-whatsapp">
+                                <div class="card border-1">
+                                    <div class="card-body text-center">
+                                        <i class="material-icons md-52">whatsapp</i>
+                                        <h6 class="text-secondary text-center m-0 d-block">Enviar</h6>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col mb-2">
+                            <a href="" data-toggle="modal" data-target="#confirmar-cancelamento">
+                                <div class="card border-1">
+                                    <div class="card-body text-center">
+                                        <i class="material-icons md-52">delete_forever</i>
+                                        <h6 class="text-secondary text-center m-0 d-block">Cancelar</h6>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button class="btn btn-lg btn-secondary btn-rounded" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Enviar NF por WhatsApp -->
+    <div class="modal fade" id="enviar-nf-whatsapp" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="header-title mb-0">Enviar NFC-e</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="row">
+                        <div class="col-12 align-self-top text-center px-0">
+                            <h5 class="header-title mb-0">Deseja enviar a Nota Fiscal por WhatsApp?</h5>
+                        </div>
+                        <div class="col-12 text-center">
+                            <div class="form-group float-label">
+                                <input type="tel" class="form-control" value="" placeholder="(99) 99999-9999">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="text-center mt-2">
+                        <button class="btn btn-lg btn-secondary btn-rounded" data-dismiss="modal">Fechar</button>
+                        <button class="btn btn-lg btn-success btn-rounded" data-dismiss="modal">Enviar Mensagem</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Confirmar Cancelamento -->
+    <div class="modal fade" id="confirmar-cancelamento" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content bg-danger text-white shadow">
+                <div class="modal-body text-center pr-4 pl-4">
+                    <i class="material-icons text-white md-120 mt-3">sentiment_very_dissatisfied</i>
+                    <h3 class="">Alerta!</h3>
+                    <div class="text-center mb-4">
+                        <p>Deseja cancelar a Nota Fiscal <b>524</b>?</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="button" class="btn btn-light btn-rounded btn-block col" data-dismiss="modal">Sim</button>
+                        <button type="button" class="btn btn-secondary btn-rounded btn-block col" data-dismiss="modal">Não</button>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Notificações Pedidos / Diversos -->
+    <div class="modal fade" id="notificacoes" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="header-title mb-0">Notificações</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                     
+                    <div class="row">
+                        <div class="col-12 px-0">
+                            <div class="modal-header">
+                                <h5 class="header-title mb-0">Pedido(s) <span class="badge badge-default">0</span></h5>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Notificações Garçom -->
+    <div class="modal fade" id="notificacoes-garcom" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full modal-lg" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="header-title mb-0">Notificações</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                     
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-6 px-0">
+                            <div class="modal-header">
+                                <h5 class="header-title mb-0">Chamando Garçom <span class="badge badge-default">0</span></h5>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-12 col-lg-6 px-0 mb-3">
+                            <div class="modal-header">
+                                <h5 class="header-title mb-0">Alteração de Mesa <span class="badge badge-default">0</span></h5>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Jquery / Popper / Bootstrap JS -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap-select.js"></script>
+    
+    <!-- Swiper JS -->
+    <script src="vendor/swiper/js/swiper.min.js"></script>
+    
+    <!-- Moment JS -->
+    <script src="vendor/moment/moment.js"></script>
+    
+    <!-- Slimscroll JS -->
+    <script src="vendor/slimscroll/slimscroll.min.js"></script>
+    
+    <!-- Tabs Wizard JS -->
+    <script src="vendor/tabs-wizard/tabs-wizard.js"></script>
+    
+    <!-- Daterange JS -->
+    <script src="vendor/datarange/daterange.js"></script>
+    
+    <!-- Datatables JS -->
+    <script src="vendor/datatables/datatables.min.js"></script>
+    <script src="vendor/datatables/dataTables.responsive.min.js"></script>
+    
+    <!-- Lobipanel JS -->
+    <script src="vendor/lobipanel/lobipanel.js"></script>
+    
+    <!-- ApexCharts JS -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    
+    <!-- Customização JS -->
+    <script src="js/main.js"></script>
+    
+    <!-- Scripts -->
+    <script>
+        $(window).on('load', function() {
+            
+        });
+        
+        /* Filtro Calendário */
+        $(function() {
+            var start = moment();
+            var end = moment().add(1, 'days');
+            function cb(start, end) {
+                $('#calendario-filtro span').html(start.format('DD/MM/YYYY HH:mm') + ' - ' + end.format('DD/MM/YYYY HH:mm'));
+            }
+            $('#calendario-filtro').daterangepicker({
+                opens: 'center',
+                startDate: start,
+                endDate: end,
+                timePicker: true,
+                autoApply: true,
+                ranges: {
+                    'Hoje': [moment(), moment()],
+                    'Ontem': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Últimos 7 dias': [moment().subtract(6, 'days'), moment()],
+                    'Últimos 30 dias': [moment().subtract(29, 'days'), moment()],
+                    'Mês passado': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                },
+                "locale": {
+                    "format": "DD/MM/YYYY HH:mm",
+                    "separator": " - ",
+                    "applyLabel": "Aplicar",
+                    "cancelLabel": "Cancelar",
+                    "fromLabel": "De",
+                    "toLabel": "Para",
+                    "customRangeLabel": "Período",
+                    "weekLabel": "S",
+                    "daysOfWeek": [
+                      "Dom",
+                      "Seg",
+                      "Ter",
+                      "Qua",
+                      "Qui",
+                      "Sex",
+                      "Sab"
+                    ],
+                    "monthNames": [
+                      "Janeiro",	
+                      "Fevereiro",
+                      "Março",
+                      "Abril",
+                      "Maio",
+                      "Junho",
+                      "Julho",
+                      "Agosto",
+                      "Setembro",
+                      "Outubro",
+                      "Novembro",
+                      "Dezembro"
+                    ],
+                    "firstDay": 1
+                },
+            }, cb);
+            cb(start, end);
+        });
+        
+        $(function() {
+            var start = moment();
+            var end = moment().add(1, 'days');
+            function cb(start, end) {
+                $('#calendario-filtro-nf span').html(start.format('DD/MM/YYYY HH:mm') + ' - ' + end.format('DD/MM/YYYY HH:mm'));
+            }
+            $('#calendario-filtro-nf').daterangepicker({
+                opens: 'center',
+                startDate: start,
+                endDate: end,
+                timePicker: true,
+                autoApply: true,
+                ranges: {
+                    'Hoje': [moment(), moment()],
+                    'Ontem': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Últimos 7 dias': [moment().subtract(6, 'days'), moment()],
+                    'Últimos 30 dias': [moment().subtract(29, 'days'), moment()],
+                    'Mês passado': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                },
+                "locale": {
+                    "format": "DD/MM/YYYY HH:mm",
+                    "separator": " - ",
+                    "applyLabel": "Aplicar",
+                    "cancelLabel": "Cancelar",
+                    "fromLabel": "De",
+                    "toLabel": "Para",
+                    "customRangeLabel": "Período",
+                    "weekLabel": "S",
+                    "daysOfWeek": [
+                      "Dom",
+                      "Seg",
+                      "Ter",
+                      "Qua",
+                      "Qui",
+                      "Sex",
+                      "Sab"
+                    ],
+                    "monthNames": [
+                      "Janeiro",	
+                      "Fevereiro",
+                      "Março",
+                      "Abril",
+                      "Maio",
+                      "Junho",
+                      "Julho",
+                      "Agosto",
+                      "Setembro",
+                      "Outubro",
+                      "Novembro",
+                      "Dezembro"
+                    ],
+                    "firstDay": 1
+                },
+            }, cb);
+            cb(start, end);
+        });
+        
+        /* Lista Tabela Transações / NF */
+        $(document).ready(function() {
+            $('#lista-transacoes').dataTable( {
+                responsive: true,
+                "autoWidth": false,
+                "lengthChange": true,
+                "pagingType": "simple",
+                "language": {
+                    "sEmptyTable": "Nenhum registro encontrado",
+                    "sInfo": "Exibir: _START_ até _END_ de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                    "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sInfoThousands": ".",
+                    "sLengthMenu": "_MENU_",
+                    "sLoadingRecords": "Carregando...",
+                    "sProcessing": "Processando...",
+                    "sZeroRecords": "Nenhum registro encontrado",
+                    searchPlaceholder: "Pesquisar...",
+                    "oPaginate": {
+                        "sNext": "Próximo",
+                        "sPrevious": "Anterior",
+                        "sFirst": "Primeiro",
+                        "sLast": "Último"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Ordenar colunas de forma ascendente",
+                        "sSortDescending": ": Ordenar colunas de forma descendente"
+                    }
+                }
+            });
+            
+            $('#lista-nf').dataTable( {
+                responsive: true,
+                "autoWidth": false,
+                "lengthChange": true,
+                "pagingType": "simple",
+                "language": {
+                    "sEmptyTable": "Nenhum registro encontrado",
+                    "sInfo": "Exibir: _START_ até _END_ de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                    "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sInfoThousands": ".",
+                    "sLengthMenu": "_MENU_",
+                    "sLoadingRecords": "Carregando...",
+                    "sProcessing": "Processando...",
+                    "sZeroRecords": "Nenhum registro encontrado",
+                    searchPlaceholder: "Pesquisar...",
+                    "oPaginate": {
+                        "sNext": "Próximo",
+                        "sPrevious": "Anterior",
+                        "sFirst": "Primeiro",
+                        "sLast": "Último"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Ordenar colunas de forma ascendente",
+                        "sSortDescending": ": Ordenar colunas de forma descendente"
+                    }
+                }
+            });
+            
+            /* Multi-Modal */
+            $(document).ready(function() {
+                (function($, window) {
+                    'use strict';
+                    var MultiModal = function(element) {
+                        this.$element = $(element);
+                        this.modalCount = 0;
+                    };
+                    MultiModal.BASE_ZINDEX = 1040;
+                    MultiModal.prototype.show = function(target) {
+                        var that = this;
+                        var $target = $(target);
+                        var modalIndex = that.modalCount++;
+                        $target.css('z-index', MultiModal.BASE_ZINDEX + (modalIndex * 20) + 10);
+                        window.setTimeout(function() {
+                            if(modalIndex > 0)
+                                $('.modal-backdrop').not(':first').addClass('hidden');
+                            that.adjustBackdrop();
+                        });
+                    };
+                    MultiModal.prototype.hidden = function(target) {
+                        this.modalCount--;
+                        if(this.modalCount) {
+                           this.adjustBackdrop();
+                            $('body').addClass('modal-open');
+                        }
+                    };
+                    MultiModal.prototype.adjustBackdrop = function() {
+                        var modalIndex = this.modalCount - 1;
+                        $('.modal-backdrop:first').css('z-index', MultiModal.BASE_ZINDEX + (modalIndex * 20));
+                    };
+                    function Plugin(method, target) {
+                        return this.each(function() {
+                            var $this = $(this);
+                            var data = $this.data('multi-modal-plugin');
+                            if(!data)
+                                $this.data('multi-modal-plugin', (data = new MultiModal(this)));
+                            if(method)
+                                data[method](target);
+                        });
+                    }
+                    $.fn.multiModal = Plugin;
+                    $.fn.multiModal.Constructor = MultiModal;
+                    $(document).on('show.bs.modal', function(e) {
+                        $(document).multiModal('show', e.target);
+                    });
+                    $(document).on('hidden.bs.modal', function(e) {
+                        $(document).multiModal('hidden', e.target);
+                    });
+                }(jQuery, window));
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

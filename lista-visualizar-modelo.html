@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="pt-br" class="menon">
+
+<head>
+    
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#E93D25">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="description" content="O seu cardápio digital">
+
+    <title>Menon - Painel Administrativo</title>
+    
+    <!-- Icones / Favicon -->
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="icon" href="img/favicon.png">
+
+    <!-- Icones CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap-4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-4.3.1/css/bootstrap-select.css">
+
+    <!-- Swiper Slide CSS -->
+    <link rel="stylesheet" href="vendor/swiper/css/swiper.min.css">
+    
+     <!-- Progress Wizard CSS -->
+    <link rel="stylesheet" href="vendor/progress-wizard/css/progress-wizard.min.css">
+    
+    <!-- DateRange CSS -->
+	<link rel="stylesheet" href="vendor/datarange/daterange.css">
+    
+    <!-- Datatables CSS -->
+	<link rel="stylesheet" href="vendor/datatables/datatables.min.css">
+    <link rel="stylesheet" href="vendor/datatables/responsive.dataTables.min.css">
+    
+    <!-- Lobipanel css -->
+    <link rel="stylesheet" href="vendor/lobipanel/lobipanel.css">
+
+    <!-- Estilo CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="row no-gutters vh-100 loader-screen">
+        <div class="col align-self-center text-white text-center">
+            <img src="img/logo.svg" alt="logo">
+            <div></div>
+            <div class="laoderhorizontal"><div></div><div></div><div></div><div></div></div>
+        </div>
+    </div>
+    
+    <!-- Menu Lateral -->
+    <div class="sidebar">
+        <div class="text-center">
+            <div class="figure-menu shadow">
+                <figure><img src="img/usuario.svg" alt=""></figure>
+            </div>
+            <h5 class="mb-1 ">Nome Sobrenome</h5>
+            <p class="text-mute small">Função | Restaurante</p>
+        </div>
+        <br>
+        <div class="row mx-0">
+            <div class="col">
+                <div class="list-group main-menu">
+                    <a href="painel.html" class="list-group-item list-group-item-action"><i class="material-icons">multiline_chart</i> Painel</a>
+                    <a href="cardapios.html" class="list-group-item list-group-item-action"><i class="material-icons">fastfood</i> Cardápios</a>
+                    <a href="pedidos.html" class="list-group-item list-group-item-action active"><i class="material-icons">receipt_long</i> Pedidos</a>
+                    <a href="mesas.html" class="list-group-item list-group-item-action"><i class="material-icons">view_module</i> Mesas</a>
+                    <a href="cupom.html" class="list-group-item list-group-item-action"><i class="material-icons">local_activity</i> Cupom</a>
+                    <a href="usuarios.html" class="list-group-item list-group-item-action"><i class="material-icons">account_circle</i> Usuários</a>
+                    <a href="financeiro.html" class="list-group-item list-group-item-action"><i class="material-icons">monetization_on</i> Financeiro</a>
+                    <a href="relatorios.html" class="list-group-item list-group-item-action"><i class="material-icons">bar_chart</i> Relatórios</a>
+                    <a href="configuracoes.html" class="list-group-item list-group-item-action"><i class="material-icons">settings</i> Configurações</a>
+                    <a href="index.html" class="list-group-item list-group-item-action"><i class="material-icons">exit_to_app</i> Sair</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="wrapper">
+        
+        <!-- Cabeçalho -->
+        <div class="header">
+            <div class="row no-gutters">
+                <div class="col text-left">
+                    <button class="btn btn-link text-secondary menu-btn"><i class="material-icons">apps</i></button>
+                </div>
+                <div class="col text-center"><img src="img/logo-menon-h.svg" alt="" class="header-logo"></div>
+                <div class="col text-right">
+                    <a href="" class="btn-link text-success table-btn small" data-toggle="modal" data-target="#notificacoes"><i class="material-icons">notifications_active</i></a> 
+                    <a href="" class="btn-link text-secondary table-btn small" data-toggle="modal" data-target="#notificacoes-garcom"><i class="material-icons">emoji_people</i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pedidos -->
+        <div class="container-fluid">
+            <div class="mb-2">
+                <div class="row">
+                    <div class="col-auto align-self-center pr-0">
+                         <i class="material-icons md-48 text-default">receipt_long</i>
+                    </div>
+                    <div class="col-auto align-self-center px-2">
+                         <h6 class="mb-0">Pedidos</h6>
+                         <span class="text-secondary text-bold small">Lista de pedidos</span>
+                    </div>
+                    <div class="col align-self-center text-right pl-0"> 
+                        <button class="btn btn-light button-rounded-36 mr-1" onclick="window.location.href='bar.html'"><i class="material-icons md-20">local_bar</i></button>
+                        <button class="btn btn-light button-rounded-36 mr-1" onclick="window.location.href='cozinha.html'"><i class="material-icons md-20">local_dining</i></button>
+                        <button class="btn btn-light button-rounded-36 mr-1" onclick="window.location.href='caixa.html'"><i class="material-icons md-20">local_atm</i></button>
+                        <button class="btn btn-light button-rounded-36 mr-1" data-toggle="modal" data-target="#pedidos-cancelados"><i class="material-icons md-20">remove_shopping_cart</i></button>
+                        <button class="btn btn-default button-rounded-36" data-toggle="modal" data-target="#adicionar-pedido"><i class="material-icons md-20">add</i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="">
+                                <table id="lista-pedidos" class="table nowrap">
+                                    <thead>
+                                        <tr>
+                                            <th>Comanda:</th>
+                                            <th>Mesa:</th>
+                                            <th>Pedidos:</th>
+                                            <th>Cliente:</th>
+                                            <th>Status:</th>
+                                            <th>Data/Hora:</th>
+                                            <th>Valor:</th>
+                                            <th>Ações:</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="badge badge-primary text-white dtr-block"><b>0009</b></span></td>
+                                            <td><span class="badge badge-success text-white dtr-block"><b>01</b></span></td>
+                                            <td>
+                                                <span class="badge badge-light text-secondary"><b>00481</b></span>
+                                                <span class="badge badge-light text-secondary"><b>00479</b></span>
+                                                <span class="badge badge-light text-secondary"><b>00475</b></span>
+                                            </td>
+                                            <td>Jefferson Soares Antunes</td>
+                                            <td><span class="badge badge-default text-white">Aberto</span></td>
+                                            <td>30/06/2020 - 21:02:37</td>
+                                            <td><b>R$ 116,00</b></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-link text-secondary p-0 mr-1" data-toggle="modal" data-target="#visualizar-comanda"><i class="material-icons md-20">visibility</i></button>
+                                                <button class="btn btn-sm btn-link text-secondary p-0" data-toggle="modal" data-target="#editar-comanda"><i class="material-icons md-20">edit</i></button>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td><span class="badge badge-primary text-white dtr-block"><b>0010</b></span></td>
+                                            <td><span class="badge badge-success text-white dtr-block"><b>10</b></span></td>
+                                            <td>
+                                                <span class="badge badge-light text-secondary"><b>00480</b></span>
+                                                <span class="badge badge-light text-secondary"><b>00478</b></span>
+                                            </td>
+                                            <td>Carlos Eduardo Souza Filho</td>
+                                            <td><span class="badge badge-default text-white">Aberto</span></td>
+                                            <td>30/06/2020 - 21:00:14</td>
+                                            <td><b>R$ 87,00</b></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-link text-secondary p-0 mr-1" data-toggle="modal" data-target="#visualizar-comanda"><i class="material-icons md-20">visibility</i></button>
+                                                <button class="btn btn-sm btn-link text-secondary p-0" data-toggle="modal" data-target="#editar-comanda"><i class="material-icons md-20">edit</i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <!-- Modal Adicionar Pedido -->
+    <div class="modal fade" id="adicionar-pedido" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full modal-xl" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="header-title mb-0">Adicionar Pedido</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body"> 
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-6 px-0">
+
+                        </div>
+
+                        <div class="col-12 col-md-12 col-lg-6 px-0">
+
+                        </div> 
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-lg btn-secondary btn-rounded" data-dismiss="modal">Fechar</button>
+                    <button class="btn btn-lg btn-success btn-rounded" type="submit">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Pedidos Cancelados -->
+    <div class="modal fade" id="pedidos-cancelados" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="header-title mb-0">Pedidos Cancelados</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body p-4"> 
+                    ###
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Visualizar Comanda -->
+    <div class="modal fade" id="visualizar-comanda" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full modal-lg" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header clean">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body clean p-4">
+                     
+                    <div class="row">
+                        <div class="col align-self-center text-right px-0 -ml-55">
+                            <figure class="avatar avatar-120 mt-2">
+                                <img src="img/pedidos.svg" alt="">
+                            </figure>
+                        </div>
+                        <div class="col align-self-center text-left pl-2">
+                            <h5 class="mt-2">Comanda: <b>0009</b></h5>
+                            <h6 class="mb-0">MESA: <b>01</b></h6>
+                            <span class="d-block">Jefferson Soares Antunes</span>
+                            <span class="text-secondary small">Status do Pagamento:</span>
+                            <span class="badge badge-default text-white">Aberto</span>
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mt-4 p-0">
+                            <div id="accordion">
+                                <ul class="list-group list-group-flush">
+                                    <li id="pedido00481" class="list-group-item active">
+                                        <div class="row" data-toggle="collapse" data-target="#collapse00481" aria-expanded="true" aria-controls="collapse00481">
+                                            <div class="col text-left align-self-center">
+                                                <h6 class="mb-0">30 de Junho 2020</h6>
+                                                <span class="text-mute small">às 21:02:37</span>
+                                            </div>
+                                            <div class="col-auto text-right align-self-center">
+                                                <h6 class="text-success font-weight-normal mb-0">Pedido: <b>00481</b></h6>
+                                                <span class="badge badge-warning text-white">Aguardando...</span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <div id="collapse00481" class="collapse" aria-labelledby="pedido00481" data-parent="#accordion">
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-auto align-self-center">
+                                                    <figure class="product-image h-auto"><img src="img/prato-01.png" alt="" class="vm list-crop"></figure>
+                                                </div>
+                                                <div class="col align-self-center px-0">
+                                                    <h6 class="text-dark my-1">1x - Filés de Frango</h6>
+                                                    <p class="text-secondary text-mute small mb-0">1x - Molho Rosê</p>
+                                                    <p class="text-secondary text-mute small mb-0">1x - Molho Barbecue</p>
+                                                    <p class="text-secondary text-bold small mb-0">Obs.: Sem pimenta e bem passado os filés.</p>
+                                                </div>
+                                                <div class="col-auto align-self-center">
+                                                    <h5 class="text-success font-weight-normal small my-1">R$ 22,00</h5>
+                                                    <p class="text-success small mb-0">R$ 4,00</p>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-auto align-self-center">
+                                                    <figure class="product-image h-auto"><img src="img/prato-02.png" alt="" class="vm list-crop"></figure>
+                                                </div>
+                                                <div class="col align-self-center px-0">
+                                                    <h6 class="text-dark my-1">1x - Badejo Grelhado</h6>
+                                                    <p class="text-secondary text-mute small mb-0">1x - Molho Rosê</p>
+                                                    <p class="text-secondary text-mute small mb-0">1x - Molho Ervas Finas</p>
+                                                    <p class="text-secondary text-bold small mb-0">Obs.: Sem cebola.</p>
+                                                </div>
+                                                <div class="col-auto align-self-center">
+                                                    <h5 class="text-success font-weight-normal small my-1">R$ 28,00</h5>
+                                                    <p class="text-success small mb-0">R$ 4,00</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col align-self-center">
+                                                    <p class="text-secondary mb-0 small">Total:</p>
+                                                </div>
+                                                <div class="col text-right align-self-center">
+                                                    <p class="text-secondary mb-0 small">R$ 58,00</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </div>
+                                </ul>
+
+                                <ul class="list-group list-group-flush">
+                                    <li id="pedido00479" class="list-group-item active">
+                                        <div class="row" data-toggle="collapse" data-target="#collapse00479" aria-expanded="true" aria-controls="collapse00481">
+                                            <div class="col text-left align-self-center">
+                                                <h6 class="mb-0">30 de Junho 2020</h6>
+                                                <span class="text-mute small">às 21:00:14</span>
+                                            </div>
+                                            <div class="col-auto text-right align-self-center">
+                                                <h6 class="text-success font-weight-normal mb-0">Pedido: <b>00479</b></h6>
+                                                <span class="badge badge-warning text-white">Aguardando...</span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <div id="collapse00479" class="collapse" aria-labelledby="pedido00479" data-parent="#accordion">
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-auto align-self-center">
+                                                    <figure class="product-image h-auto"><img src="img/prato-01.png" alt="" class="vm list-crop"></figure>
+                                                </div>
+                                                <div class="col align-self-center px-0">
+                                                    <h6 class="text-dark my-1">1x - Filés de Frango</h6>
+                                                    <p class="text-secondary text-mute small mb-0">1x - Molho Rosê</p>
+                                                    <p class="text-secondary text-mute small mb-0">1x - Molho Barbecue</p>
+                                                    <p class="text-secondary small mb-0"><b>Obs.:</b> Sem pimenta e bem passado os filés.</p>
+                                                </div>
+                                                <div class="col-auto align-self-center">
+                                                    <h5 class="text-success font-weight-normal small my-1">R$ 22,00</h5>
+                                                    <p class="text-success small mb-0">R$ 4,00</p>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-auto align-self-center">
+                                                    <figure class="product-image h-auto"><img src="img/prato-02.png" alt="" class="vm list-crop"></figure>
+                                                </div>
+                                                <div class="col align-self-center px-0">
+                                                    <h6 class="text-dark my-1">1x - Badejo Grelhado</h6>
+                                                    <p class="text-secondary text-mute small mb-0">1x - Molho Rosê</p>
+                                                    <p class="text-secondary text-mute small mb-0">1x - Molho Ervas Finas</p>
+                                                    <p class="text-secondary text-bold small mb-0">Obs.: Sem cebola.</p>
+                                                </div>
+                                                <div class="col-auto align-self-center">
+                                                    <h5 class="text-success font-weight-normal small my-1">R$ 28,00</h5>
+                                                    <p class="text-success small mb-0">R$ 4,00</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col align-self-center">
+                                                    <p class="text-secondary mb-0 small">Total:</p>
+                                                </div>
+                                                <div class="col text-right align-self-center">
+                                                    <p class="text-secondary mb-0 small">R$ 58,00</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </div>
+                                </ul>
+                                
+                                <ul class="list-group list-group-flush mb-2">
+                                    <li class="list-group-item border-0">
+                                        <div class="row">
+                                            <div class="col align-self-center">
+                                                <h6 class="mb-0">Subtotal Pedido(s):</h6>
+                                            </div>
+                                            <div class="col text-right align-self-center">
+                                                <h6 class="mb-0">R$ 116,00</h6>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Editar Comanda -->
+    <div class="modal fade" id="editar-comanda" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full modal-lg" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header clean">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body clean p-4">
+                    <div class="row">
+                        <div class="col align-self-center text-right px-0 -ml-55">
+                            <figure class="avatar avatar-120 mt-2">
+                                <img src="img/pedidos.svg" alt="">
+                            </figure>
+                        </div>
+                        <div class="col align-self-center text-left pl-2">
+                            <h5 class="mt-2">Comanda: <b>0009</b></h5>
+                            <h6 class="mb-0">MESA: <b>01</b></h6>
+                            <span class="d-block">Jefferson Soares Antunes</span>
+                            <span class="text-secondary small">Status do Pagamento:</span>
+                            <span class="badge badge-default text-white">Aberto</span>
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mt-4 p-0">
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col text-left align-self-center">
+                                            <h6 class="mb-0">30 de Junho 2020</h6>
+                                            <span class="text-mute small">às 21:02:37</span>
+                                        </div>
+                                        <div class="col-auto text-right align-self-center">
+                                            <h6 class="text-success font-weight-normal mb-0">Pedido: <b>00481</b></h6>
+                                            <span class="badge badge-warning text-white">Aguardando...</span>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center">
+                                            <figure class="product-image h-auto"><img src="img/prato-01.png" alt="" class="vm list-crop"></figure>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h6 class="text-dark my-1">1x - Filés de Frango</h6>
+                                            <p class="text-secondary text-mute small mb-0">1x - Molho Rosê</p>
+                                            <p class="text-secondary text-mute small mb-0">1x - Molho Barbecue</p>
+                                            <p class="text-secondary text-bold small mb-0">Obs.: Sem pimenta e bem passado os filés.</p>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <h5 class="text-success font-weight-normal small my-1">R$ 22,00</h5>
+                                            <p class="text-success small mb-0">R$ 4,00</p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center">
+                                            <figure class="product-image h-auto"><img src="img/prato-02.png" alt="" class="vm list-crop"></figure>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h6 class="text-dark my-1">1x - Badejo Grelhado</h6>
+                                            <p class="text-secondary text-mute small mb-0">1x - Molho Rosê</p>
+                                            <p class="text-secondary text-mute small mb-0">1x - Molho Ervas Finas</p>
+                                            <p class="text-secondary text-bold small mb-0">Obs.: Sem cebola.</p>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <h5 class="text-success font-weight-normal small my-1">R$ 28,00</h5>
+                                            <p class="text-success small mb-0">R$ 4,00</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col align-self-center">
+                                            <p class="text-secondary mb-0 small">Subtotal:</p>
+                                        </div>
+                                        <div class="col text-right align-self-center">
+                                            <p class="text-secondary mb-0 small">R$ 58,00</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col text-left align-self-center">
+                                            <h6 class="mb-0">30 de Junho 2020</h6>
+                                            <span class="text-mute small">às 21:00:14</span>
+                                        </div>
+                                        <div class="col-auto text-right align-self-center">
+                                            <h6 class="text-success font-weight-normal mb-0">Pedido: <b>00479</b></h6>
+                                            <span class="badge badge-warning text-white">Aguardando...</span>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center">
+                                            <figure class="product-image h-auto"><img src="img/prato-01.png" alt="" class="vm list-crop"></figure>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h6 class="text-dark my-1">1x - Filés de Frango</h6>
+                                            <p class="text-secondary text-mute small mb-0">1x - Molho Rosê</p>
+                                            <p class="text-secondary text-mute small mb-0">1x - Molho Barbecue</p>
+                                            <p class="text-secondary text-bold small mb-0">Obs.: Sem pimenta e bem passado os filés.</p>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <h5 class="text-success font-weight-normal small my-1">R$ 22,00</h5>
+                                            <p class="text-success small mb-0">R$ 4,00</p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center">
+                                            <figure class="product-image h-auto"><img src="img/prato-02.png" alt="" class="vm list-crop"></figure>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h6 class="text-dark my-1">1x - Badejo Grelhado</h6>
+                                            <p class="text-secondary text-mute small mb-0">1x - Molho Rosê</p>
+                                            <p class="text-secondary text-mute small mb-0">1x - Molho Ervas Finas</p>
+                                            <p class="text-secondary text-bold small mb-0">Obs.: Sem cebola.</p>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <h5 class="text-success font-weight-normal small my-1">R$ 28,00</h5>
+                                            <p class="text-success small mb-0">R$ 4,00</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col align-self-center">
+                                            <p class="text-secondary mb-0 small">Subtotal:</p>
+                                        </div>
+                                        <div class="col text-right align-self-center">
+                                            <p class="text-secondary mb-0 small">R$ 58,00</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                            <ul class="list-group list-group-flush mb-2">
+                                <li class="list-group-item border-0">
+                                    <div class="row">
+                                        <div class="col align-self-center">
+                                            <h6 class="mb-0">Subtotal Pedido(s):</h6>
+                                        </div>
+                                        <div class="col text-right align-self-center">
+                                            <h6 class="mb-0">R$ 116,00</h6>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Notificações Pedidos / Diversos -->
+    <div class="modal fade" id="notificacoes" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="header-title mb-0">Notificações</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                     
+                    <div class="row">
+                        <div class="col-12 px-0">
+                            <div class="modal-header">
+                                <h5 class="header-title mb-0">Pedido(s) <span class="badge badge-default">2</span></h5>
+                            </div>
+                            <ul class="list-group list-group-flush mb-2">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center">
+                                            <span class="btn btn-success p-3 btn-rounded-15">
+                                                <p class="small mb-0">MESA</p>
+                                                <h2 class="mb-0">01</h2>
+                                            </span>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h5 class="text-dark mb-1 d-block">
+                                                <i class="material-icons md-16">schedule</i> 21:02:37
+                                            </h5>
+                                            <p class="text-secondary text-ellipsis text-mute small mb-1">Jefferson Soares Antunes</p>
+                                            <span class="badge badge-light text-secondary">Pedido: <b>00481</b></span>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <span class="badge badge-default text-white">Aberto</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center">
+                                            <span class="btn btn-success p-3 btn-rounded-15">
+                                                <p class="small mb-0">MESA</p>
+                                                <h2 class="mb-0">01</h2>
+                                            </span>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h5 class="text-dark mb-1 d-block">
+                                                <i class="material-icons md-16">schedule</i> 21:00:14
+                                            </h5>
+                                            <p class="text-secondary text-ellipsis text-mute small mb-1">Carlos Eduardo Souza Filho</p>
+                                            <span class="badge badge-light text-secondary">Pedido: <b>00480</b></span>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <span class="badge badge-default text-white">Aberto</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Notificações Garçom -->
+    <div class="modal fade" id="notificacoes-garcom" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full modal-lg" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="header-title mb-0">Notificações</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                     
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-6 px-0">
+                            <div class="modal-header">
+                                <h5 class="header-title mb-0">Chamando Garçom <span class="badge badge-default">0</span></h5>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-12 col-lg-6 px-0 mb-3">
+                            <div class="modal-header">
+                                <h5 class="header-title mb-0">Alteração de Mesa <span class="badge badge-default">0</span></h5>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Jquery / Popper / Bootstrap JS -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap-select.js"></script>
+    
+    <!-- Swiper JS -->
+    <script src="vendor/swiper/js/swiper.min.js"></script>
+    
+    <!-- Moment JS -->
+    <script src="vendor/moment/moment.js"></script>
+    
+    <!-- Slimscroll JS -->
+    <script src="vendor/slimscroll/slimscroll.min.js"></script>
+    
+    <!-- Tabs Wizard JS -->
+    <script src="vendor/tabs-wizard/tabs-wizard.js"></script>
+    
+    <!-- Daterange JS -->
+    <script src="vendor/datarange/daterange.js"></script>
+    
+    <!-- Datatables JS -->
+    <script src="vendor/datatables/datatables.min.js"></script>
+    <script src="vendor/datatables/dataTables.responsive.min.js"></script>
+    
+    <!-- Lobipanel JS -->
+    <script src="vendor/lobipanel/lobipanel.js"></script>
+    
+    <!-- ApexCharts JS -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    
+    <!-- Customização JS -->
+    <script src="js/main.js"></script>
+    
+    <!-- Scripts -->
+    <script>
+        $(window).on('load', function() {
+            
+        });
+        
+        /* Lista Tabela Pedidos */
+        $(document).ready(function() {
+            $('#lista-pedidos').dataTable( {
+                responsive: true,
+                "autoWidth": false,
+                "language": {
+                    "sEmptyTable": "Nenhum registro encontrado",
+                    "sInfo": "Exibir: _START_ até _END_ de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                    "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sInfoThousands": ".",
+                    "sLengthMenu": "_MENU_",
+                    "sLoadingRecords": "Carregando...",
+                    "sProcessing": "Processando...",
+                    "sZeroRecords": "Nenhum registro encontrado",
+                    searchPlaceholder: "Pesquisar...",
+                    "oPaginate": {
+                        "sNext": "Próximo",
+                        "sPrevious": "Anterior",
+                        "sFirst": "Primeiro",
+                        "sLast": "Último"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Ordenar colunas de forma ascendente",
+                        "sSortDescending": ": Ordenar colunas de forma descendente"
+                    }
+                }
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

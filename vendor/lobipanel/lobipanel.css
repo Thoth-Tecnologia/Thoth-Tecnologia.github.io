@@ -1,0 +1,43 @@
+body.lobipanel-minimized {
+	padding-bottom: 36px;
+}
+
+.lobipanel {
+	position: relative;
+    margin-bottom: 1rem;
+	-webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+.lobipanel .card-drag-drop .dropdown .dropdown-menu .dropdown-item .control-title {
+    display: none;
+}
+
+.lobipanel .card-drag-drop .dropdown .dropdown-toggle {
+    display: none;
+}
+
+.lobipanel-placeholder {
+	background-color: rgba(255,255,255,0.75);
+	border: 1px dashed rgba(0,0,0,0.2);
+    border-radius: 15px;
+	margin-bottom: 15px;
+}
+
+.lobipanel-parent-sortable {
+	min-height: 20px;
+}
+
+.lobipanel-sortable .card-drag-drop {
+	cursor: move;
+}
+.lobipanel-sortable .card-drag-drop:after {
+	display: none;
+}
+.lobipanel-sortable:hover {
+	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(233,61,37,0.75) !important;
+       -moz-box-shadow: inset 0px 0px 0px 1px rgba(233,61,37,0.75) !important;
+            box-shadow: inset 0px 0px 0px 1px rgba(233,61,37,0.75) !important;
+}

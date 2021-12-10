@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="pt-br" class="menon">
+
+<head>
+    
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#E93D25">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="description" content="O seu cardápio digital">
+
+    <title>Menon - Painel Administrativo</title>
+    
+    <!-- Icones / Favicon -->
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="icon" href="img/favicon.png">
+
+    <!-- Icones CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap-4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-4.3.1/css/bootstrap-select.css">
+
+    <!-- Swiper Slide CSS -->
+    <link rel="stylesheet" href="vendor/swiper/css/swiper.min.css">
+    
+     <!-- Progress Wizard CSS -->
+    <link rel="stylesheet" href="vendor/progress-wizard/css/progress-wizard.min.css">
+    
+    <!-- DateRange CSS -->
+	<link rel="stylesheet" href="vendor/datarange/daterange.css">
+    
+    <!-- Datatables CSS -->
+	<link rel="stylesheet" href="vendor/datatables/datatables.min.css">
+    <link rel="stylesheet" href="vendor/datatables/responsive.dataTables.min.css">
+    
+    <!-- Lobipanel css -->
+    <link rel="stylesheet" href="vendor/lobipanel/lobipanel.css">
+
+    <!-- Estilo CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="row no-gutters vh-100 loader-screen">
+        <div class="col align-self-center text-white text-center">
+            <img src="img/logo.svg" alt="logo">
+            <div></div>
+            <div class="laoderhorizontal"><div></div><div></div><div></div><div></div></div>
+        </div>
+    </div>
+    
+    <!-- Menu Lateral -->
+    <div class="sidebar">
+        <div class="text-center">
+            <div class="figure-menu shadow">
+                <figure><img src="img/usuario.svg" alt=""></figure>
+            </div>
+            <h5 class="mb-1 ">Nome Sobrenome</h5>
+            <p class="text-mute small">Função | Restaurante</p>
+        </div>
+        <br>
+        <div class="row mx-0">
+            <div class="col">
+                <div class="list-group main-menu">
+                    <a href="painel.html" class="list-group-item list-group-item-action"><i class="material-icons">multiline_chart</i> Painel</a>
+                    <a href="cardapios.html" class="list-group-item list-group-item-action"><i class="material-icons">fastfood</i> Cardápios</a>
+                    <a href="pedidos.html" class="list-group-item list-group-item-action"><i class="material-icons">confirmation_number</i> Pedidos</a>
+                    <a href="mesas.html" class="list-group-item list-group-item-action"><i class="material-icons">view_module</i> Mesas</a>
+                    <a href="cupom.html" class="list-group-item list-group-item-action active"><i class="material-icons">local_activity</i> Cupom</a>
+                    <a href="usuarios.html" class="list-group-item list-group-item-action"><i class="material-icons">account_circle</i> Usuários</a>
+                    <a href="financeiro.html" class="list-group-item list-group-item-action"><i class="material-icons">monetization_on</i> Financeiro</a>
+                    <a href="relatorios.html" class="list-group-item list-group-item-action"><i class="material-icons">bar_chart</i> Relatórios</a>
+                    <a href="configuracoes.html" class="list-group-item list-group-item-action"><i class="material-icons">settings</i> Configurações</a>
+                    <a href="index.html" class="list-group-item list-group-item-action"><i class="material-icons">exit_to_app</i> Sair</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="wrapper">
+        
+        <!-- Cabeçalho -->
+        <div class="header">
+            <div class="row no-gutters">
+                <div class="col text-left">
+                    <button class="btn btn-link text-secondary menu-btn"><i class="material-icons">apps</i></button>
+                </div>
+                <div class="col text-center"><img src="img/logo-menon-h.svg" alt="" class="header-logo"></div>
+                <div class="col text-right">
+                    <a href="" class="btn-link text-secondary table-btn small" data-toggle="modal" data-target="#notificacoes"><i class="material-icons">notifications_active</i></a> 
+                    <a href="" class="btn-link text-secondary table-btn small" data-toggle="modal" data-target="#notificacoes-garcom"><i class="material-icons">emoji_people</i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cupom -->
+        <div class="container-fluid">
+            <div class="mb-2">
+                <div class="row">
+                    <div class="col-auto align-self-center pr-0">
+                         <i class="material-icons md-48 text-default">local_activity</i>
+                    </div>
+                    <div class="col-auto align-self-center px-2">
+                         <h6 class="mb-0">Cupom</h6>
+                         <span class="text-secondary text-bold small">Lista de cupons</span>
+                    </div>
+                    <div class="col align-self-center text-right pl-0"> 
+                        <button class="btn btn-default button-rounded-36" data-toggle="modal" data-target="#adicionar-usuario"><i class="material-icons md-20">add</i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="text-center">
+                        <img src="img/sem-cadastro.svg" alt="" class="mw-100">
+                        <h5 class="my-4">Nenhum cupom cadastrado</h5>
+                        <p class="text-secondary">Olá! Até o momento você não adicionou nenhum cupom. <br>Vamos adicionar agora?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Adicionar Cupom -->
+    <div class="modal fade" id="adicionar-usuario" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header clean">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body clean text-center p-4">
+                    <figure class="avatar avatar-120 mt-2">
+                        <img src="img/cupom.svg" alt="">
+                    </figure>
+                    <h5 class="my-3">Adicionar Cupom</h5> 
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group float-label">
+                                <select class="custom-select" required>
+                                    <option value="" selected>Selecione...</option>
+                                    <option value="gerente">Gerente</option>
+                                    <option value="caixa">Caixa</option>
+                                    <option value="garcom">Garçom</option>
+                                    <option value="cozinha">Cozinha</option>
+                                </select>
+                                <label class="form-control-label">Tipo de Função</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group float-label">
+                                <input type="text" class="form-control" value="" placeholder="Nome Sobrenome" required>
+                                <label class="form-control-label">Nome Completo</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group float-label">
+                                <input type="email" class="form-control" value="" placeholder="E-mail válido" required>
+                                <label class="form-control-label">E-mail</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group float-label">
+                                <input type="password" class="form-control" value="" placeholder="" required>
+                                <label class="form-control-label">Senha</label>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="form-group float-label">
+                                <div class="row mt-3">
+                                    <div class="col-6">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" name="status" class="custom-control-input" id="ativo" checked>
+                                            <label class="custom-control-label" for="ativo">Ativo</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" name="status" class="custom-control-input" id="inativo">
+                                            <label class="custom-control-label" for="inativo">Inativo</label>
+                                        </div>
+                                    </div>    
+                                </div>    
+                                <label class="form-control-label">Status</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-2">
+                        <button class="btn btn-lg btn-secondary btn-rounded" data-dismiss="modal">Fechar</button>
+                        <button class="btn btn-lg btn-success btn-rounded" type="submit">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Editar Cupom -->
+    <div class="modal fade" id="editar-usuario" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header clean">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body clean text-center p-4">
+                    <figure class="avatar avatar-120 mt-2">
+                        <img src="img/cupom.svg" alt="">
+                    </figure>
+                    <h5 class="my-3">Editar Cupom</h5> 
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group float-label">
+                                <select class="custom-select" required>
+                                    <option value="" selected>Selecione...</option>
+                                    <option value="gerente">Gerente</option>
+                                    <option value="caixa">Caixa</option>
+                                    <option value="garcom">Garçom</option>
+                                    <option value="cozinha">Cozinha</option>
+                                </select>
+                                <label class="form-control-label">Tipo de Função</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group float-label">
+                                <input type="text" class="form-control" value="" placeholder="Nome Sobrenome" required>
+                                <label class="form-control-label">Nome Completo</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group float-label">
+                                <input type="email" class="form-control" value="" placeholder="E-mail válido" required>
+                                <label class="form-control-label">E-mail</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group float-label">
+                                <input type="password" class="form-control" value="" placeholder="" required>
+                                <label class="form-control-label">Senha</label>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="form-group float-label">
+                                <div class="row mt-3">
+                                    <div class="col-6">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" name="status" class="custom-control-input" id="ativo">
+                                            <label class="custom-control-label" for="ativo">Ativo</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" name="status" class="custom-control-input" id="inativo">
+                                            <label class="custom-control-label" for="inativo">Inativo</label>
+                                        </div>
+                                    </div>    
+                                </div>    
+                                <label class="form-control-label">Status</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-2">
+                        <button class="btn btn-lg btn-secondary btn-rounded" data-dismiss="modal">Fechar</button>
+                        <button class="btn btn-lg btn-success btn-rounded" type="submit">Salvar</button>
+                        <button class="btn btn-default button-rounded-42 float-right" type="button"><i class="material-icons md-24">delete_forever</i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Notificações Pedidos / Diversos -->
+    <div class="modal fade" id="notificacoes" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="header-title mb-0">Notificações</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                     
+                    <div class="row">
+                        <div class="col-12 px-0">
+                            <div class="modal-header">
+                                <h5 class="header-title mb-0">Pedido(s) <span class="badge badge-default">0</span></h5>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Notificações Garçom -->
+    <div class="modal fade" id="notificacoes-garcom" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full modal-lg" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="header-title mb-0">Notificações</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                     
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-6 px-0">
+                            <div class="modal-header">
+                                <h5 class="header-title mb-0">Chamando Garçom <span class="badge badge-default">0</span></h5>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-12 col-lg-6 px-0 mb-3">
+                            <div class="modal-header">
+                                <h5 class="header-title mb-0">Alteração de Mesa <span class="badge badge-default">0</span></h5>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Jquery / Popper / Bootstrap JS -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap-select.js"></script>
+    
+    <!-- Swiper JS -->
+    <script src="vendor/swiper/js/swiper.min.js"></script>
+    
+    <!-- Moment JS -->
+    <script src="vendor/moment/moment.js"></script>
+    
+    <!-- Slimscroll JS -->
+    <script src="vendor/slimscroll/slimscroll.min.js"></script>
+    
+    <!-- Tabs Wizard JS -->
+    <script src="vendor/tabs-wizard/tabs-wizard.js"></script>
+    
+    <!-- Daterange JS -->
+    <script src="vendor/datarange/daterange.js"></script>
+    
+    <!-- Datatables JS -->
+    <script src="vendor/datatables/datatables.min.js"></script>
+    <script src="vendor/datatables/dataTables.responsive.min.js"></script>
+    
+    <!-- Lobipanel JS -->
+    <script src="vendor/lobipanel/lobipanel.js"></script>
+    
+    <!-- ApexCharts JS -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    
+    <!-- Customização JS -->
+    <script src="js/main.js"></script>
+    
+    <!-- Scripts -->
+    <script>
+        $(window).on('load', function() {
+            
+        });
+
+    </script>
+
+</body>
+
+</html>

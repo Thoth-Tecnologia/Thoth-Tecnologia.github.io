@@ -1,0 +1,1011 @@
+<!doctype html>
+<html lang="pt-br" class="menon">
+
+<head>
+    
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#E93D25">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="description" content="O seu cardápio digital">
+
+    <title>Menon - Painel Administrativo</title>
+    
+    <!-- Icones / Favicon -->
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="icon" href="img/favicon.png">
+
+    <!-- Icones CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap-4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-4.3.1/css/bootstrap-select.css">
+
+    <!-- Swiper Slide CSS -->
+    <link rel="stylesheet" href="vendor/swiper/css/swiper.min.css">
+    
+     <!-- Progress Wizard CSS -->
+    <link rel="stylesheet" href="vendor/progress-wizard/css/progress-wizard.min.css">
+    
+    <!-- DateRange CSS -->
+	<link rel="stylesheet" href="vendor/datarange/daterange.css">
+    
+    <!-- Datatables CSS -->
+	<link rel="stylesheet" href="vendor/datatables/datatables.min.css">
+    <link rel="stylesheet" href="vendor/datatables/responsive.dataTables.min.css">
+    
+    <!-- Lobipanel css -->
+    <link rel="stylesheet" href="vendor/lobipanel/lobipanel.css">
+
+    <!-- Estilo CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="row no-gutters vh-100 loader-screen">
+        <div class="col align-self-center text-white text-center">
+            <img src="img/logo.svg" alt="logo">
+            <div></div>
+            <div class="laoderhorizontal"><div></div><div></div><div></div><div></div></div>
+        </div>
+    </div>
+    
+    <!-- Menu Lateral -->
+    <div class="sidebar">
+        <div class="text-center">
+            <div class="figure-menu shadow">
+                <figure><img src="img/usuario.svg" alt=""></figure>
+            </div>
+            <h5 class="mb-1 ">Nome Sobrenome</h5>
+            <p class="text-mute small">Função | Restaurante</p>
+        </div>
+        <div class="row mx-0">
+            <div class="col">
+                <div class="list-group main-menu">
+                    <a href="painel.html" class="list-group-item list-group-item-action active"><i class="material-icons">multiline_chart</i> Painel</a>
+                    <a href="cardapios.html" class="list-group-item list-group-item-action"><i class="material-icons">fastfood</i> Cardápios</a>
+                    <a href="pedidos.html" class="list-group-item list-group-item-action"><i class="material-icons">receipt_long</i> Pedidos</a>
+                    <a href="mesas.html" class="list-group-item list-group-item-action"><i class="material-icons">view_module</i> Mesas</a>
+                    <a href="cupom.html" class="list-group-item list-group-item-action"><i class="material-icons">local_activity</i> Cupom</a>
+                    <a href="usuarios.html" class="list-group-item list-group-item-action"><i class="material-icons">account_circle</i> Usuários</a>
+                    <a href="financeiro.html" class="list-group-item list-group-item-action"><i class="material-icons">payments</i> Financeiro</a>
+                    <a href="relatorios.html" class="list-group-item list-group-item-action"><i class="material-icons">bar_chart</i> Relatórios</a>
+                    <a href="configuracoes.html" class="list-group-item list-group-item-action"><i class="material-icons">settings</i> Configurações</a>
+                    <a href="index.html" class="list-group-item list-group-item-action"><i class="material-icons">exit_to_app</i> Sair</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="wrapper">
+        
+        <!-- Cabeçalho -->
+        <div class="header">
+            <div class="row no-gutters">
+                <div class="col text-left">
+                    <button class="btn btn-link text-secondary menu-btn"><i class="material-icons">apps</i></button>
+                </div>
+                <div class="col text-center"><img src="img/logo-menon-h.svg" alt="" class="header-logo"></div>
+                <div class="col text-right">
+                    <a href="" class="btn-link text-success table-btn small" data-toggle="modal" data-target="#notificacoes"><i class="material-icons">notifications_active</i></a> 
+                    <a href="" class="btn-link text-secondary table-btn small" data-toggle="modal" data-target="#notificacoes-garcom"><i class="material-icons">emoji_people</i><span class="badge badge-default small">04</span></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Painel de Controle -->
+        <div class="container-fluid">
+            <div class="mb-2">
+                <div class="row">
+                    <div class="col-auto align-self-center pr-0">
+                         <i class="material-icons md-48 text-default">multiline_chart</i>
+                    </div>
+                    <div class="col-auto align-self-center px-2">
+                        <h6 class="mb-0">Painel de Controle</h6>
+                        <!--
+                        <span class="text-secondary text-bold small">01/07/2020 18:30 - 02/07/2020 00:30</span>
+                        -->
+                        <span id="calendario-filtro" class="cursor text-secondary small">
+                            <span></span>
+                            <!--<i class="material-icons md-16">expand_more</i>	-->
+                        </span>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row text-center">
+                <div class="col-6 col-md-4 col-lg mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <i class="material-icons md-42 text-default">face</i>
+                            <h3 class="mb-0">28</h3>
+                            <p class="text-secondary text-mute small">Total de Clientes</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <i class="material-icons md-42 text-default">receipt_long</i>
+                            <h3 class="mb-0">40</h3>
+                            <p class="text-secondary text-mute small">Pedidos Realizados</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <i class="material-icons md-42 text-default">local_atm</i>
+                            <h3 class="mb-0"><sup>R$</sup> 390<sup>,94</sup></h3>
+                            <p class="text-secondary text-mute small">Pagamentos no Caixa</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <i class="material-icons md-42 text-default">credit_card</i>
+                            <h3 class="mb-0"><sup>R$</sup> 648<sup>,10</sup></h3>
+                            <p class="text-secondary text-mute small">App Crédito/Débito</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col col-md col-lg mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <i class="material-icons md-42 text-default">monetization_on</i>
+                            <h3 class="mb-0"><sup>R$</sup> 1.039<sup>,04</sup></h3>
+                            <p class="text-secondary text-mute small">Total de Vendas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 col-lg-4 mb-4 mb-md-4 mb-lg-0">
+                                    <div class="row">
+                                        <div class="col-6 mb-2">
+                                            <a href="pedidos.html">
+                                                <div class="card border-1">
+                                                    <div class="card-body text-center">
+                                                        <i class="material-icons md-52">receipt_long</i>
+                                                        <h6 class="text-secondary text-center m-0 d-block">Pedidos</h6>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-6 mb-2">
+                                            <a href="caixa.html">
+                                                <div class="card border-1">
+                                                    <div class="card-body text-center">
+                                                        <i class="material-icons md-52">point_of_sale</i>
+                                                        <h6 class="text-secondary text-center m-0 d-block">Caixa</h6>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-6 mb-2">
+                                            <a href="cardapios.html">
+                                                <div class="card border-1">
+                                                    <div class="card-body text-center">
+                                                        <i class="material-icons md-52">fastfood</i>
+                                                        <h6 class="text-secondary text-center m-0 d-block">Cardápios</h6>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-6 mb-2">
+                                            <a href="mesas.html">
+                                                <div class="card border-1">
+                                                    <div class="card-body text-center">
+                                                        <i class="material-icons md-52">view_module</i>
+                                                        <h6 class="text-secondary text-center m-0 d-block">Mesas</h6>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-6 mb-0">
+                                            <a href="financeiro.html">
+                                                <div class="card border-1">
+                                                    <div class="card-body text-center">
+                                                        <i class="material-icons md-52">payments</i>
+                                                        <h6 class="text-secondary text-center m-0 d-block">Financeiro</h6>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-6 mb-0">
+                                            <a href="relatorios.html">
+                                                <div class="card border-1">
+                                                    <div class="card-body text-center">
+                                                        <i class="material-icons md-52">bar_chart</i>
+                                                        <h6 class="text-secondary text-center m-0 mb-0 d-block">Relatórios</h6>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12 col-lg-4 mb-4 mb-md-4 mb-lg-0">
+                                    <h6 class="subtitle mt-1">Aguardando preparação <span class="text-success">(06)</span></h6>
+                                    <div class="overflow-auto h-285">
+                                        <ul class="list-group-activity px-2 mb-4">
+                                            <li class="list-group-item-activity">
+                                                <div class="row detail-info">
+                                                    <div class="col align-self-center px-0">
+                                                        <p class="time">20:47:33</p>
+                                                        <p class="text-secondary text-ellipsis text-mute small mb-1">Paulo Roberto Gonçalves Maia</p>
+                                                    </div>
+                                                    <div class="col-auto align-self-center px-0">
+                                                        <span class="badge badge-success text-white d-block mb-1">Mesa: <b>08</b></span>
+                                                        <span class="badge badge-light text-secondary d-block mb-1">Comanda: <b>0007</b></span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item-activity">
+                                                <div class="row detail-info">
+                                                    <div class="col align-self-center px-0">
+                                                        <p class="time">20:58:22</p>
+                                                        <p class="text-secondary text-ellipsis text-mute small mb-1">Ana Maria Concença da Silva</p>
+                                                    </div>
+                                                    <div class="col-auto align-self-center px-0">
+                                                        <span class="badge badge-success text-white d-block mb-1">Mesa: <b>12</b></span>
+                                                        <span class="badge badge-light text-secondary d-block mb-1">Comanda: <b>0008</b></span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item-activity">
+                                                <div class="row detail-info">
+                                                    <div class="col align-self-center px-0">
+                                                        <p class="time">21:02:37</p>
+                                                        <p class="text-secondary text-ellipsis text-mute small mb-1">Jefferson Soares Antunes</p>
+                                                    </div>
+                                                    <div class="col-auto align-self-center px-0">
+                                                        <span class="badge badge-success text-white d-block mb-1">Mesa: <b>01</b></span>
+                                                        <span class="badge badge-light text-secondary d-block mb-1">Comanda: <b>0009</b></span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item-activity">
+                                                <div class="row detail-info">
+                                                    <div class="col align-self-center px-0">
+                                                        <p class="time">21:10:13</p>
+                                                        <p class="text-secondary text-ellipsis text-mute small mb-1">Maria Luiza Gonçalves de Souza</p>
+                                                    </div>
+                                                    <div class="col-auto align-self-center px-0">
+                                                        <span class="badge badge-success text-white d-block mb-1">Mesa: <b>10</b></span>
+                                                        <span class="badge badge-light text-secondary d-block mb-1">Comanda: <b>0010</b></span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item-activity">
+                                                <div class="row detail-info">
+                                                    <div class="col align-self-center px-0">
+                                                        <p class="time">21:12:43</p>
+                                                        <p class="text-secondary text-ellipsis text-mute small mb-1">Saulo Garcia Aguiar de Paula</p>
+                                                    </div>
+                                                    <div class="col-auto align-self-center px-0">
+                                                        <span class="badge badge-success text-white d-block mb-1">Mesa: <b>25</b></span>
+                                                        <span class="badge badge-light text-secondary d-block mb-1">Comanda: <b>0011</b></span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item-activity">
+                                                <div class="row detail-info">
+                                                    <div class="col align-self-center px-0">
+                                                        <p class="time">21:14:09</p>
+                                                        <p class="text-secondary text-ellipsis text-mute small mb-1">Maurício Augusto Sanches</p>
+                                                    </div>
+                                                    <div class="col-auto align-self-center px-0">
+                                                        <span class="badge badge-success text-white d-block mb-1">Mesa: <b>15</b></span>
+                                                        <span class="badge badge-light text-secondary d-block mb-1">Comanda: <b>0012</b></span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12 col-lg-4 mb-4 mb-md-4 mb-lg-0">
+                                    <h6 class="subtitle mt-1">Ocupação das mesas <span class="text-success">(30,8%)</span></h6>
+                                    <div id="grafico-ocupacao-mesas"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+            
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-lg-6 mb-4 mb-md-0 mb-lg-0">
+                                    <h6 class="subtitle mt-1">Pedidos semanal <span class="text-success">(135)</span></h6>
+                                    <div id="grafico-pedidos"></div>
+                                </div>
+                                
+                                <div class="col-12 col-md-6 col-lg-6">
+                                    <h6 class="subtitle mt-1">Faturamento semanal <span class="text-success">(R$ 3.496,65)</span></h6>
+                                    <div id="grafico-faturamento"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </div>    
+        </div>
+    </div>
+    
+    <!-- Aba Lateral -->
+    <div class="filter">
+        <button class="btn btn-sm btn-default filter-btn shadow"><i class="material-icons">filter_list</i></button>
+        <div class="container filters-container p-4">
+            <h5 class="mb-4">Resumo | Caixa</h5>
+            <div class="row">
+                <div class="col-auto align-self-center pr-1">
+                    <i class="material-icons md-52">inbox</i>
+                </div>
+                <div class="col align-self-center pl-0">
+                    <p class="small text-mute text-uppercase mb-0">Total de Abertura</p>
+                    <h3 class="mb-0"><sup>R$</sup> 1.200<sup>,00</sup></h3>
+                </div>
+            </div>
+            <hr class="mt-1 mb-2">
+            <div class="row">
+                <div class="col-auto align-self-center pr-1">
+                    <i class="material-icons md-52">outbox</i>
+                </div>
+                <div class="col align-self-center pl-0">
+                    <p class="small text-mute text-uppercase mb-0">Sangria(s)</p>
+                    <h3 class="mb-0"><sup>R$</sup> 200<sup>,00</sup></h3>
+                </div>
+                <div class="col-auto align-self-center pl-0">
+                    <p class="small text-mute text-uppercase mb-0">QTDE:</p>
+                    <h3 class="mb-0 text-center">2</h3>
+                </div>
+            </div>
+            <hr class="mt-1 mb-2">
+            <div class="row">
+                <div class="col-auto align-self-center pr-1">
+                    <i class="material-icons md-52">move_to_inbox</i>
+                </div>
+                <div class="col align-self-center pl-0">
+                    <p class="small text-mute text-uppercase mb-0">Reforço(s)</p>
+                    <h3 class="mb-0"><sup>R$</sup> 300<sup>,00</sup></h3>
+                </div>
+                <div class="col-auto align-self-center pl-0">
+                    <p class="small text-mute text-uppercase mb-0">QTDE:</p>
+                    <h3 class="mb-0 text-center">1</h3>
+                </div>
+            </div>
+            <hr class="mt-1 mb-2">
+            <div class="row">
+                <div class="col-auto align-self-center pr-1">
+                    <i class="material-icons md-52">paid</i>
+                </div>
+                <div class="col align-self-center pl-0">
+                    <p class="small text-mute text-uppercase mb-0">Pag. Dinheiro (Vendas)</p>
+                    <h3 class="mb-0"><sup>R$</sup>120<sup>,00</sup></h3>
+                </div>
+            </div>
+            <hr class="mt-1 mb-2">
+            <div class="row">
+                <div class="col-auto align-self-center pr-1">
+                    <i class="material-icons md-52">attach_money</i>
+                </div>
+                <div class="col align-self-center pl-0">
+                    <p class="small text-mute text-uppercase mb-0">Total em Gaveta (Dinheiro)</p>
+                    <h3 class="mb-0"><sup>R$</sup> 1.420<sup>,00</sup></h3>
+                </div>
+            </div>
+            <hr class="mt-1 mb-2">
+            <div class="row">
+                <div class="col align-self-center text-center">
+                    <p class="small text-mute text-uppercase mb-0">Caixa Aberto</p>
+                    <h5 class="mb-0">16:31:27</h5>
+                </div>
+                <div class="col align-self-center text-center">
+                    <p class="small text-mute text-uppercase mb-0">Funcionamento</p>
+                    <h5 class="mb-0">01/09/2021</h5>
+                </div>
+                <div class="col-12 align-self-center mt-3">
+                    <button type="button" class="btn btn-light btn-rounded btn-block col" data-toggle="modal" data-target="#fechar-caixa"><i class="material-icons">lock</i> Fechar Caixa</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Notificações Pedidos / Diversos -->
+    <div class="modal fade" id="notificacoes" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="header-title mb-0">Notificações</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                     
+                    <div class="row">
+                        <div class="col-12 px-0">
+                            <div class="modal-header">
+                                <h5 class="header-title mb-0">Pedido(s) <span class="badge badge-default">6</span></h5>
+                            </div>
+                            <ul class="list-group list-group-flush mb-2">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center">
+                                            <span class="btn btn-success p-3 btn-rounded-15">
+                                                <p class="small mb-0">MESA</p>
+                                                <h2 class="mb-0">15</h2>
+                                            </span>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h5 class="text-dark mb-1 d-block">
+                                                <i class="material-icons md-16">schedule</i> 21:14:09
+                                            </h5>
+                                            <p class="text-secondary text-ellipsis text-mute small mb-1">Maurício Augusto Sanches</p>
+                                            <span class="badge badge-light text-secondary">Pedido: <b>00484</b></span>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <span class="badge badge-info text-white">Débito</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center">
+                                            <span class="btn btn-success p-3 btn-rounded-15">
+                                                <p class="small mb-0">MESA</p>
+                                                <h2 class="mb-0">25</h2>
+                                            </span>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h5 class="text-dark mb-1 d-block">
+                                                <i class="material-icons md-16">schedule</i> 21:12:43
+                                            </h5>
+                                            <p class="text-secondary text-ellipsis text-mute small mb-1">Saulo Garcia Aguiar de Paula</p>
+                                            <span class="badge badge-light text-secondary">Pedido: <b>00483</b></span>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <span class="badge badge-info text-white">Crédito</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center">
+                                            <span class="btn btn-success p-3 btn-rounded-15">
+                                                <p class="small mb-0">MESA</p>
+                                                <h2 class="mb-0">10</h2>
+                                            </span>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h5 class="text-dark mb-1 d-block">
+                                                <i class="material-icons md-16">schedule</i> 21:10:13
+                                            </h5>
+                                            <p class="text-secondary text-ellipsis text-mute small mb-1">Maria Luiza Gonçalves de Souza</p>
+                                            <span class="badge badge-light text-secondary">Pedido: <b>00482</b></span>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <span class="badge badge-primary text-white">Caixa</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center">
+                                            <span class="btn btn-success p-3 btn-rounded-15">
+                                                <p class="small mb-0">MESA</p>
+                                                <h2 class="mb-0">01</h2>
+                                            </span>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h5 class="text-dark mb-1 d-block">
+                                                <i class="material-icons md-16">schedule</i> 21:02:37
+                                            </h5>
+                                            <p class="text-secondary text-ellipsis text-mute small mb-1">Jefferson Soares Antunes</p>
+                                            <span class="badge badge-light text-secondary">Pedido: <b>00481</b></span>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <span class="badge badge-default text-white">Aberto</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center">
+                                            <span class="btn btn-success p-3 btn-rounded-15">
+                                                <p class="small mb-0">MESA</p>
+                                                <h2 class="mb-0">12</h2>
+                                            </span>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h5 class="text-dark mb-1 d-block">
+                                                <i class="material-icons md-16">schedule</i> 20:58:22
+                                            </h5>
+                                            <p class="text-secondary text-ellipsis text-mute small mb-1">Ana Maria Concença da Silva</p>
+                                            <span class="badge badge-light text-secondary">Pedido: <b>00473</b></span>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <span class="badge badge-default text-white">Aberto</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center">
+                                            <span class="btn btn-success p-3 btn-rounded-15">
+                                                <p class="small mb-0">MESA</p>
+                                                <h2 class="mb-0">08</h2>
+                                            </span>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h5 class="text-dark mb-1 d-block">
+                                                <i class="material-icons md-16">schedule</i> 20:47:33
+                                            </h5>
+                                            <p class="text-secondary text-ellipsis text-mute small mb-1">Paulo Roberto Gonçalves Maia</p>
+                                            <span class="badge badge-light text-secondary">Pedido: <b>00470</b></span>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <span class="badge badge-default text-white">Aberto</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Notificações Garçom -->
+    <div class="modal fade" id="notificacoes-garcom" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full modal-lg" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="header-title mb-0">Notificações</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                     
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-6 px-0">
+                            <div class="modal-header">
+                                <h5 class="header-title mb-0">Chamando Garçom <span class="badge badge-default">3</span></h5>
+                            </div>
+                            <ul class="list-group list-group-flush mb-2">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center">
+                                            <span class="btn btn-success p-3 btn-rounded-15">
+                                                <p class="small mb-0">MESA</p>
+                                                <h2 class="mb-0">01</h2>
+                                            </span>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h5 class="text-dark mb-1 d-block">
+                                                <i class="material-icons md-16">schedule</i> 21:02:37
+                                            </h5>
+                                            <p class="text-secondary text-ellipsis text-mute small mb-1">Jefferson Soares Antunes</p>
+                                            <span class="badge badge-warning text-white">Aguardando...</span>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">clear</i></button>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center">
+                                            <span class="btn btn-success p-3 btn-rounded-15">
+                                                <p class="small mb-0">MESA</p>
+                                                <h2 class="mb-0">10</h2>
+                                            </span>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h5 class="text-dark mb-1 d-block">
+                                                <i class="material-icons md-16">schedule</i> 21:10:13
+                                            </h5>
+                                            <p class="text-secondary text-ellipsis text-mute small mb-1">Maria Luiza Gonçalves de Souza</p>
+                                            <span class="badge badge-warning text-white">Aguardando...</span>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">clear</i></button>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center">
+                                            <span class="btn btn-success p-3 btn-rounded-15">
+                                                <p class="small mb-0">MESA</p>
+                                                <h2 class="mb-0">25</h2>
+                                            </span>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h5 class="text-dark mb-1 d-block">
+                                                <i class="material-icons md-16">schedule</i> 21:12:43
+                                            </h5>
+                                            <p class="text-secondary text-ellipsis text-mute small mb-1">Saulo Garcia Aguiar de Paula</p>
+                                            <span class="badge badge-warning text-white">Aguardando...</span>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">clear</i></button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-12 col-md-12 col-lg-6 px-0 mb-3">
+                            <div class="modal-header">
+                                <h5 class="header-title mb-0">Alteração de Mesa <span class="badge badge-default">1</span></h5>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center">
+                                            <span class="btn btn-success p-3 btn-rounded-15">
+                                                <p class="small mb-0">MESA</p>
+                                                <h2 class="mb-0">15</h2>
+                                            </span>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h5 class="text-dark mb-1 d-block">
+                                                <i class="material-icons md-16">schedule</i> 21:14:09
+                                            </h5>
+                                            <p class="text-secondary text-ellipsis text-mute small mb-1">Maurício Augusto Sanches</p>
+                                            <span class="badge badge-warning text-white">Aguardando...</span>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">clear</i></button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Notificação -->
+    <div class="notification bg-white shadow border-success">
+        <div class="row">
+            <div class="col-auto align-self-center pr-0">
+                <i class="material-icons text-success md-36">notifications_active</i>
+            </div>
+            <div class="col">
+                <h6>Pedido Pendente</h6>
+                <p class="mb-0 text-secondary">Pedido da <b>Mesa 15</b> aguardando preparação. <b>Comanda: 0012</b>.</p>
+            </div>
+            <div class="col-auto align-self-center pl-0">
+                <button class="btn btn-link closenotification"><i class="material-icons text-secondary text-mute md-18 ">close</i></button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Jquery / Popper / Bootstrap JS -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap-select.js"></script>
+    
+    <!-- Swiper JS -->
+    <script src="vendor/swiper/js/swiper.min.js"></script>
+    
+    <!-- Moment JS -->
+    <script src="vendor/moment/moment.js"></script>
+    
+    <!-- Slimscroll JS -->
+    <script src="vendor/slimscroll/slimscroll.min.js"></script>
+    
+    <!-- Tabs Wizard JS -->
+    <script src="vendor/tabs-wizard/tabs-wizard.js"></script>
+    
+    <!-- Daterange JS -->
+    <script src="vendor/datarange/daterange.js"></script>
+    
+    <!-- Datatables JS -->
+    <script src="vendor/datatables/datatables.min.js"></script>
+    <script src="vendor/datatables/dataTables.responsive.min.js"></script>
+    
+    <!-- Lobipanel JS -->
+    <script src="vendor/lobipanel/lobipanel.js"></script>
+    
+    <!-- ApexCharts JS -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    
+    <!-- Customização JS -->
+    <script src="js/main.js"></script>
+    
+    <!-- Scripts -->
+    <script>
+        $(window).on('load', function() {
+            
+        });
+
+        /* Notificação */
+        setTimeout(function() {
+            $('.notification').addClass('active');
+             setTimeout(function() {
+                 $('.notification').removeClass('active');
+             }, 10000);
+        }, 800);
+        $('.closenotification').on('click', function(){
+            $(this).closest('.notification').removeClass('active')
+        });
+        
+        /* Filtro Calendário */
+        $(function() {
+            var start = moment();
+            var end = moment().add(1, 'days');
+            function cb(start, end) {
+                $('#calendario-filtro span').html(start.format('DD/MM/YYYY HH:mm') + ' - ' + end.format('DD/MM/YYYY HH:mm'));
+            }
+            $('#calendario-filtro').daterangepicker({
+                opens: 'center',
+                startDate: start,
+                endDate: end,
+                timePicker: true,
+                autoApply: true,
+                ranges: {
+                    'Hoje': [moment(), moment()],
+                    'Ontem': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Últimos 7 dias': [moment().subtract(6, 'days'), moment()],
+                    'Últimos 30 dias': [moment().subtract(29, 'days'), moment()],
+                    'Mês passado': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                },
+                "locale": {
+                    "format": "DD/MM/YYYY HH:mm",
+                    "separator": " - ",
+                    "applyLabel": "Aplicar",
+                    "cancelLabel": "Cancelar",
+                    "fromLabel": "De",
+                    "toLabel": "Para",
+                    "customRangeLabel": "Período",
+                    "weekLabel": "S",
+                    "daysOfWeek": [
+                      "Dom",
+                      "Seg",
+                      "Ter",
+                      "Qua",
+                      "Qui",
+                      "Sex",
+                      "Sab"
+                    ],
+                    "monthNames": [
+                      "Janeiro",	
+                      "Fevereiro",
+                      "Março",
+                      "Abril",
+                      "Maio",
+                      "Junho",
+                      "Julho",
+                      "Agosto",
+                      "Setembro",
+                      "Outubro",
+                      "Novembro",
+                      "Dezembro"
+                    ],
+                    "firstDay": 1
+                },
+            }, cb);
+            cb(start, end);
+        });
+        
+        /* Gráfico Pedidos */
+        var options = {
+          series: [{
+          name: 'Semana anterior',
+          data: [23, 32, 42, 37, 34, 52, 58]
+        }, {
+          name: 'Semana atual',
+          data: [31, 40, 25, 39, 0, 0, 0]
+        }],
+        chart: {
+          height: 325,
+          type: 'area',
+          toolbar: {
+            show: false
+          }
+        },
+        colors: ['#C7D4E1','#00BE7D'],
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          curve: 'smooth'
+        },
+        xaxis: {
+          type: '',
+          categories: ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"]
+        },
+        legend: {
+          position: 'top',
+          horizontalAlign: 'right',
+          floating: true,
+        }    
+        };
+        var chart = new ApexCharts(document.querySelector("#grafico-pedidos"), options);
+        chart.render();
+        
+        /* Gráfico Faturamento */
+        var options = {
+          series: [{
+          name: 'Semana anterior',
+          data: [595.77, 828.81, 1087.85, 958.32, 880.68, 1346.83, 1502.26]
+        }, {
+          name: 'Semana atual',
+          data: [802.84, 1036.22, 647.45, 1010.14, 0, 0, 0]
+        }],
+        chart: {
+          height: 325,
+          type: 'area',
+          toolbar: {
+            show: false
+          }
+        },
+        plotOptions: {
+          bar: {
+            endingShape: 'rounded'
+          },
+        },    
+        colors: ['#C7D4E1', '#00BE7D'],
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          curve: 'smooth'
+        },    
+        xaxis: {
+          type: '',
+          categories: ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"]
+        },
+        yaxis: {
+          labels: {
+              formatter: function (val) {
+              return "R$ " + Number(val).toLocaleString();
+            }   
+          },
+        },    
+        legend: {
+          position: 'top',
+          horizontalAlign: 'right',
+          floating: true,
+        },
+        };
+        var chart = new ApexCharts(document.querySelector("#grafico-faturamento"), options);
+        chart.render();
+        
+        /* Gráfico Pedidos por Categoria */
+        var options = {
+          series: [{
+          name: 'Pedidos',      
+          data: [1, 2, 11,7,3,15]
+        }],
+          chart: {
+          type: 'bar',
+          height: 270,    
+          toolbar: {
+            show: false
+          }    
+        },
+        grid: {
+          padding: {
+            top: -20,
+            bottom: -10,
+          },
+          yaxis: {
+            lines: {
+              show: false
+            }
+          }    
+        },    
+        plotOptions: {
+          bar: {
+            horizontal: true,
+            endingShape: 'rounded'  
+          }
+        },
+        colors: ['#00BE7D'],    
+        dataLabels: {
+          enabled: true
+        },
+        xaxis: {
+          type: '',    
+          categories: ['Entradas', 'Saladas', 'Pratos Quentes', 'Porções', 'Sobremesas', 'Bebidas']
+        },
+        };
+        var chart = new ApexCharts(document.querySelector("#grafico-pedidos-categoria"), options);
+        chart.render();
+        
+        /* Gráfico Ocupação das Mesas */
+        var options = {
+          series: [20, 45],
+          chart: {
+          height: 270,
+          type: 'donut',
+        },
+        grid: {
+          padding: {
+            top: 0,
+            bottom: -10,
+          }
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                total: {
+                  showAlways: true,
+                  show: true
+                }
+              }
+            }
+          }
+        },    
+        colors: ['#00BE7D', '#C7D4E1'],
+        labels: ['Ocupadas', 'Livres'],
+        dataLabels: {
+          enabled: true,
+          dropShadow: {
+              enabled: false
+          }
+        },    
+        responsive: [{
+          breakpoint: 1160,
+          options: {
+            chart: {
+              height: 315,
+            },
+            dataLabels: {
+              offset: 30
+            },
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }],    
+        };
+        var chart = new ApexCharts(document.querySelector("#grafico-ocupacao-mesas"), options);
+        chart.render();
+
+    </script>
+
+</body>
+
+</html>

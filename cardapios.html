@@ -1,0 +1,2178 @@
+<!doctype html>
+<html lang="pt-br" class="menon">
+
+<head>
+    
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#E93D25">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="description" content="O seu cardápio digital">
+
+    <title>Menon - Painel Administrativo</title>
+    
+    <!-- Icones / Favicon -->
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="icon" href="img/favicon.png">
+
+    <!-- Icones CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap-4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-4.3.1/css/bootstrap-select.css">
+
+    <!-- Swiper Slide CSS -->
+    <link rel="stylesheet" href="vendor/swiper/css/swiper.min.css">
+    
+     <!-- Progress Wizard CSS -->
+    <link rel="stylesheet" href="vendor/progress-wizard/css/progress-wizard.min.css">
+    
+    <!-- DateRange CSS -->
+	<link rel="stylesheet" href="vendor/datarange/daterange.css">
+    
+    <!-- Datatables CSS -->
+	<link rel="stylesheet" href="vendor/datatables/datatables.min.css">
+    <link rel="stylesheet" href="vendor/datatables/responsive.dataTables.min.css">
+    
+    <!-- Lobipanel css -->
+    <link rel="stylesheet" href="vendor/lobipanel/lobipanel.css">
+
+    <!-- Estilo CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="row no-gutters vh-100 loader-screen">
+        <div class="col align-self-center text-white text-center">
+            <img src="img/logo.svg" alt="logo">
+            <div></div>
+            <div class="laoderhorizontal"><div></div><div></div><div></div><div></div></div>
+        </div>
+    </div>
+    
+    <!-- Menu Lateral -->
+    <div class="sidebar">
+        <div class="text-center">
+            <div class="figure-menu shadow">
+                <figure><img src="img/usuario.svg" alt=""></figure>
+            </div>
+            <h5 class="mb-1 ">Nome Sobrenome</h5>
+            <p class="text-mute small">Função | Restaurante</p>
+        </div>
+        <div class="row mx-0">
+            <div class="col">
+                <div class="list-group main-menu">
+                    <a href="painel.html" class="list-group-item list-group-item-action"><i class="material-icons">multiline_chart</i> Painel</a>
+                    <a href="cardapios.html" class="list-group-item list-group-item-action active"><i class="material-icons">fastfood</i> Cardápios</a>
+                    <a href="pedidos.html" class="list-group-item list-group-item-action"><i class="material-icons">receipt_long</i> Pedidos</a>
+                    <a href="mesas.html" class="list-group-item list-group-item-action"><i class="material-icons">view_module</i> Mesas</a>
+                    <a href="cupom.html" class="list-group-item list-group-item-action"><i class="material-icons">local_activity</i> Cupom</a>
+                    <a href="usuarios.html" class="list-group-item list-group-item-action"><i class="material-icons">account_circle</i> Usuários</a>
+                    <a href="financeiro.html" class="list-group-item list-group-item-action"><i class="material-icons">payments</i> Financeiro</a>
+                    <a href="relatorios.html" class="list-group-item list-group-item-action"><i class="material-icons">bar_chart</i> Relatórios</a>
+                    <a href="configuracoes.html" class="list-group-item list-group-item-action"><i class="material-icons">settings</i> Configurações</a>
+                    <a href="index.html" class="list-group-item list-group-item-action"><i class="material-icons">exit_to_app</i> Sair</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="wrapper">
+        
+        <!-- Cabeçalho -->
+        <div class="header">
+            <div class="row no-gutters">
+                <div class="col text-left">
+                    <button class="btn btn-link text-secondary menu-btn"><i class="material-icons">apps</i></button>
+                </div>
+                <div class="col text-center"><img src="img/logo-menon-h.svg" alt="" class="header-logo"></div>
+                <div class="col text-right">
+                    <a href="" class="btn-link text-secondary table-btn small" data-toggle="modal" data-target="#notificacoes"><i class="material-icons">notifications_active</i></a> 
+                    <a href="" class="btn-link text-secondary table-btn small" data-toggle="modal" data-target="#notificacoes-garcom"><i class="material-icons">emoji_people</i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cardápios -->
+        <div class="container-fluid">
+            <div class="mb-2">
+                <div class="row">
+                    <div class="col-auto align-self-center pr-0">
+                         <i class="material-icons md-48 text-default">fastfood</i>
+                    </div>
+                    <div class="col-auto align-self-center px-2">
+                         <h6 class="mb-0">Cardápios</h6>
+                         <span class="text-secondary text-bold small">Lista de Itens</span>
+                    </div>
+                    <div class="col align-self-center text-right pl-0"> 
+                        <span class="d-inline-block mr-1" data-toggle="tooltip" data-placement="top" title="Configurar Cardápios">
+                            <button class="btn btn-light button-rounded-36" data-toggle="modal" data-target="#configurar-cardapios"><i class="material-icons md-20">settings</i></button>
+                        </span>
+                        <span class="d-inline-block mr-1" data-toggle="tooltip" data-placement="top" title="Visualizar Estoque">
+                            <button class="btn btn-light button-rounded-36" onclick="window.location.href='estoque.html'"><i class="material-icons md-20">inventory_2</i></button>
+                        </span>
+                        <span class="d-inline-block mr-1" data-toggle="tooltip" data-placement="top" title="Complementos Adicionais">
+                            <button class="btn btn-light button-rounded-36" data-toggle="modal" data-target="#configurar-complementos"><i class="material-icons md-20">playlist_add</i></button>
+                        </span>
+                        <span class="d-inline-block" data-toggle="tooltip" data-placement="top" title="Adicionar Categoria">
+                            <button class="btn btn-default button-rounded-36" data-toggle="modal" data-target="#adicionar-categoria"><i class="material-icons md-20">add</i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto align-self-center">
+                                    <h6 class="subtitle mt-1"><span class="text-secondary font-weight-normal">Categoria |</span> Entradas</h6>
+                                </div>
+                                <div class="col align-self-center text-right"> 
+                                    <span class="d-inline-block mr-2" data-toggle="tooltip" data-placement="top" title="Editar Categoria">
+                                        <button class="btn btn-sm btn-link text-light p-0" data-toggle="modal" data-target="#editar-categoria"><i class="material-icons md-18">edit</i></button>
+                                    </span>
+                                    <span class="d-inline-block" data-toggle="tooltip" data-placement="top" title="Adicionar Item">
+                                        <button class="btn btn-sm btn-link text-default p-0" data-toggle="modal" data-target="#adicionar-item"><i class="material-icons">add_circle</i></button>
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <table id="lista-itens-categoria-01" class="table nowrap mt-4">
+                                <thead>
+                                    <tr>
+                                        <th>ID:</th>
+                                        <th>Imagem:</th>
+                                        <th>Item:</th>
+                                        <th>Subcategoria:</th>
+                                        <th>Status:</th>
+                                        <th>Oferta:</th>
+                                        <th>Valor:</th>
+                                        <th>Ações:</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>01</td>
+                                        <td><figure class="product-image h-auto"><img src="img/prato-07.png" alt="" class="vm list-crop"></figure></td>
+                                        <td>Ceviche</td>
+                                        <td>Nenhum</td>
+                                        <td><a href="#"><span class="badge badge-success text-white">Ativo</span></a></td>
+                                        <td><span class="badge badge-info text-white">10%</span></td>
+                                        <td><b>R$ 24,00</b></td>
+                                        <td>
+                                            <div class="btn-group w-125 py-1">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#editar-item"><i class="material-icons">edit</i></button>
+                                                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="sr-only">Toggle Dropdown</span>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-right rounded my-2">
+                                                    <button class="btn btn-link text-secondary text-capitalize font-weight-normal dropdown-item" data-toggle="modal" data-target="#excluir-item"><i class="material-icons">delete_forever</i> Excluir Item</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>    
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto align-self-center">
+                                    <h6 class="subtitle mt-1"><span class="text-secondary font-weight-normal">Categoria |</span> Saladas</h6>
+                                </div>
+                                <div class="col align-self-center text-right"> 
+                                    <span class="d-inline-block mr-2" data-toggle="tooltip" data-placement="top" title="Editar Categoria">
+                                        <button class="btn btn-sm btn-link text-light p-0" data-toggle="modal" data-target="#editar-categoria"><i class="material-icons md-18">edit</i></button>
+                                    </span>
+                                    <span class="d-inline-block" data-toggle="tooltip" data-placement="top" title="Adicionar Item">
+                                        <button class="btn btn-sm btn-link text-default p-0" data-toggle="modal" data-target="#adicionar-item"><i class="material-icons">add_circle</i></button>
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <table id="lista-itens-categoria-02" class="table nowrap mt-4">
+                                <thead>
+                                    <tr>
+                                        <th>ID:</th>
+                                        <th>Imagem:</th>
+                                        <th>Item:</th>
+                                        <th>Subcategoria:</th>
+                                        <th>Status:</th>
+                                        <th>Oferta:</th>
+                                        <th>Valor:</th>
+                                        <th>Ações:</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>01</td>
+                                        <td><figure class="product-image h-auto"><img src="img/prato-05.png" alt="" class="vm list-crop"></figure></td>
+                                        <td>Metropolitana</td>
+                                        <td>Nenhum</td>
+                                        <td><span class="badge badge-success text-white">Ativo</span></td>
+                                        <td><span class="badge badge-info text-white">05%</span></td>
+                                        <td><b>R$ 20,00</b></td>
+                                        <td>
+                                            <div class="btn-group w-125 py-1">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#editar-item"><i class="material-icons">edit</i></button>
+                                                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="sr-only">Toggle Dropdown</span>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-right rounded my-2">
+                                                    <button class="btn btn-link text-secondary text-capitalize font-weight-normal dropdown-item" data-toggle="modal" data-target="#excluir-item"><i class="material-icons">delete_forever</i> Excluir Item</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>    
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto align-self-center">
+                                    <h6 class="subtitle mt-1"><span class="text-secondary font-weight-normal">Categoria |</span> Pratos Quentes</h6>
+                                </div>
+                                <div class="col align-self-center text-right"> 
+                                    <span class="d-inline-block mr-2" data-toggle="tooltip" data-placement="top" title="Editar Categoria">
+                                        <button class="btn btn-sm btn-link text-light p-0" data-toggle="modal" data-target="#editar-categoria"><i class="material-icons md-18">edit</i></button>
+                                    </span>
+                                    <span class="d-inline-block" data-toggle="tooltip" data-placement="top" title="Adicionar Item">
+                                        <button class="btn btn-sm btn-link text-default p-0" data-toggle="modal" data-target="#adicionar-item"><i class="material-icons">add_circle</i></button>
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <table id="lista-itens-categoria-03" class="table nowrap mt-4">
+                                <thead>
+                                    <tr>
+                                        <th>ID:</th>
+                                        <th>Imagem:</th>
+                                        <th>Item:</th>
+                                        <th>Subcategoria:</th>
+                                        <th>Status:</th>
+                                        <th>Oferta:</th>
+                                        <th>Valor:</th>
+                                        <th>Ações:</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>01</td>
+                                        <td><figure class="product-image h-auto"><img src="img/prato-01.png" alt="" class="vm list-crop"></figure></td>
+                                        <td>Filés de Frango</td>
+                                        <td>Frango</td>
+                                        <td><span class="badge badge-success text-white">Ativo</span></td>
+                                        <td><span class="badge badge-info text-white">10%</span></td>
+                                        <td><b>R$ 22,00</b></td>
+                                        <td>
+                                            <div class="btn-group w-125 py-1">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#editar-item"><i class="material-icons">edit</i></button>
+                                                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="sr-only">Toggle Dropdown</span>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-right rounded my-2">
+                                                    <button class="btn btn-link text-secondary text-capitalize font-weight-normal dropdown-item" data-toggle="modal" data-target="#excluir-item"><i class="material-icons">delete_forever</i> Excluir Item</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>02</td>
+                                        <td><figure class="product-image h-auto"><img src="img/prato-02.png" alt="" class="vm list-crop"></figure></td>
+                                        <td>Badejo Grelhado</td>
+                                        <td>Peixe</td>
+                                        <td><span class="badge badge-success text-white">Ativo</span></td>
+                                        <td><span class="badge badge-info text-white">15%</span></td>
+                                        <td><b>R$ 28,00</b></td>
+                                        <td>
+                                            <div class="btn-group w-125 py-1">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#editar-item"><i class="material-icons">edit</i></button>
+                                                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="sr-only">Toggle Dropdown</span>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-right rounded my-2">
+                                                    <button class="btn btn-link text-secondary text-capitalize font-weight-normal dropdown-item" data-toggle="modal" data-target="#excluir-item"><i class="material-icons">delete_forever</i> Excluir Item</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>03</td>
+                                        <td><figure class="product-image h-auto"><img src="img/prato-03.png" alt="" class="vm list-crop"></figure></td>
+                                        <td>Linguado Assado</td>
+                                        <td>Peixe</td>
+                                        <td><span class="badge badge-success text-white">Ativo</span></td>
+                                        <td><span class="badge badge-info text-white">20%</span></td>
+                                        <td><b>R$ 32,00</b></td>
+                                        <td>
+                                            <div class="btn-group w-125 py-1">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#editar-item"><i class="material-icons">edit</i></button>
+                                                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="sr-only">Toggle Dropdown</span>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-right rounded my-2">
+                                                    <button class="btn btn-link text-secondary text-capitalize font-weight-normal dropdown-item" data-toggle="modal" data-target="#excluir-item"><i class="material-icons">delete_forever</i> Excluir Item</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>    
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto align-self-center">
+                                    <h6 class="subtitle mt-1"><span class="text-secondary font-weight-normal">Categoria |</span> Bebidas</h6>
+                                </div>
+                                <div class="col align-self-center text-right"> 
+                                    <span class="d-inline-block mr-2" data-toggle="tooltip" data-placement="top" title="Editar Categoria">
+                                        <button class="btn btn-sm btn-link text-light p-0" data-toggle="modal" data-target="#editar-categoria"><i class="material-icons md-18">edit</i></button>
+                                    </span>
+                                    <span class="d-inline-block" data-toggle="tooltip" data-placement="top" title="Adicionar Item">
+                                        <button class="btn btn-sm btn-link text-default p-0" data-toggle="modal" data-target="#adicionar-item"><i class="material-icons">add_circle</i></button>
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <table id="lista-itens-categoria-04" class="table nowrap mt-4">
+                                <thead>
+                                    <tr>
+                                        <th>ID:</th>
+                                        <th>Imagem:</th>
+                                        <th>Item:</th>
+                                        <th>Subcategoria:</th>
+                                        <th>Status:</th>
+                                        <th>Oferta:</th>
+                                        <th>Valor:</th>
+                                        <th>Ações:</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>01</td>
+                                        <td><figure class="product-image h-auto"><img src="img/bebida-06.png" alt="" class="vm list-crop"></figure></td>
+                                        <td>PEPSI Lata</td>
+                                        <td>Refrigerante</td>
+                                        <td><span class="badge badge-success text-white">Ativo</span></td>
+                                        <td>Nenhum</td>
+                                        <td><b>R$ 3,50</b></td>
+                                        <td>
+                                            <div class="btn-group w-125 py-1">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#editar-item"><i class="material-icons">edit</i></button>
+                                                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="sr-only">Toggle Dropdown</span>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-right rounded my-2">
+                                                    <button class="btn btn-link text-secondary text-capitalize font-weight-normal dropdown-item" data-toggle="modal" data-target="#excluir-item"><i class="material-icons">delete_forever</i> Excluir Item</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>02</td>
+                                        <td><figure class="product-image h-auto"><img src="img/bebida-07.png" alt="" class="vm list-crop"></figure></td>
+                                        <td>Guaraná Antarctica Lata</td>
+                                        <td>Refrigerante</td>
+                                        <td><span class="badge badge-success text-white">Ativo</span></td>
+                                        <td>Nenhum</td>
+                                        <td><b>R$ 3,50</b></td>
+                                        <td>
+                                            <div class="btn-group w-125 py-1">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#editar-item"><i class="material-icons">edit</i></button>
+                                                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="sr-only">Toggle Dropdown</span>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-right rounded my-2">
+                                                    <button class="btn btn-link text-secondary text-capitalize font-weight-normal dropdown-item" data-toggle="modal" data-target="#excluir-item"><i class="material-icons">delete_forever</i> Excluir Item</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>02</td>
+                                        <td><figure class="product-image h-auto"><img src="img/bebida-04.png" alt="" class="vm list-crop"></figure></td>
+                                        <td>Cerveja Brahma Chopp</td>
+                                        <td>Alcoólicas</td>
+                                        <td><span class="badge badge-success text-white">Ativo</span></td>
+                                        <td>Nenhum</td>
+                                        <td><b>R$ 6,00</b></td>
+                                        <td>
+                                            <div class="btn-group w-125 py-1">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#editar-item"><i class="material-icons">edit</i></button>
+                                                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="sr-only">Toggle Dropdown</span>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-right rounded my-2">
+                                                    <button class="btn btn-link text-secondary text-capitalize font-weight-normal dropdown-item" data-toggle="modal" data-target="#excluir-item"><i class="material-icons">delete_forever</i> Excluir Item</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Configurar Cardápios -->
+    <div class="modal fade" id="configurar-cardapios" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full modal-lg" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header clean">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body clean text-center p-4">
+                    <figure class="avatar avatar-120 mt-2">
+                        <img src="img/cardapios.svg" alt="">
+                    </figure>
+                    <h5 class="my-3">Configurar Cardápios</h5> 
+                    <div class="row">
+                        <div class="col-12">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center px-0">
+                                            <p><b>Padrão</b></p>
+                                        </div>
+                                        <div class="col align-self-center">
+                                            <p class="small mb-0">Segunda à Domingo das 00:00 às 23:59</p>
+                                        </div>
+                                        <div class="col-auto align-self-center px-0">
+                                            <span class="badge badge-default text-white">Inativo</span>
+                                        </div>
+                                        <div class="col-auto align-self-center pr-0">
+                                            <button class="btn btn-sm btn-link text-secondary p-0 mr-1" data-toggle="modal" data-target="#editar-cardapio"><i class="material-icons md-18">edit</i></button>
+                                            <button class="btn btn-sm btn-link text-default p-0" data-toggle="modal" data-target="#adicionar-cardapio"><i class="material-icons">add_circle</i></button>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center px-0">
+                                            <p><b>Almoço</b></p>
+                                        </div>
+                                        <div class="col align-self-center">
+                                            <p class="small mb-0">Segunda à Domingo das 11:00 às 15:00</p>
+                                        </div>
+                                        <div class="col-auto align-self-center px-0">
+                                            <span class="badge badge-success text-white">Ativo</span>
+                                        </div>
+                                        <div class="col-auto align-self-center pr-0">
+                                            <button class="btn btn-sm btn-link text-secondary p-0 mr-1" data-toggle="modal" data-target="#editar-cardapio"><i class="material-icons md-18">edit</i></button>
+                                            <button class="btn btn-sm btn-link text-secondary p-0" data-toggle="modal" data-target="#excluir-cardapio"><i class="material-icons">delete_forever</i></button>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center px-0">
+                                            <p><b>Jantar</b></p>
+                                        </div>
+                                        <div class="col align-self-center">
+                                            <p class="small mb-0">Segunda à Sexta das 19:00 às 23:30</p>
+                                            <p class="small mb-0">Sábado à Domingo das 19:00 às 22:00</p>
+                                        </div>
+                                        <div class="col-auto align-self-center px-0">
+                                            <span class="badge badge-success text-white">Ativo</span>
+                                        </div>
+                                        <div class="col-auto align-self-center pr-0">
+                                            <button class="btn btn-sm btn-link text-secondary p-0 mr-1" data-toggle="modal" data-target="#editar-cardapio"><i class="material-icons md-18">edit</i></button>
+                                            <button class="btn btn-sm btn-link text-secondary p-0" data-toggle="modal" data-target="#excluir-cardapio"><i class="material-icons">delete_forever</i></button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button class="btn btn-lg btn-secondary btn-rounded" data-dismiss="modal">Fechar</button>
+                        <button class="btn btn-lg btn-success btn-rounded" data-dismiss="modal">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Adicionar Cardápio -->
+    <div class="modal fade" id="adicionar-cardapio" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="header-title mb-0">Adicionar Cardápio</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group float-label">
+                                <input type="text" class="form-control" value="" placeholder="Ex: Almoço" required>
+                                <label class="form-control-label">Nome do Cardápio</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group float-label">
+                                <div class="row">
+                                    <div class="col-11 col-md-11 col-lg">
+                                        <div class="input-group float-label">
+                                            <select class="custom-select selectpicker" aria-describedby="inputGroupPrepend" title="Dia" required>
+                                                <option value="seg">Segunda</option>
+                                                <option value="ter">Terça</option>
+                                                <option value="qua">Quarta</option>
+                                                <option value="qui">Quinta</option>
+                                                <option value="sex">Sexta</option>
+                                                <option value="sab">Sábado</option>
+                                                <option value="dom">Domingo</option>
+                                            </select>
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text px-2" id="inputGroupPrepend">
+                                                    <p>à</p>
+                                                </span>
+                                            </div>
+                                            <select class="custom-select selectpicker" aria-describedby="inputGroupPrepend" title="Dia" required>
+                                                <option value="seg">Segunda</option>
+                                                <option value="ter">Terça</option>
+                                                <option value="qua">Quarta</option>
+                                                <option value="qui">Quinta</option>
+                                                <option value="sex">Sexta</option>
+                                                <option value="sab">Sábado</option>
+                                                <option value="dom">Domingo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-11 col-md-11 col-lg">
+                                        <div class="input-group float-label">
+                                            <input type="tel" class="form-control" placeholder="HH:MM" aria-describedby="inputGroupPrepend3" required="">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text px-2" id="inputGroupPrepend">
+                                                    <p>às</p>
+                                                </span>
+                                            </div>
+                                            <input type="tel" class="form-control" placeholder="HH:MM" aria-describedby="inputGroupPrepend" required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-1 col-md-1 col-lg-auto align-self-center pl-0">
+                                        <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">add_circle</i></button>
+                                    </div>
+                                </div>
+                                <label class="form-control-label">Período</label>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="form-group float-label">
+                                <div class="row mt-2">
+                                    <div class="col-6">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" name="status-1" class="custom-control-input" id="ativo-1" checked>
+                                            <label class="custom-control-label" for="ativo-1">Ativo</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" name="status-1" class="custom-control-input" id="inativo-1">
+                                            <label class="custom-control-label" for="inativo-1">Inativo</label>
+                                        </div>
+                                    </div>    
+                                </div>    
+                                <label class="form-control-label">Status</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-2">
+                        <button class="btn btn-lg btn-secondary btn-rounded" data-dismiss="modal">Fechar</button>
+                        <button class="btn btn-lg btn-success btn-rounded" data-dismiss="modal">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Editar Cardápio -->
+    <div class="modal fade" id="editar-cardapio" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="header-title mb-0">Editar Cardápio</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group float-label">
+                                <input type="text" class="form-control" value="" placeholder="Ex: Almoço" required>
+                                <label class="form-control-label">Nome do Cardápio</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group float-label">
+                                <div class="row">
+                                    <div class="col-11 col-md-11 col-lg">
+                                        <div class="input-group float-label">
+                                            <select class="custom-select selectpicker" aria-describedby="inputGroupPrepend" title="Dia" required>
+                                                <option value="seg">Segunda</option>
+                                                <option value="ter">Terça</option>
+                                                <option value="qua">Quarta</option>
+                                                <option value="qui">Quinta</option>
+                                                <option value="sex">Sexta</option>
+                                                <option value="sab">Sábado</option>
+                                                <option value="dom">Domingo</option>
+                                            </select>
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text px-2" id="inputGroupPrepend">
+                                                    <p>à</p>
+                                                </span>
+                                            </div>
+                                            <select class="custom-select selectpicker" aria-describedby="inputGroupPrepend" title="Dia" required>
+                                                <option value="seg">Segunda</option>
+                                                <option value="ter">Terça</option>
+                                                <option value="qua">Quarta</option>
+                                                <option value="qui">Quinta</option>
+                                                <option value="sex">Sexta</option>
+                                                <option value="sab">Sábado</option>
+                                                <option value="dom">Domingo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-11 col-md-11 col-lg">
+                                        <div class="input-group float-label">
+                                            <input type="tel" class="form-control" placeholder="HH:MM" aria-describedby="inputGroupPrepend3" required="">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text px-2" id="inputGroupPrepend">
+                                                    <p>às</p>
+                                                </span>
+                                            </div>
+                                            <input type="tel" class="form-control" placeholder="HH:MM" aria-describedby="inputGroupPrepend" required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-1 col-md-1 col-lg-auto align-self-center pl-0">
+                                        <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">add_circle</i></button>
+                                    </div>
+                                </div>
+                                <label class="form-control-label">Período</label>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="form-group float-label">
+                                <div class="row mt-2">
+                                    <div class="col-6">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" name="status-3" class="custom-control-input" id="ativo-3" checked>
+                                            <label class="custom-control-label" for="ativo-3">Ativo</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" name="status-3" class="custom-control-input" id="inativo-3">
+                                            <label class="custom-control-label" for="inativo-3">Inativo</label>
+                                        </div>
+                                    </div>    
+                                </div>    
+                                <label class="form-control-label">Status</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-2">
+                        <button class="btn btn-lg btn-secondary btn-rounded" data-dismiss="modal">Fechar</button>
+                        <button class="btn btn-lg btn-success btn-rounded" data-dismiss="modal">Salvar</button>
+                        <button class="btn btn-default button-rounded-42 float-right" type="button"><i class="material-icons md-24">delete_forever</i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Adicionar Categoria -->
+    <div class="modal fade" id="adicionar-categoria" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full modal-lg" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header clean">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body clean text-center p-4">
+                    <figure class="avatar avatar-120 mt-2">
+                        <img src="img/cardapios.svg" alt="">
+                    </figure>
+                    <h5 class="my-3">Adicionar Categoria</h5> 
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-4">
+                            <div class="figure-item my-2">
+                                <figure><img src="img/item.svg" alt=""></figure>
+                                <div class="btn btn-dark text-white floating-btn">
+                                    <i class="material-icons">camera_alt</i>
+                                    <input type="file" class="float-file">
+                                </div>
+                            </div>
+                            <h6 class="text-center">Foto da Categoria</h6>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-8">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group float-label">
+                                        <input type="text" class="form-control" value="" placeholder="Ex: Saladas, Entradas, Pratos Quentes, etc.." required>
+                                        <label class="form-control-label">Nome da Categoria</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group float-label">
+                                                <input type="text" class="form-control" value="" placeholder="Ex: Peixes, Frango, Carnes, Massas, etc...">
+                                                <label class="form-control-label">Nome da Subcategoria</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto align-self-center pl-0">
+                                            <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">add_circle</i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group float-label">
+                                        <select class="custom-select selectpicker" title="Selecione (um ou mais) Cardápio" multiple required>
+                                            <option value="almoco">Almoço</option>
+                                            <option value="jantar">Jantar</option>
+                                        </select>
+                                        <label class="form-control-label">Selecione o Cardápio para qual irá a Categoria</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto mr-4">
+                                    <div class="form-group float-label">
+                                        <div class="row mt-2">
+                                            <div class="col-6">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" name="status-2" class="custom-control-input" id="ativo-2" checked>
+                                                    <label class="custom-control-label" for="ativo-2">Ativo</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" name="status-2" class="custom-control-input" id="inativo-2">
+                                                    <label class="custom-control-label" for="inativo-2">Inativo</label>
+                                                </div>
+                                            </div>    
+                                        </div>    
+                                        <label class="form-control-label">Status</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button class="btn btn-lg btn-secondary btn-rounded" data-dismiss="modal">Fechar</button>
+                        <button class="btn btn-lg btn-success btn-rounded" data-dismiss="modal">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Editar Categoria -->
+    <div class="modal fade" id="editar-categoria" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full modal-lg" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header clean">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body clean text-center p-4">
+                    <figure class="avatar avatar-120 mt-2">
+                        <img src="img/cardapios.svg" alt="">
+                    </figure>
+                    <h5 class="my-3">Editar Categoria</h5> 
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-4">
+                            <div class="figure-item my-2">
+                                <figure><img src="img/item.svg" alt=""></figure>
+                                <div class="btn btn-dark text-white floating-btn">
+                                    <i class="material-icons">camera_alt</i>
+                                    <input type="file" class="float-file">
+                                </div>
+                            </div>
+                            <h6 class="text-center">Foto da Categoria</h6>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-8">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group float-label">
+                                        <input type="text" class="form-control" value="" placeholder="Ex: Saladas, Entradas, Pratos Quentes, etc.." required>
+                                        <label class="form-control-label">Nome da Categoria</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group float-label">
+                                                <input type="text" class="form-control" value="" placeholder="Ex: Peixes, Frango, Carnes, Massas, etc...">
+                                                <label class="form-control-label">Nome da Subcategoria</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto align-self-center pl-0">
+                                            <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">add_circle</i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group float-label">
+                                        <select class="custom-select selectpicker" title="Selecione (um ou mais) Cardápio" multiple required>
+                                            <option value="almoco">Almoço</option>
+                                            <option value="jantar">Jantar</option>
+                                        </select>
+                                        <label class="form-control-label">Selecione o Cardápio para qual irá a Categoria</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto mr-4">
+                                    <div class="form-group float-label">
+                                        <div class="row mt-2">
+                                            <div class="col-6">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" name="status-21" class="custom-control-input" id="ativo-21" checked>
+                                                    <label class="custom-control-label" for="ativo-21">Ativo</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" name="status-21" class="custom-control-input" id="inativo-21">
+                                                    <label class="custom-control-label" for="inativo-21">Inativo</label>
+                                                </div>
+                                            </div>    
+                                        </div>    
+                                        <label class="form-control-label">Status</label>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-group float-label">
+                                        <select class="custom-select selectpicker" title="Selecione">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                        <label class="form-control-label">Ordenação</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button class="btn btn-lg btn-secondary btn-rounded" data-dismiss="modal">Fechar</button>
+                        <button class="btn btn-lg btn-success btn-rounded" data-dismiss="modal">Salvar</button>
+                        <button class="btn btn-default button-rounded-42 float-right" type="button"><i class="material-icons md-24">delete_forever</i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Adicionar Item -->
+    <div class="modal fade" id="adicionar-item" role="dialog" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-full modal-xl" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header clean">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body clean p-4">
+                    <div class="text-center">
+                        <figure class="avatar avatar-120 mt-2">
+                            <img src="img/item.svg" alt="">
+                        </figure>
+                        <h5 class="my-3">Adicionar Item</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div id="abas-adicionar-item">
+                                <ul class="nav nav-tabs tabs-bordered d-flex nav-justified mb-4" role="tablist">
+                                    <li>
+                                        <a href="#tab-detalhes" aria-controls="tab-detalhes" class="active show" role="tab" data-toggle="tab">Detalhes</a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab-opcionais" aria-controls="tab-complementos" role="tab" data-toggle="tab">Opcionais</a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab-promocional" aria-controls="tab-promocional" role="tab" data-toggle="tab">Promocional</a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab-fiscal" aria-controls="tab-fiscal" role="tab" data-toggle="tab">Fiscal</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane fade active show" id="tab-detalhes">
+                                        <div class="row">
+                                            <div class="col-12 col-md-12 col-lg-4">
+                                                <div class="figure-item my-2">
+                                                    <figure><img src="img/item.svg" alt=""></figure>
+                                                    <div class="btn btn-dark text-white floating-btn">
+                                                        <i class="material-icons">camera_alt</i>
+                                                        <input type="file" class="float-file">
+                                                    </div>
+                                                </div>
+                                                <h6 class="text-center mb-4">Foto do Item</h6>
+                                                
+                                                <div class="form-group float-label">
+                                                    <div class="row mt-2">
+                                                        <div class="col-auto">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" name="status-4" class="custom-control-input" id="ativo-4" checked>
+                                                                <label class="custom-control-label" for="ativo-4">Ativo</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" name="status-4" class="custom-control-input" id="inativo-4">
+                                                                <label class="custom-control-label" for="inativo-4">Inativo</label>
+                                                            </div>
+                                                        </div>    
+                                                    </div>    
+                                                    <label class="form-control-label">Status</label>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-12 col-md-12 col-lg-8">
+                                                <div class="row">
+                                                    <div class="col-12 col-md-12 col-lg-6">
+                                                        <div class="form-group float-label">
+                                                            <select class="custom-select selectpicker" title="Selecione..." multiple required>
+                                                                <option value="almoco">Almoço</option>
+                                                                <option value="jantar">Jantar</option>
+                                                            </select>
+                                                            <label class="form-control-label">Cardápio (um ou mais)</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-12 col-lg-6">
+                                                        <div class="form-group float-label">
+                                                            <select class="custom-select selectpicker" data-live-search="true" data-live-search-placeholder="Pesquisar..." title="Selecione..." multiple required>
+                                                                <option value="nenhum">Nenhum</option>
+                                                                <optgroup label="Promoções">
+                                                                    <option value="promocao-dia">Promoção do Dia</option>
+                                                                </optgroup>
+                                                                <optgroup label="Entradas">
+                                                                    <option value="frias">Frias</option>
+                                                                    <option value="quentes">Quentes</option>
+                                                                </optgroup>
+                                                                <optgroup label="Pratos Quentes">
+                                                                    <option value="peixe">Peixe</option>
+                                                                    <option value="frango">Frango</option>
+                                                                    <option value="carne">Carne Vermelha</option>
+                                                                    <option value="massas">Massas</option>
+                                                                </optgroup>
+                                                            </select>
+                                                            <label class="form-control-label">Subcategoria (um ou mais)</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-12 col-lg-6">
+                                                        <div class="form-group float-label">
+                                                            <input type="text" class="form-control" value="" placeholder="Ex: Filés de Frango" required>
+                                                            <label class="form-control-label">Nome do Item</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6 col-md-6 col-lg-3">
+                                                        <div class="form-group float-label">
+                                                            <input type="tel" class="form-control" value="" placeholder="Ex: Inteiro">
+                                                            <label class="form-control-label">Legenda (Valor)</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6 col-md-6 col-lg-3">
+                                                        <div class="form-group float-label">
+                                                            <input type="tel" class="form-control" value="" placeholder="Ex: 22,00" required>
+                                                            <label class="form-control-label">Valor</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-12 col-lg-9">
+                                                        <div class="form-group float-label">
+                                                            <input type="text" class="form-control" value="" placeholder="Ex: Filés de frango assados e depois grelhados à moda do chefe." required>
+                                                            <label class="form-control-label">Descrição</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6 col-md-3 col-lg-3">
+                                                        <div class="form-group float-label">
+                                                            <input type="text" class="form-control" value="" placeholder="Ex: 40" required>
+                                                            <label class="form-control-label">Quantidade</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6 col-md col-lg">
+                                                        <div class="form-group float-label">
+                                                            <select class="custom-select selectpicker" multiple required>
+                                                                <option value="mesa" selected>Mesa</option>
+                                                                <option value="unico" selected>Único</option>
+                                                                <option value="Mesa" selected>Ticket</option>
+                                                                <option value="Mesa" selected>Link</option>
+                                                            </select>
+                                                            <label class="form-control-label">QR Code/Link</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6 col-md col-lg">
+                                                        <div class="form-group float-label">
+                                                            <select class="custom-select selectpicker" title="Selecione..." required>
+                                                                <option value="cozinha" selected>Cozinha</option>
+                                                                <option value="cozinha-bar">Cozinha/Bar</option>
+                                                                <option value="cozinha-copa">Cozinha/Copa</option>
+                                                                <option value="bar">Bar</option>
+                                                                <option value="Copa">Copa</option>
+                                                                <option value="bar-copa">Bar/Copa</option>
+                                                                <option value="balcao-caixa">Balcão/Caixa</option>
+                                                                <option value="nenhum">Nenhum</option>
+                                                            </select>
+                                                            <label class="form-control-label">Displays/Impressão</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-md-2 col-lg-2">
+                                                        <div class="form-group float-label">
+                                                            <input type="tel" class="form-control" value="" placeholder="Ex: M001">
+                                                            <label class="form-control-label">Cód. PDV</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-md-3 col-lg-3">
+                                                        <div class="form-group float-label">
+                                                            <select class="custom-select selectpicker" title="Selecione">
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                            </select>
+                                                            <label class="form-control-label">Ordenação</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div role="tabpanel" class="tab-pane fade" id="tab-opcionais">
+                                        <p>Acrescente complementos, variedade ou ficha técnica:</p>
+                                        
+                                        <div id="accordion-1">
+                                            <ul class="list-group list-group-flush">
+                                                <li id="complementos-1" class="list-group-item active px-0">
+                                                    <div class="row" data-toggle="collapse" data-target="#collapse01-1" aria-expanded="true" aria-controls="collapse01-1">
+                                                        <div class="col text-left align-self-center">
+                                                            <h6 class="mb-0">Complementos</h6>
+                                                        </div>
+                                                        <div class="col-auto text-right align-self-center">
+                                                            <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">expand_more</i></button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <div id="collapse01-1" class="collapse" data-parent="#accordion-1">
+                                                    <div class="d-block text-right mb-2">
+                                                        <button class="btn btn-sm btn-link text-secondary p-0" data-toggle="modal" data-target="#configurar-complementos"><i class="material-icons">settings</i></button>
+                                                        <button class="btn btn-sm btn-link text-default p-0" data-toggle="modal" data-target="#adicionar-complementos"><i class="material-icons">add_circle</i></button>
+                                                    </div>
+                                                    
+                                                    <li class="list-group-item">
+                                                        <div class="row">
+                                                            <div class="col align-self-center px-0">
+                                                                <p>Adicionais</p>
+                                                            </div>
+                                                            <div class="col align-self-center">
+                                                                <p class="small mb-0">Molho Rosê, Molho Ervas Finas, Molho Barbecue</p>
+                                                            </div>
+                                                            <div class="col-auto align-self-center px-0">
+                                                                <span class="badge badge-success text-white">Ativo</span>
+                                                            </div>
+                                                            <div class="col-auto align-self-center pr-0">
+                                                                <button class="btn btn-sm btn-link text-secondary p-0 mr-1" data-toggle="modal" data-target="#editar-complementos"><i class="material-icons md-18">edit</i></button>
+                                                                <button class="btn btn-sm btn-link text-secondary p-0" data-toggle="modal" data-target="#excluir-complementos"><i class="material-icons">delete_forever</i></button>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    
+                                                    <li class="list-group-item">
+                                                        <div class="row">
+                                                            <div class="col align-self-center px-0">
+                                                                <p>Qual o ponto da carne</p>
+                                                            </div>
+                                                            <div class="col align-self-center">
+                                                                <p class="small mb-0">Mal Passado, Ao Ponto, Bem Passado</p>
+                                                            </div>
+                                                            <div class="col-auto align-self-center px-0">
+                                                                <span class="badge badge-success text-white">Ativo</span>
+                                                            </div>
+                                                            <div class="col-auto align-self-center pr-0">
+                                                                <button class="btn btn-sm btn-link text-secondary p-0 mr-1" data-toggle="modal" data-target="#editar-complementos"><i class="material-icons md-18">edit</i></button>
+                                                                <button class="btn btn-sm btn-link text-secondary p-0" data-toggle="modal" data-target="#excluir-complementos"><i class="material-icons">delete_forever</i></button>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </div>
+                                            </ul>
+                                            
+                                            <ul class="list-group list-group-flush">
+                                                <li id="variedade-1" class="list-group-item active px-0">
+                                                    <div class="row" data-toggle="collapse" data-target="#collapse02-1" aria-expanded="true" aria-controls="collapse02-1">
+                                                        <div class="col text-left align-self-center">
+                                                            <h6 class="mb-0">Variedade</h6>
+                                                        </div>
+                                                        <div class="col-auto text-right align-self-center">
+                                                            <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">expand_more</i></button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <div id="collapse02-1" class="collapse" data-parent="#accordion-1">
+                                                    <div class="row">
+                                                        <div class="col col-md col-lg">
+                                                            <div class="form-group float-label">
+                                                                <input type="text" class="form-control" value="" placeholder="Ex: Inteiro, Meia porção, 2 pessoas">
+                                                                <label class="form-control-label">Nome da Variedade</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col col-md-5 col-lg-3">
+                                                            <div class="form-group float-label">
+                                                                <input type="tel" class="form-control" value="" placeholder="Ex: R$ 15,00">
+                                                                <label class="form-control-label">Valor (somente números)</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto align-self-center pl-0">
+                                                            <button class="btn btn-sm btn-link text-default p-0"><i class="material-icons">add_circle</i></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ul>
+                                            <ul class="list-group list-group-flush">
+                                                <li id="ficha-tecnica" class="list-group-item active px-0">
+                                                    <div class="row" data-toggle="collapse" data-target="#collapse00-1" aria-expanded="true" aria-controls="collapse00-1">
+                                                        <div class="col text-left align-self-center">
+                                                            <h6 class="mb-0">Ficha Técnica</h6>
+                                                        </div>
+                                                        <div class="col-auto text-right align-self-center">
+                                                            <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">expand_more</i></button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <div id="collapse00-1" class="collapse" data-parent="#accordion-1">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="form-group">
+                                                                <textarea class="form-control row-6" id="ficha-tecnica" rows="6" placeholder="Ex.: Unidade de medida de cada item (kg, ml, und) Quantidade exata que será utilizada na receita (incluindo as perdas), etc..."></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <div role="tabpanel" class="tab-pane fade" id="tab-promocional">
+                                        <p>Promocional e Ofertas:</p>
+
+                                        <div class="row">
+                                            <div class="col-auto mr-4">
+                                                <div class="form-group float-label">
+                                                    <div class="row mt-2">
+                                                        <div class="col">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" name="promocional" class="custom-control-input" id="nenhum" value="nenhum" checked>
+                                                                <label class="custom-control-label" for="nenhum">Nenhum</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" name="promocional" class="custom-control-input" value="promocao" id="promocao">
+                                                                <label class="custom-control-label" for="promocao">Promoção</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" name="promocional" class="custom-control-input" value="oferta" id="oferta">
+                                                                <label class="custom-control-label" for="oferta">Oferta</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>    
+                                                    <label class="form-control-label">Selecione</label>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group float-label">
+                                                    <div class="custom-control custom-checkbox text-left mt-2">
+                                                        <input type="checkbox" class="custom-control-input" id="happy-hour">
+                                                        <label class="custom-control-label" for="happy-hour">Sim</label>
+                                                    </div>
+                                                    <label class="form-control-label">É Happy Hour?</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="nenhum promocional">
+                                                </div>
+                                                <div class="promocao promocional hide">
+                                                    <div class="row">
+                                                        <div class="col-12 col-md-3 col-lg-3">
+                                                            <div class="form-group float-label">
+                                                                <input type="tel" class="form-control" value="" placeholder="Ex: 15,00">
+                                                                <label class="form-control-label">Valor</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 col-md-9 col-lg-9">
+                                                            <div class="form-group float-label">
+                                                                <div class="row">
+                                                                    <div class="col-11 col-md-11 col-lg">
+                                                                        <div class="input-group float-label">
+                                                                            <select class="custom-select selectpicker" aria-describedby="inputGroupPrepend" title="Dia" required>
+                                                                                <option value="seg">Segunda</option>
+                                                                                <option value="ter">Terça</option>
+                                                                                <option value="qua">Quarta</option>
+                                                                                <option value="qui">Quinta</option>
+                                                                                <option value="sex">Sexta</option>
+                                                                                <option value="sab">Sábado</option>
+                                                                                <option value="dom">Domingo</option>
+                                                                            </select>
+                                                                            <div class="input-group-prepend">
+                                                                                <span class="input-group-text px-2" id="inputGroupPrepend">
+                                                                                    <p>à</p>
+                                                                                </span>
+                                                                            </div>
+                                                                            <select class="custom-select selectpicker" aria-describedby="inputGroupPrepend" title="Dia" required>
+                                                                                <option value="seg">Segunda</option>
+                                                                                <option value="ter">Terça</option>
+                                                                                <option value="qua">Quarta</option>
+                                                                                <option value="qui">Quinta</option>
+                                                                                <option value="sex">Sexta</option>
+                                                                                <option value="sab">Sábado</option>
+                                                                                <option value="dom">Domingo</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-11 col-md-11 col-lg">
+                                                                        <div class="input-group float-label">
+                                                                            <input type="tel" class="form-control" placeholder="HH:MM" aria-describedby="inputGroupPrepend3" required="">
+                                                                            <div class="input-group-prepend">
+                                                                                <span class="input-group-text px-2" id="inputGroupPrepend">
+                                                                                    <p>às</p>
+                                                                                </span>
+                                                                            </div>
+                                                                            <input type="tel" class="form-control" placeholder="HH:MM" aria-describedby="inputGroupPrepend" required="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-1 col-md-1 col-lg-auto align-self-center pl-0">
+                                                                        <button class="btn btn-sm btn-link text-default p-0"><i class="material-icons">add_circle</i></button>
+                                                                    </div>
+                                                                </div>
+                                                                <label class="form-control-label">Período</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="oferta promocional hide">
+                                                    <div class="row">
+                                                        <div class="col-12 col-md-3 col-lg-3">
+                                                            <div class="form-group float-label">
+                                                                <input type="tel" class="form-control" value="" placeholder="Ex: 10">
+                                                                <label class="form-control-label">Percentual</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 col-md-9 col-lg-9">
+                                                            <div class="form-group float-label">
+                                                                <div class="row">
+                                                                    <div class="col-11 col-md-11 col-lg">
+                                                                        <div class="input-group float-label">
+                                                                            <select class="custom-select selectpicker" aria-describedby="inputGroupPrepend" title="Dia" required>
+                                                                                <option value="seg">Segunda</option>
+                                                                                <option value="ter">Terça</option>
+                                                                                <option value="qua">Quarta</option>
+                                                                                <option value="qui">Quinta</option>
+                                                                                <option value="sex">Sexta</option>
+                                                                                <option value="sab">Sábado</option>
+                                                                                <option value="dom">Domingo</option>
+                                                                            </select>
+                                                                            <div class="input-group-prepend">
+                                                                                <span class="input-group-text px-2" id="inputGroupPrepend">
+                                                                                    <p>à</p>
+                                                                                </span>
+                                                                            </div>
+                                                                            <select class="custom-select selectpicker" aria-describedby="inputGroupPrepend" title="Dia" required>
+                                                                                <option value="seg">Segunda</option>
+                                                                                <option value="ter">Terça</option>
+                                                                                <option value="qua">Quarta</option>
+                                                                                <option value="qui">Quinta</option>
+                                                                                <option value="sex">Sexta</option>
+                                                                                <option value="sab">Sábado</option>
+                                                                                <option value="dom">Domingo</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-11 col-md-11 col-lg">
+                                                                        <div class="input-group float-label">
+                                                                            <input type="tel" class="form-control" placeholder="HH:MM" aria-describedby="inputGroupPrepend3" required="">
+                                                                            <div class="input-group-prepend">
+                                                                                <span class="input-group-text px-2" id="inputGroupPrepend">
+                                                                                    <p>às</p>
+                                                                                </span>
+                                                                            </div>
+                                                                            <input type="tel" class="form-control" placeholder="HH:MM" aria-describedby="inputGroupPrepend" required="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-1 col-md-1 col-lg-auto align-self-center pl-0">
+                                                                        <button class="btn btn-sm btn-link text-default p-0"><i class="material-icons">add_circle</i></button>
+                                                                    </div>
+                                                                </div>
+                                                                <label class="form-control-label">Período</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div role="tabpanel" class="tab-pane fade" id="tab-fiscal">
+                                        <p>Campos Obrigatórios para emissão de NF:</p>
+                                        
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form-group float-label">
+                                                    <select class="custom-select selectpicker" data-live-search="true" data-live-search-placeholder="Pesquisar NCM..." title="Selecione o Código" required>
+                                                        <option value="nenhum">Nenhum</option>
+                                                        <option value="21069090">21069090 - Almoços, Jantares, Refeições e Pizzas: (Preparações alimentícias diversas – Preparações alimentícias não especificadas nem compreendidas em outras posições);</option>
+                                                        <option value="22021000">22021000 - Refrigerantes, Águas com gás e sem gás:  Águas, incluindo as águas minerais e as águas gaseificadas; Coca-Cola, Pepsi, Guaraná, Fanta, Sukita, Soda, Kuat, etc.</option>
+                                                        <option value="20098000">20098000 - Sucos de frutas ou de produtos hortícolas; mistura de sucos.</option>
+                                                    </select>
+                                                    <label class="form-control-label">Código NCM</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group float-label">
+                                                    <select class="custom-select selectpicker" data-live-search="true" data-live-search-placeholder="Pesquisar CFOP..." title="Selecione o Código" required>
+                                                        <option value="nenhum">Nenhum</option>
+                                                        <option value="1102">1102 - Compra de produtos, de fornecedor do seu estado, sem substituição tributária</option>
+                                                        <option value="2102">2102 - Compra de produtos, de fornecedor de outro estado, sem substituição tributária</option>
+                                                        <option value="2403">2403 - Compra de produtos, de fornecedor de outro estado, com substituição tributária</option>
+                                                    </select>
+                                                    <label class="form-control-label">Código CFOP</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group float-label">
+                                                    <select class="custom-select selectpicker" title="Selecione o Código" required>
+                                                        <option value="nenhum">Nenhum</option>
+                                                        <option value="ICMS-00">0 – Nacional</option>
+                                                        <option value="ICMS-01">1 – Estrangeira (importação direta)</option>
+                                                        <option value="ICMS-02">2 – Estrangeira (adquirida no mercado interno)</option>
+                                                        <option value="ICMS-03">3 – Nacional com mais de 40% de conteúdo estrangeiro</option>
+                                                        <option value="ICMS-04">4 – Nacional produzida através de processos produtivos básicos</option>
+                                                        <option value="ICMS-05">5 – Nacional com menos de 40% de conteúdo estrangeiro</option>
+                                                        <option value="ICMS-06">6 – Estrangeira (importação direta) sem produto nacional similar</option>
+                                                        <option value="ICMS-07">7 – Estrangeira (adquirida no mercado interno) sem produto nacional similar</option>
+                                                    </select>
+                                                    <label class="form-control-label">ICMS Origem</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-4">
+                                    <button class="btn btn-lg btn-outline-secondary btn-rounded btnPrev">Voltar</button>
+                                    <button class="btn btn-lg btn-outline-secondary btn-rounded btnNext">Próximo</button>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Configurar Complementos -->
+    <div class="modal fade" id="configurar-complementos" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-full" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header clean">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body clean text-center p-4">
+                    <figure class="avatar avatar-120 d-block mt-2 mb-3">
+                        <img src="img/complementos.svg" alt="">
+                    </figure>
+                    <h5 class="d-inline ml-4">Complementos Adicionais</h5>
+                    <button class="btn btn-sm btn-link text-default p-0 float-right" data-toggle="modal" data-target="#adicionar-item-complemento"><i class="material-icons">add_circle</i></button>
+                    <div class="row">
+                        <div class="col-12 mt-3">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col align-self-center text-left px-0">
+                                            <p>Molho Rosê</p>
+                                        </div>
+                                        <div class="col-3 align-self-center text-left pl-0">
+                                            <p><b>R$ 4,00</b></p>
+                                        </div>
+                                        <div class="col-auto align-self-center px-0">
+                                            <span class="badge badge-success text-white">Ativo</span>
+                                        </div>
+                                        <div class="col-auto align-self-center pr-0">
+                                            <button class="btn btn-sm btn-link text-secondary p-0 mr-1" data-toggle="modal" data-target="#editar-item-complemento"><i class="material-icons md-18">edit</i></button>
+                                            <button class="btn btn-sm btn-link text-secondary p-0" data-toggle="modal" data-target="#excluir-item-complemento"><i class="material-icons">delete_forever</i></button>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col align-self-center text-left px-0">
+                                            <p>Molho Ervas Finas</p>
+                                        </div>
+                                        <div class="col-3 align-self-center text-left pl-0">
+                                            <p><b>R$ 4,00</b></p>
+                                        </div>
+                                        <div class="col-auto align-self-center px-0">
+                                            <span class="badge badge-success text-white">Ativo</span>
+                                        </div>
+                                        <div class="col-auto align-self-center pr-0">
+                                            <button class="btn btn-sm btn-link text-secondary p-0 mr-1" data-toggle="modal" data-target="#editar-item-complemento"><i class="material-icons md-18">edit</i></button>
+                                            <button class="btn btn-sm btn-link text-secondary p-0" data-toggle="modal" data-target="#excluir-item-complemento"><i class="material-icons">delete_forever</i></button>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col align-self-center text-left px-0">
+                                            <p>Molho Barbecue</p>
+                                        </div>
+                                        <div class="col-3 align-self-center text-left pl-0">
+                                            <p><b>R$ 6,00</b></p>
+                                        </div>
+                                        <div class="col-auto align-self-center px-0">
+                                            <span class="badge badge-success text-white">Ativo</span>
+                                        </div>
+                                        <div class="col-auto align-self-center pr-0">
+                                            <button class="btn btn-sm btn-link text-secondary p-0 mr-1" data-toggle="modal" data-target="#editar-item-complemento"><i class="material-icons md-18">edit</i></button>
+                                            <button class="btn btn-sm btn-link text-secondary p-0" data-toggle="modal" data-target="#excluir-item-complemento"><i class="material-icons">delete_forever</i></button>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col align-self-center text-left px-0">
+                                            <p>Mal Passado</p>
+                                        </div>
+                                        <div class="col-3 align-self-center text-left pl-0">
+                                            <p><b>R$ 0,00</b></p>
+                                        </div>
+                                        <div class="col-auto align-self-center px-0">
+                                            <span class="badge badge-success text-white">Ativo</span>
+                                        </div>
+                                        <div class="col-auto align-self-center pr-0">
+                                            <button class="btn btn-sm btn-link text-secondary p-0 mr-1" data-toggle="modal" data-target="#editar-item-complemento"><i class="material-icons md-18">edit</i></button>
+                                            <button class="btn btn-sm btn-link text-secondary p-0" data-toggle="modal" data-target="#excluir-item-complemento"><i class="material-icons">delete_forever</i></button>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col align-self-center text-left px-0">
+                                            <p>Ao Ponto</p>
+                                        </div>
+                                        <div class="col-3 align-self-center text-left pl-0">
+                                            <p><b>R$ 0,00</b></p>
+                                        </div>
+                                        <div class="col-auto align-self-center px-0">
+                                            <span class="badge badge-success text-white">Ativo</span>
+                                        </div>
+                                        <div class="col-auto align-self-center pr-0">
+                                            <button class="btn btn-sm btn-link text-secondary p-0 mr-1" data-toggle="modal" data-target="#editar-item-complemento"><i class="material-icons md-18">edit</i></button>
+                                            <button class="btn btn-sm btn-link text-secondary p-0" data-toggle="modal" data-target="#excluir-item-complemento"><i class="material-icons">delete_forever</i></button>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col align-self-center text-left px-0">
+                                            <p>Bem Passado</p>
+                                        </div>
+                                        <div class="col-3 align-self-center text-left pl-0">
+                                            <p><b>R$ 0,00</b></p>
+                                        </div>
+                                        <div class="col-auto align-self-center px-0">
+                                            <span class="badge badge-success text-white">Ativo</span>
+                                        </div>
+                                        <div class="col-auto align-self-center pr-0">
+                                            <button class="btn btn-sm btn-link text-secondary p-0 mr-1" data-toggle="modal" data-target="#editar-item-complemento"><i class="material-icons md-18">edit</i></button>
+                                            <button class="btn btn-sm btn-link text-secondary p-0" data-toggle="modal" data-target="#excluir-item-complemento"><i class="material-icons">delete_forever</i></button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button class="btn btn-lg btn-secondary btn-rounded" data-dismiss="modal">Fechar</button>
+                        <button class="btn btn-lg btn-success btn-rounded" data-dismiss="modal">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Adicionar Item do Complemento -->
+    <div class="modal fade" id="adicionar-item-complemento" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="header-title mb-0">Adicionar Item do Complemento</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group float-label">
+                                <input type="text" class="form-control" value="" placeholder="Ex: Molho Barbecue" required>
+                                <label class="form-control-label">Nome do Complemento</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group float-label">
+                                <input type="tel" class="form-control" value="" placeholder="Ex: 4,00" required>
+                                <label class="form-control-label">Valor (somente números)</label>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="form-group float-label">
+                                <div class="row mt-2">
+                                    <div class="col-6">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" name="status-5" class="custom-control-input" id="ativo-5" checked>
+                                            <label class="custom-control-label" for="ativo-5">Ativo</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" name="status-5" class="custom-control-input" id="inativo-5">
+                                            <label class="custom-control-label" for="inativo-5">Inativo</label>
+                                        </div>
+                                    </div>    
+                                </div>    
+                                <label class="form-control-label">Status</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-2">
+                        <button class="btn btn-lg btn-secondary btn-rounded" data-dismiss="modal">Fechar</button>
+                        <button class="btn btn-lg btn-success btn-rounded" data-dismiss="modal">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Editar Item do Complemento -->
+    <div class="modal fade" id="editar-item-complemento" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="header-title mb-0">Editar Item do Complemento</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group float-label">
+                                <input type="text" class="form-control" value="" placeholder="Ex: Molho Barbecue" required>
+                                <label class="form-control-label">Nome do Complemento</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group float-label">
+                                <input type="tel" class="form-control" value="" placeholder="Ex: 4,00" required>
+                                <label class="form-control-label">Valor (somente números)</label>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="form-group float-label">
+                                <div class="row mt-2">
+                                    <div class="col-6">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" name="status-6" class="custom-control-input" id="ativo-6" checked>
+                                            <label class="custom-control-label" for="ativo-6">Ativo</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" name="status-6" class="custom-control-input" id="inativo-6">
+                                            <label class="custom-control-label" for="inativo-6">Inativo</label>
+                                        </div>
+                                    </div>    
+                                </div>    
+                                <label class="form-control-label">Status</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-2">
+                        <button class="btn btn-lg btn-secondary btn-rounded" data-dismiss="modal">Fechar</button>
+                        <button class="btn btn-lg btn-success btn-rounded" data-dismiss="modal">Salvar</button>
+                        <button class="btn btn-default button-rounded-42 float-right" type="button"><i class="material-icons md-24">delete_forever</i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Adicionar Complementos -->
+    <div class="modal fade" id="adicionar-complementos" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full modal-lg" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header clean">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body clean p-4">
+                    <div class="text-center">
+                        <figure class="avatar avatar-120 mt-2">
+                            <img src="img/complementos.svg" alt="">
+                        </figure>
+                        <h5 class="my-3">Adicionar Complementos</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-8">
+                            <div class="form-group float-label">
+                                <input type="text" class="form-control" value="" placeholder="Ex: Adicionais, Complementos, etc..." required>
+                                <label class="form-control-label">Nome da Categoria do Complemento</label>
+                            </div>
+                        </div>
+                        <div class="col-auto col-md-6 col-lg-4">
+                            <div class="form-group float-label">
+                                <div class="custom-control custom-checkbox text-left mt-2">
+                                    <input type="checkbox" class="custom-control-input" id="complementos-obrigatorios">
+                                    <label class="custom-control-label" for="complementos-obrigatorios">Obrigatório(s)</label>
+                                </div>
+                                <div class="custom-control custom-checkbox text-left">
+                                    <input type="checkbox" class="custom-control-input" id="complementos-multipla-escolha">
+                                    <label class="custom-control-label" for="complementos-multipla-escolha">Múltipla Escolha</label>
+                                </div>
+                                <label class="form-control-label">Complemento(s)</label>
+                            </div>
+                        </div>
+                        <div class="col col-md-3 col-lg-2">
+                            <div class="form-group float-label">
+                                <input type="tel" class="form-control" value="" placeholder="Ex: 0" required>
+                                <label class="form-control-label">Qtd. Mín.</label>
+                            </div>
+                        </div>
+                        <div class="col col-md-3 col-lg-2">
+                            <div class="form-group float-label">
+                                <input type="tel" class="form-control" value="" placeholder="Ex: 5" required>
+                                <label class="form-control-label">Qtd. Máx.</label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-8">
+                            <div class="form-group float-label">
+                                <select class="custom-select selectpicker" data-live-search="true" data-live-search-placeholder="Pesquisar..." title="Selecione..." data-show-subtext="true" multiple required>
+                                    <option value="Molho Rosê" data-subtext="R$ 4,00">Molho Rosê</option>
+                                    <option value="Molho Ervas Finas" data-subtext="R$ 4,00">Molho Ervas Finas</option>
+                                    <option value="Molho Barbecue" data-subtext="R$ 6,00">Molho Barbecue</option>
+                                    <option value="Mal Passado" data-subtext="">Mal Passado</option>
+                                    <option value="Ao Ponto" data-subtext="">Ao Ponto</option>
+                                    <option value="Bem Passado" data-subtext="">Bem Passado</option>
+                                </select>
+                                <label class="form-control-label">Itens dos Complementos (um ou mais)</label>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="form-group float-label">
+                                <div class="row mt-2">
+                                    <div class="col-6">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" name="status-7" class="custom-control-input" id="ativo-7" checked>
+                                            <label class="custom-control-label" for="ativo-7">Ativo</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" name="status-7" class="custom-control-input" id="inativo-7">
+                                            <label class="custom-control-label" for="inativo-7">Inativo</label>
+                                        </div>
+                                    </div>    
+                                </div>    
+                                <label class="form-control-label">Status</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button class="btn btn-lg btn-secondary btn-rounded" data-dismiss="modal">Fechar</button>
+                        <button class="btn btn-lg btn-success btn-rounded" data-dismiss="modal">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Editar Complementos -->
+    <div class="modal fade" id="editar-complementos" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full modal-lg" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header clean">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body clean p-4">
+                    <div class="text-center">
+                        <figure class="avatar avatar-120 mt-2">
+                            <img src="img/complementos.svg" alt="">
+                        </figure>
+                        <h5 class="my-3">Editar Complementos</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-8">
+                            <div class="form-group float-label">
+                                <input type="text" class="form-control" value="" placeholder="Ex: Adicionais, Complementos, etc..." required>
+                                <label class="form-control-label">Nome da Categoria do Complemento</label>
+                            </div>
+                        </div>
+                        <div class="col-auto col-md-6 col-lg-4">
+                            <div class="form-group float-label">
+                                <div class="custom-control custom-checkbox text-left mt-2">
+                                    <input type="checkbox" class="custom-control-input" id="complementos-obrigatorios">
+                                    <label class="custom-control-label" for="complementos-obrigatorios">Obrigatório(s)</label>
+                                </div>
+                                <div class="custom-control custom-checkbox text-left">
+                                    <input type="checkbox" class="custom-control-input" id="complementos-multipla-escolha">
+                                    <label class="custom-control-label" for="complementos-multipla-escolha">Múltipla Escolha</label>
+                                </div>
+                                <label class="form-control-label">Complemento(s)</label>
+                            </div>
+                        </div>
+                        <div class="col col-md-3 col-lg-2">
+                            <div class="form-group float-label">
+                                <input type="tel" class="form-control" value="" placeholder="Ex: 0" required>
+                                <label class="form-control-label">Qtd. Mín.</label>
+                            </div>
+                        </div>
+                        <div class="col col-md-3 col-lg-2">
+                            <div class="form-group float-label">
+                                <input type="tel" class="form-control" value="" placeholder="Ex: 5" required>
+                                <label class="form-control-label">Qtd. Máx.</label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-8">
+                            <div class="form-group float-label">
+                                <select class="custom-select selectpicker" data-live-search="true" data-live-search-placeholder="Pesquisar..." title="Selecione..." data-show-subtext="true" multiple required>
+                                    <option value="Molho Rosê" data-subtext="R$ 4,00">Molho Rosê</option>
+                                    <option value="Molho Ervas Finas" data-subtext="R$ 4,00">Molho Ervas Finas</option>
+                                    <option value="Molho Barbecue" data-subtext="R$ 6,00">Molho Barbecue</option>
+                                    <option value="Mal Passado" data-subtext="">Mal Passado</option>
+                                    <option value="Ao Ponto" data-subtext="">Ao Ponto</option>
+                                    <option value="Bem Passado" data-subtext="">Bem Passado</option>
+                                </select>
+                                <label class="form-control-label">Itens dos Complementos (um ou mais)</label>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="form-group float-label">
+                                <div class="row mt-2">
+                                    <div class="col-6">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" name="status-7" class="custom-control-input" id="ativo-7" checked>
+                                            <label class="custom-control-label" for="ativo-7">Ativo</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" name="status-7" class="custom-control-input" id="inativo-7">
+                                            <label class="custom-control-label" for="inativo-7">Inativo</label>
+                                        </div>
+                                    </div>    
+                                </div>    
+                                <label class="form-control-label">Status</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button class="btn btn-lg btn-secondary btn-rounded" data-dismiss="modal">Fechar</button>
+                        <button class="btn btn-lg btn-success btn-rounded" data-dismiss="modal">Salvar</button>
+                        <button class="btn btn-default button-rounded-42 float-right" type="button"><i class="material-icons md-24">delete_forever</i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <!-- Modal Notificações Pedidos / Diversos -->
+    <div class="modal fade" id="notificacoes" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="header-title mb-0">Notificações</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                     
+                    <div class="row">
+                        <div class="col-12 px-0">
+                            <div class="modal-header">
+                                <h5 class="header-title mb-0">Pedido(s) <span class="badge badge-default">0</span></h5>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Notificações Garçom -->
+    <div class="modal fade" id="notificacoes-garcom" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full modal-lg" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="header-title mb-0">Notificações</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                     
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-6 px-0">
+                            <div class="modal-header">
+                                <h5 class="header-title mb-0">Chamando Garçom <span class="badge badge-default">0</span></h5>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-12 col-lg-6 px-0 mb-3">
+                            <div class="modal-header">
+                                <h5 class="header-title mb-0">Alteração de Mesa <span class="badge badge-default">0</span></h5>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Jquery / Popper / Bootstrap JS -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap-select.js"></script>
+    
+    <!-- Swiper JS -->
+    <script src="vendor/swiper/js/swiper.min.js"></script>
+    
+    <!-- Moment JS -->
+    <script src="vendor/moment/moment.js"></script>
+    
+    <!-- Slimscroll JS -->
+    <script src="vendor/slimscroll/slimscroll.min.js"></script>
+    
+    <!-- Tabs Wizard JS -->
+    <script src="vendor/tabs-wizard/tabs-wizard.js"></script>
+    
+    <!-- Daterange JS -->
+    <script src="vendor/datarange/daterange.js"></script>
+    
+    <!-- Datatables JS -->
+    <script src="vendor/datatables/datatables.min.js"></script>
+    <script src="vendor/datatables/dataTables.responsive.min.js"></script>
+    
+    <!-- Lobipanel JS -->
+    <script src="vendor/lobipanel/lobipanel.js"></script>
+    
+    <!-- ApexCharts JS -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    
+    <!-- Customização JS -->
+    <script src="js/main.js"></script>
+    
+    <!-- Scripts -->
+    <script>
+        $(window).on('load', function() {
+            
+        });
+        
+        /* Lista Tabela Itens da Categoria */
+        $(document).ready(function() {
+            $('#lista-itens-categoria-01').dataTable( {
+                responsive: true,
+                "autoWidth": false,
+                "lengthChange": true,
+                "pagingType": "simple",
+                "language": {
+                    "sEmptyTable": "Nenhum registro encontrado",
+                    "sInfo": "Exibir: _START_ até _END_ de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                    "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sInfoThousands": ".",
+                    "sLengthMenu": "_MENU_",
+                    "sLoadingRecords": "Carregando...",
+                    "sProcessing": "Processando...",
+                    "sZeroRecords": "Nenhum registro encontrado",
+                    searchPlaceholder: "Pesquisar...",
+                    "oPaginate": {
+                        "sNext": "Próximo",
+                        "sPrevious": "Anterior",
+                        "sFirst": "Primeiro",
+                        "sLast": "Último"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Ordenar colunas de forma ascendente",
+                        "sSortDescending": ": Ordenar colunas de forma descendente"
+                    }
+                }
+            });
+            
+            $('#lista-itens-categoria-02').dataTable( {
+                responsive: true,
+                "autoWidth": false,
+                "lengthChange": true,
+                "pagingType": "simple",
+                "language": {
+                    "sEmptyTable": "Nenhum registro encontrado",
+                    "sInfo": "Exibir: _START_ até _END_ de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                    "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sInfoThousands": ".",
+                    "sLengthMenu": "_MENU_",
+                    "sLoadingRecords": "Carregando...",
+                    "sProcessing": "Processando...",
+                    "sZeroRecords": "Nenhum registro encontrado",
+                    searchPlaceholder: "Pesquisar...",
+                    "oPaginate": {
+                        "sNext": "Próximo",
+                        "sPrevious": "Anterior",
+                        "sFirst": "Primeiro",
+                        "sLast": "Último"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Ordenar colunas de forma ascendente",
+                        "sSortDescending": ": Ordenar colunas de forma descendente"
+                    }
+                }
+            });
+            
+            $('#lista-itens-categoria-03').dataTable( {
+                responsive: true,
+                "autoWidth": false,
+                "lengthChange": true,
+                "pagingType": "simple",
+                "language": {
+                    "sEmptyTable": "Nenhum registro encontrado",
+                    "sInfo": "Exibir: _START_ até _END_ de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                    "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sInfoThousands": ".",
+                    "sLengthMenu": "_MENU_",
+                    "sLoadingRecords": "Carregando...",
+                    "sProcessing": "Processando...",
+                    "sZeroRecords": "Nenhum registro encontrado",
+                    searchPlaceholder: "Pesquisar...",
+                    "oPaginate": {
+                        "sNext": "Próximo",
+                        "sPrevious": "Anterior",
+                        "sFirst": "Primeiro",
+                        "sLast": "Último"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Ordenar colunas de forma ascendente",
+                        "sSortDescending": ": Ordenar colunas de forma descendente"
+                    }
+                }
+            });
+            
+            $('#lista-itens-categoria-04').dataTable( {
+                responsive: true,
+                "autoWidth": false,
+                "lengthChange": true,
+                "pagingType": "simple",
+                "language": {
+                    "sEmptyTable": "Nenhum registro encontrado",
+                    "sInfo": "Exibir: _START_ até _END_ de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                    "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sInfoThousands": ".",
+                    "sLengthMenu": "_MENU_",
+                    "sLoadingRecords": "Carregando...",
+                    "sProcessing": "Processando...",
+                    "sZeroRecords": "Nenhum registro encontrado",
+                    searchPlaceholder: "Pesquisar...",
+                    "oPaginate": {
+                        "sNext": "Próximo",
+                        "sPrevious": "Anterior",
+                        "sFirst": "Primeiro",
+                        "sLast": "Último"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Ordenar colunas de forma ascendente",
+                        "sSortDescending": ": Ordenar colunas de forma descendente"
+                    }
+                }
+            });
+        });
+        
+        /* Habilitar Promocionais */
+        $(document).ready(function(){
+            $('input[type="radio"]').click(function(){
+                var inputValue = $(this).attr("value");
+                var content = $("." + inputValue);
+                $(".promocional").not(content).hide();
+                $(content).show();
+            });
+        });
+        
+        /* Aba Adicionar Item */
+        $(document).ready(function() {
+            $('#abas-adicionar-item').TabWizard({
+                nextButtonClass: '.btnNext',
+                previousButtonClass: '.btnPrev',
+                onFinish: function () {
+                    $("[data-dismiss=modal]").trigger({ type: "click" });
+                },
+            });
+        });
+        
+        /* Período Oferta */
+        $(function() {
+            $('input[name="periodo-oferta"]').daterangepicker({
+                opens: 'center',
+                timePicker: true,
+                minDate:new Date(),
+                startDate: moment().startOf('day'),
+                endDate: moment().endOf('day'),
+                "locale": {
+                    "format": "DD/MM/YYYY HH:mm A",
+                    "separator": " - ",
+                    "applyLabel": "Aplicar",
+                    "cancelLabel": "Cancelar",
+                    "fromLabel": "De",
+                    "toLabel": "Para",
+                    "customRangeLabel": "Período",
+                    "weekLabel": "S",
+                    "daysOfWeek": [
+                      "Dom",
+                      "Seg",
+                      "Ter",
+                      "Qua",
+                      "Qui",
+                      "Sex",
+                      "Sab"
+                    ],
+                    "monthNames": [
+                      "Janeiro",	
+                      "Fevereiro",
+                      "Março",
+                      "Abril",
+                      "Maio",
+                      "Junho",
+                      "Julho",
+                      "Agosto",
+                      "Setembro",
+                      "Outubro",
+                      "Novembro",
+                      "Dezembro"
+                    ],
+                },
+            });
+        });
+        
+        /* Multi-Modal */
+        $(document).ready(function() {
+            (function($, window) {
+                'use strict';
+                var MultiModal = function(element) {
+                    this.$element = $(element);
+                    this.modalCount = 0;
+                };
+                MultiModal.BASE_ZINDEX = 1040;
+                MultiModal.prototype.show = function(target) {
+                    var that = this;
+                    var $target = $(target);
+                    var modalIndex = that.modalCount++;
+                    $target.css('z-index', MultiModal.BASE_ZINDEX + (modalIndex * 20) + 10);
+                    window.setTimeout(function() {
+                        if(modalIndex > 0)
+                            $('.modal-backdrop').not(':first').addClass('hidden');
+                        that.adjustBackdrop();
+                    });
+                };
+                MultiModal.prototype.hidden = function(target) {
+                    this.modalCount--;
+                    if(this.modalCount) {
+                       this.adjustBackdrop();
+                        $('body').addClass('modal-open');
+                    }
+                };
+                MultiModal.prototype.adjustBackdrop = function() {
+                    var modalIndex = this.modalCount - 1;
+                    $('.modal-backdrop:first').css('z-index', MultiModal.BASE_ZINDEX + (modalIndex * 20));
+                };
+                function Plugin(method, target) {
+                    return this.each(function() {
+                        var $this = $(this);
+                        var data = $this.data('multi-modal-plugin');
+                        if(!data)
+                            $this.data('multi-modal-plugin', (data = new MultiModal(this)));
+                        if(method)
+                            data[method](target);
+                    });
+                }
+                $.fn.multiModal = Plugin;
+                $.fn.multiModal.Constructor = MultiModal;
+                $(document).on('show.bs.modal', function(e) {
+                    $(document).multiModal('show', e.target);
+                });
+                $(document).on('hidden.bs.modal', function(e) {
+                    $(document).multiModal('hidden', e.target);
+                });
+            }(jQuery, window));
+        });
+
+    </script>
+
+</body>
+
+</html>

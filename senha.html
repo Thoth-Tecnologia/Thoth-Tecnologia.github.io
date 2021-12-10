@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-br" class="menon">
+
+<head>
+    
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#E93D25">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="description" content="O seu cardápio digital">
+
+    <title>Menon - Painel Administrativo</title>
+    
+    <!-- Icones / Favicon -->
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="icon" href="img/favicon.png">
+
+    <!-- Icones CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap-4.3.1/css/bootstrap.min.css">
+
+    <!-- Swiper Slide CSS -->
+    <link rel="stylesheet" href="vendor/swiper/css/swiper.min.css">
+    
+     <!-- Progress Wizard CSS -->
+    <link rel="stylesheet" href="vendor/progress-wizard/css/progress-wizard.min.css">
+
+    <!-- Estilo CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="row no-gutters vh-100 loader-screen">
+        <div class="col align-self-center text-white text-center">
+            <img src="img/logo.svg" alt="logo">
+            <div></div>
+            <div class="laoderhorizontal"><div></div><div></div><div></div><div></div></div>
+        </div>
+    </div>
+    
+    <!-- Recuperar Senha -->
+    <div class="row no-gutters vh-100 proh bg-dark">
+        <img src="img/login.png" alt="logo" class="login right-image">
+        <div class="col align-self-center text-center mt-2">
+            <h2 class="text-white"><img src="img/logo.svg" alt="" class="logo-small"> <span class="font-weight-light">Recuperar</span> Senha</h2>
+            <h5 class="text-white font-weight-light">Painel Administrativo</h5>
+            <form class="form-signin shadow needs-validation was-validated" novalidate="">
+                <p class="text-secondary small">Para recuperar sua senha informe o seu endereço de e-mail e CPF:</p>
+            
+                <div class="form-group float-label active">
+                    <input type="email" id="inputEmail" class="form-control" value="" placeholder="E-mail válido" required autofocus>
+                    <label for="inputEmail" class="form-control-label">E-mail:</label>
+                </div>
+                
+                <div class="form-group float-label active">
+                    <input type="tel" id="inputCPF" class="form-control" value="" placeholder="999.999.99-99" required>
+                    <label for="inputEmail" class="form-control-label">CPF:</label>
+                </div>
+                
+                <div class="form-group float-label active">
+                    <input type="tel" id="inputTelefone" class="form-control" value="" placeholder="(xx) xxxxx-9999" required>
+                    <label for="inputEmail" class="form-control-label">4 últimos números do seu telefone:</label>
+                </div>
+                
+                <div class="form-group float-label">
+                    <input type="password" id="inputPassword" class="form-control" required>
+                    <label for="inputPassword" class="form-control-label">Digite sua nova Senha:</label>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <a href="index.html" class="btn btn-lg btn-secondary btn-rounded shadow"><span>Resetar</span><i class="material-icons">arrow_forward</i></a>
+                        <!--<button class="btn btn-lg btn-warning btn-rounded shadow" type="submit"><span>Resetar</span><i class="material-icons">arrow_forward</i></button>-->
+                    </div>
+                </div>
+            </form>
+            <p class="text-center text-white">
+                Já possui uma senha de conta?<br>
+                <a href="index.html" class="mt-2 btn btn-default btn-rounded">Entrar Agora</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Jquery / Popper / Bootstrap JS -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="vendor/swiper/js/swiper.min.js"></script>
+
+    <!-- Customização JS -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

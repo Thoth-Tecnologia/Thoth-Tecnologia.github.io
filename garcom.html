@@ -1,0 +1,2210 @@
+<!doctype html>
+<html lang="pt-br" class="menon">
+
+<head>
+    
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#E93D25">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="description" content="O seu cardápio digital">
+
+    <title>Menon - Painel Administrativo</title>
+    
+    <!-- Icones / Favicon -->
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="icon" href="img/favicon.png">
+
+    <!-- Icones CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap-4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-4.3.1/css/bootstrap-select.css">
+
+    <!-- Swiper Slide CSS -->
+    <link rel="stylesheet" href="vendor/swiper/css/swiper.min.css">
+    
+     <!-- Progress Wizard CSS -->
+    <link rel="stylesheet" href="vendor/progress-wizard/css/progress-wizard.min.css">
+    
+    <!-- DateRange CSS -->
+	<link rel="stylesheet" href="vendor/datarange/daterange.css">
+    
+    <!-- Datatables CSS -->
+	<link rel="stylesheet" href="vendor/datatables/datatables.min.css">
+    <link rel="stylesheet" href="vendor/datatables/responsive.dataTables.min.css">
+    
+    <!-- Lobipanel css -->
+    <link rel="stylesheet" href="vendor/lobipanel/lobipanel.css">
+
+    <!-- Estilo CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="row no-gutters vh-100 loader-screen">
+        <div class="col align-self-center text-white text-center">
+            <img src="img/logo.svg" alt="logo">
+            <div></div>
+            <div class="laoderhorizontal"><div></div><div></div><div></div><div></div></div>
+        </div>
+    </div>
+    
+    <div class="wrapper pb-5">
+        
+        <!-- Cabeçalho -->
+        <div class="header">
+            <div class="row no-gutters">
+                <div class="col text-left">
+                    <a href="perfil.html" class="btn btn-link text-secondary small dropdown-toggle ml-2" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">settings</i></a>
+                    <div class="dropdown-menu rounded py-3">
+                        <a href=""class="dropdown-item text-secondary" data-toggle="modal" data-target="#editar-perfil"><i class="material-icons">person</i> Perfil</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="index.html" class="dropdown-item text-secondary"><i class="material-icons">exit_to_app</i> Sair</a>
+                    </div>
+                </div>
+                <div class="col text-center"><img src="img/logo-menon-h.svg" alt="" class="header-logo"></div>
+                <div class="col text-right">
+                    <a href="" class="btn-link text-success table-btn small" data-toggle="modal" data-target="#notificacoes"><i class="material-icons">notifications_active</i><span class="badge badge-default small">02</span></a> 
+                    <a href="" class="btn-link text-success table-btn small ml-1" data-toggle="modal" data-target="#notificacoes-garcom"><i class="material-icons">emoji_people</i><span class="badge badge-default small">01</span></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mesas -->
+        <div class="container-fluid pb-5">
+            <div class="mb-2">
+                <div class="row">
+                    <div class="col-auto align-self-center pl-2 pr-0">
+                         <i class="material-icons md-48 text-default">view_module</i>
+                    </div>
+                    <div class="col-auto align-self-center px-2">
+                         <h6 class="mb-0">Mesas</h6>
+                         <span class="text-secondary text-bold small">Lista de pedidos</span>
+                    </div>
+                    <div class="col align-self-center text-right mt-2 pr-2">
+                        <div class="form-group">
+                            <select class="custom-select selectpicker" data-live-search="true" data-live-search-placeholder="Pesquisar..." title="Selecionar Mesa..." required>
+                                <option value="all">MESA: TODAS</option>
+                                <option value="all">MESA: Livre</option>
+                                <option value="all">MESA: Parcial</option>
+                                <option value="all">MESA: Ocupada</option>
+                                <option value="all">MESA: Inativa</option>
+                                <option value="01">MESA: 01</option>
+                                <option value="02">MESA: 02</option>
+                                <option value="03">MESA: 03</option>
+                                <option value="04">MESA: 04</option>
+                                <option value="04">MESA: 05</option>
+                                <option value="04">MESA: 06</option>
+                                <option value="04">MESA: 07</option>
+                                <option value="04">MESA: 08</option>
+                                <option value="04">MESA: 09</option>
+                                <option value="04">MESA: 10</option>
+                                <option value="04">MESA: 11</option>
+                                <option value="04">MESA: 12</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="row text-center">
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3 px-2">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="float-top-left-fix">
+                                <a href="" class="btn-link text-success d-block small" data-toggle="modal" data-target="#notificacoes-garcom"><i class="material-icons md-20">emoji_people</i></a>
+                            </div>
+                            <div class="float-top-right-fix">
+                                <a href="" class="btn-link text-light" data-toggle="modal" data-target="#editar-mesa"><i class="material-icons md-18">edit</i></a>
+                            </div>
+                            <a href="" class="text-dark" data-toggle="modal" data-target="#pedido-mesa">
+                                <p class="small mb-0">MESA</p>
+                                <h1 class="mb-0">01</h1>
+                            </a>    
+                            <p class="text-secondary small mb-2">Capacidade: 2/4</p>
+                            <span class="badge badge-info text-white">Parcial</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3 px-2">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="float-top-left-fix">
+                                <a href="" class="btn-link text-secondary d-block small" data-toggle="modal" data-target="#notificacoes-garcom"><i class="material-icons md-20">emoji_people</i></a>
+                            </div>
+                            <div class="float-top-right-fix">
+                                <a href="" class="btn-link text-light" data-toggle="modal" data-target="#editar-mesa"><i class="material-icons md-18">edit</i></a>
+                            </div>
+                            <a href="" class="text-dark" data-toggle="modal" data-target="#pedido-mesa">
+                                <p class="small mb-0">MESA</p>
+                                <h1 class="mb-0">02</h1>
+                            </a>
+                            <p class="text-secondary small mb-2">Capacidade: 0/4</p>
+                            <span class="badge badge-success text-white">Livre</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3 px-2">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="float-top-left-fix">
+                                <a href="" class="btn-link text-secondary d-block small" data-toggle="modal" data-target="#notificacoes-garcom"><i class="material-icons md-20">emoji_people</i></a>
+                            </div>
+                            <div class="float-top-right-fix">
+                                <a href="" class="btn-link text-light" data-toggle="modal" data-target="#editar-mesa"><i class="material-icons md-18">edit</i></a>
+                            </div>
+                            <a href="" class="text-dark" data-toggle="modal" data-target="#pedido-mesa">
+                                <p class="small mb-0">MESA</p>
+                                <h1 class="mb-0">03</h1>
+                            </a>
+                            <p class="text-secondary small mb-2">Capacidade: 4/4</p>
+                            <span class="badge badge-default text-white">Ocupada</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3 px-2">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="float-top-left-fix">
+                                <a href="" class="btn-link text-secondary d-block small" data-toggle="modal" data-target="#notificacoes-garcom"><i class="material-icons md-20">emoji_people</i></a>
+                            </div>
+                            <div class="float-top-right-fix">
+                                <a href="" class="btn-link text-light" data-toggle="modal" data-target="#editar-mesa"><i class="material-icons md-18">edit</i></a>
+                            </div>
+                            <a href="" class="text-dark" data-toggle="modal" data-target="#pedido-mesa">
+                                <p class="small mb-0">MESA</p>
+                                <h1 class="mb-0">04</h1>
+                            </a>
+                            <p class="text-secondary small mb-2">Capacidade: 4/4</p>
+                            <span class="badge badge-default text-white">Ocupada</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3 px-2">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="float-top-left-fix">
+                                <a href="" class="btn-link text-secondary d-block small" data-toggle="modal" data-target="#notificacoes-garcom"><i class="material-icons md-20">emoji_people</i></a>
+                            </div>
+                            <div class="float-top-right-fix">
+                                <a href="" class="btn-link text-light" data-toggle="modal" data-target="#editar-mesa"><i class="material-icons md-18">edit</i></a>
+                            </div>
+                            <a href="" class="text-dark" data-toggle="modal" data-target="#pedido-mesa">
+                                <p class="small mb-0">MESA</p>
+                                <h1 class="mb-0">05</h1>
+                            </a>
+                            <p class="text-secondary small mb-2">Capacidade: 0/4</p>
+                            <span class="badge badge-success text-white">Livre</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3 px-2">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="float-top-left-fix">
+                                <a href="" class="btn-link text-secondary d-block small" data-toggle="modal" data-target="#notificacoes-garcom"><i class="material-icons md-20">emoji_people</i></a>
+                            </div>
+                            <div class="float-top-right-fix">
+                                <a href="" class="btn-link text-light" data-toggle="modal" data-target="#editar-mesa"><i class="material-icons md-18">edit</i></a>
+                            </div>
+                            <a href="" class="text-dark" data-toggle="modal" data-target="#pedido-mesa">
+                                <p class="small mb-0">MESA</p>
+                                <h1 class="mb-0">06</h1>
+                            </a>
+                            <p class="text-secondary small mb-2">Capacidade: 0/4</p>
+                            <span class="badge badge-success text-white">Livre</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3 px-2">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="float-top-left-fix">
+                                <a href="" class="btn-link text-secondary d-block small" data-toggle="modal" data-target="#notificacoes-garcom"><i class="material-icons md-20">emoji_people</i></a>
+                            </div>
+                            <div class="float-top-right-fix">
+                                <a href="" class="btn-link text-light" data-toggle="modal" data-target="#editar-mesa"><i class="material-icons md-18">edit</i></a>
+                            </div>
+                            <a href="" class="text-dark" data-toggle="modal" data-target="#pedido-mesa">
+                                <p class="small mb-0">MESA</p>
+                                <h1 class="mb-0">07</h1>
+                            </a>
+                            <p class="text-secondary small mb-2">Capacidade: 0/4</p>
+                            <span class="badge badge-success text-white">Livre</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3 px-2">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="float-top-left-fix">
+                                <a href="" class="btn-link text-secondary d-block small" data-toggle="modal" data-target="#notificacoes-garcom"><i class="material-icons md-20">emoji_people</i></a>
+                            </div>
+                            <div class="float-top-right-fix">
+                                <a href="" class="btn-link text-light" data-toggle="modal" data-target="#editar-mesa"><i class="material-icons md-18">edit</i></a>
+                            </div>
+                            <a href="" class="text-dark" data-toggle="modal" data-target="#pedido-mesa">
+                                <p class="small mb-0">MESA</p>
+                                <h1 class="mb-0">08</h1>
+                            </a>
+                            <p class="text-secondary small mb-2">Capacidade: 0/4</p>
+                            <span class="badge badge-success text-white">Livre</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3 px-2">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="float-top-left-fix">
+                                <a href="" class="btn-link text-secondary d-block small" data-toggle="modal" data-target="#notificacoes-garcom"><i class="material-icons md-20">emoji_people</i></a>
+                            </div>
+                            <div class="float-top-right-fix">
+                                <a href="" class="btn-link text-light" data-toggle="modal" data-target="#editar-mesa"><i class="material-icons md-18">edit</i></a>
+                            </div>
+                            <a href="" class="text-dark" data-toggle="modal" data-target="#pedido-mesa">
+                                <p class="small mb-0">MESA</p>
+                                <h1 class="mb-0">09</h1>
+                            </a>
+                            <p class="text-secondary small mb-2">Capacidade: 0/4</p>
+                            <span class="badge badge-success text-white">Livre</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3 px-2">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="float-top-left-fix">
+                                <a href="" class="btn-link text-secondary d-block small" data-toggle="modal" data-target="#notificacoes-garcom"><i class="material-icons md-20">emoji_people</i></a>
+                            </div>
+                            <div class="float-top-right-fix">
+                                <a href="" class="btn-link text-light" data-toggle="modal" data-target="#editar-mesa"><i class="material-icons md-18">edit</i></a>
+                            </div>
+                            <a href="" class="text-dark" data-toggle="modal" data-target="#pedido-mesa">
+                                <p class="small mb-0">MESA</p>
+                                <h1 class="mb-0">10</h1>
+                            </a>
+                            <p class="text-secondary small mb-2">Capacidade: 0/4</p>
+                            <span class="badge badge-success text-white">Livre</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3 px-2">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="float-top-left-fix">
+                                <a href="" class="btn-link text-secondary d-block small" data-toggle="modal" data-target="#notificacoes-garcom"><i class="material-icons md-20">emoji_people</i></a>
+                            </div>
+                            <div class="float-top-right-fix">
+                                <a href="" class="btn-link text-light" data-toggle="modal" data-target="#editar-mesa"><i class="material-icons md-18">edit</i></a>
+                            </div>
+                            <a href="" class="text-dark" data-toggle="modal" data-target="#pedido-mesa">
+                                <p class="small mb-0">MESA</p>
+                                <h1 class="mb-0">11</h1>
+                            </a>
+                            <p class="text-secondary small mb-2">Capacidade: 0/4</p>
+                            <span class="badge badge-secondary text-white">Inativa</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3 px-2">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="float-top-left-fix">
+                                <a href="" class="btn-link text-secondary d-block small" data-toggle="modal" data-target="#notificacoes-garcom"><i class="material-icons md-20">emoji_people</i></a>
+                            </div>
+                            <div class="float-top-right-fix">
+                                <a href="" class="btn-link text-light" data-toggle="modal" data-target="#editar-mesa"><i class="material-icons md-18">edit</i></a>
+                            </div>
+                            <a href="" class="text-dark" data-toggle="modal" data-target="#pedido-mesa">
+                                <p class="small mb-0">MESA</p>
+                                <h1 class="mb-0">12</h1>
+                            </a>
+                            <p class="text-secondary small mb-2">Capacidade: 0/4</p>
+                            <span class="badge badge-secondary text-white">Inativa</span>
+                        </div>
+                    </div>
+                </div>        
+            </div>
+        </div>
+        
+        <!-- Rodapé -->
+        <div class="footer">
+            <div class="no-gutters">
+                <div class="col-auto mx-auto">
+                    <div class="row no-gutters justify-content-center">
+                        <div class="col-auto">
+                            <span class="d-inline-block" data-toggle="tooltip" data-placement="top" title="Mesas">
+                                <a href="garcom.html" class="btn btn-link-default">
+                                    <i class="material-icons">view_module</i>
+                                </a>
+                            </span>
+                        </div>
+                        <div class="col-auto mx-5">
+                            <a href="" class="btn btn-default shadow centerbutton" data-toggle="modal" data-target="#adicionar-novo-pedido">
+                                <i class="material-icons">add</i>
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <span class="d-inline-block" data-toggle="tooltip" data-placement="top" title="Consultar">
+                                <a href="garcom-pedidos.html" class="btn btn-link-default">
+                                    <i class="material-icons">receipt_long</i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Editar Mesa -->
+    <div class="modal fade" id="editar-mesa" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header clean">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body clean text-center p-4">
+                    <figure class="avatar avatar-120 mt-2">
+                        <img src="img/mesa.svg" alt="">
+                    </figure>
+                    <h5 class="my-3">Editar Mesa</h5> 
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group float-label">
+                                <input type="tel" class="form-control" value="" placeholder="Ex: 01" required>
+                                <label class="form-control-label">Número da Mesa</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group float-label">
+                                <input type="tel" class="form-control" value="" placeholder="Qtde. Cadeiras. Ex:04" required>
+                                <label class="form-control-label">Capacidade</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group float-label mb-0">
+                                <div class="custom-control custom-checkbox text-left mt-2">
+                                    <input type="checkbox" class="custom-control-input" id="desocupar-mesa">
+                                    <label class="custom-control-label" for="desocupar-mesa">Desocupar Mesa?</label>
+                                </div>
+                                <label class="form-control-label">Ação Extra</label>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="form-group float-label">
+                                <div class="row mt-2">
+                                    <div class="col-6">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" name="status-2" class="custom-control-input" id="ativo-2" checked>
+                                            <label class="custom-control-label" for="ativo-2">Ativo</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" name="status-2" class="custom-control-input" id="inativo-2">
+                                            <label class="custom-control-label" for="inativo-2">Inativo</label>
+                                        </div>
+                                    </div>    
+                                </div>    
+                                <label class="form-control-label">Status</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-2">
+                        <button class="btn btn-lg btn-secondary btn-rounded" data-dismiss="modal">Fechar</button>
+                        <button class="btn btn-lg btn-success btn-rounded" data-dismiss="modal">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Desocupar Mesa -->
+    <div class="modal fade" id="desocupar-mesas" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content bg-danger text-white shadow">
+                <div class="modal-body text-center pr-4 pl-4">
+                    <i class="material-icons text-white md-120 mt-3">cleaning_services</i>
+                    <h3 class="">Desocupar Mesa?</h3>
+                    <div class="text-center mb-4">
+                        <p>Deseja desocupar: <b>MESA 01</b></p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="button" class="btn btn-light btn-rounded btn-block col" data-dismiss="modal">Sim</button>
+                        <button type="button" class="btn btn-secondary btn-rounded btn-block col" data-dismiss="modal">Não</button>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Pedidos da Mesa -->
+    <div class="modal fade" id="pedido-mesa" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-xf" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header fixed-top bg-white">
+                    <h5 class="header-title mb-0"><span class="badge badge-success d-block">MESA <strong>01</strong></span></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body p-4 mt-5">
+                    <div class="row">
+                        <div class="col-12 px-0 mb-5 pb-5">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center">
+                                            <span class="btn btn-primary p-2 btn-rounded-12">
+                                                <p class="small mb-1">CMD: <strong>0009</strong></p>
+                                                <button class="btn btn-sm btn-link text-white p-0 mr-4" data-toggle="modal" data-target="#visualizar-comanda"><i class="material-icons">visibility</i></button>
+                                                <button class="btn btn-sm btn-link text-white p-0" data-toggle="modal" data-target="#editar-comanda"><i class="material-icons">edit</i></button>
+                                            </span>
+                                        </div>
+                                        <div class="col align-self-center px-0 d-block">
+                                            <h6 class="text-dark text-bold d-block mb-1">Jefferson Soares Antunes</h6>
+                                            <span class="text-bold small">R$ 116,00</span>
+                                            <span class="badge badge-default text-white">Aberto</span>
+                                            <span class="text-secondary text-bold small d-block">Formas Pag: <b class="text-default">Nenhum</b></span>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <button class="btn btn-sm btn-link text-default p-0" data-toggle="modal" data-target="#adicionar-pedido"><i class="material-icons md-30">add_circle</i></button>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center">
+                                            <span class="btn btn-primary p-2 btn-rounded-12">
+                                                <p class="small mb-1">CMD: <strong>0010</strong></p>
+                                                <button class="btn btn-sm btn-link text-white p-0 mr-4" data-toggle="modal" data-target="#visualizar-comanda"><i class="material-icons">visibility</i></button>
+                                                <button class="btn btn-sm btn-link text-white p-0" data-toggle="modal" data-target="#editar-comanda"><i class="material-icons">edit</i></button>
+                                            </span>
+                                        </div>
+                                        <div class="col align-self-center px-0 d-block">
+                                            <h6 class="text-dark text-bold d-block mb-1">Carlos Eduardo Souza Filho</h6>
+                                            <span class="text-bold small">R$ 87,00</span>
+                                            <span class="badge badge-default text-white">Aberto</span>
+                                            <span class="text-secondary text-bold small d-block">Formas Pag: <b class="text-default">Nenhum</b></span>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <button class="btn btn-sm btn-link text-default p-0" data-toggle="modal" data-target="#adicionar-pedido"><i class="material-icons md-30">add_circle</i></button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div> 
+                    </div>
+                    <div class="bg-white text-center py-4 fixed-bottom">
+                        <button class="btn btn-lg btn-secondary btn-rounded" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Adicionar Novo Pedido -->
+    <div class="modal fade" id="adicionar-novo-pedido" role="dialog" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-xf" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header fixed-top bg-white">
+                    <h5 class="header-title text-secondary mb-0">Adicionar Pedido</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body p-4 mt-5">
+                    <div class="row">
+                        <div class="col-12">
+                            <div id="abas-adicionar-novo-pedido">
+                                <ul class="nav nav-tabs tabs-bordered d-flex nav-justified mb-4" role="tablist">
+                                    <li>
+                                        <a href="#tab-novo-cliente" aria-controls="tab-cliente" class="active show" role="tab" data-toggle="tab">Cliente/Mesa</a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab-novo-cardapio" aria-controls="tab-cardapio" role="tab" data-toggle="tab">Cardápio</a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab-novo-sacola" aria-controls="tab-sacola" role="tab" data-toggle="tab">Sacola <span class="badge badge-default">02</span></a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane fade active show" id="tab-novo-cliente">
+                                        <p>Consultar cliente ou crie um novo:</p>
+                                        
+                                        <div class="row">
+                                            <div class="col">
+                                                <form class="needs-validation was-validated" novalidate="">
+                                                    <div class="form-group float-label">
+                                                        <input type="tel" id="inputCPF" class="form-control" value="" placeholder="999.999.99-99" required>
+                                                        <label class="form-control-label">Cliente/CPF</label>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="col-auto align-self-center pl-0">
+                                                <button class="btn btn-sm btn-link p-0 float-right" data-toggle="modal" data-target="#adicionar-cliente"><i class="material-icons">add_circle</i></button>
+                                            </div>
+                                            <div class="col-12 col-md-4 col-lg-4">
+                                                <div class="form-group float-label">
+                                                    <select class="custom-select selectpicker" data-live-search="true" data-live-search-placeholder="Pesquisar..." title="Selecione..." required>
+                                                        <option value="01">MESA: 01</option>
+                                                        <option value="02">MESA: 02</option>
+                                                        <option value="03">MESA: 03</option>
+                                                        <option value="04">MESA: 04</option>
+                                                    </select>
+                                                    <label class="form-control-label">Selecionar Mesa</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 mt-2" hidden>
+                                                <div class="row">
+                                                    <div class="col-12 col-md-6 col-lg-6 mb-2">
+                                                        <p><span class="text-secondary font-weight-normal">Nome:</span> Nome Sobrenome</p>
+                                                    </div>
+                                                    <div class="col-12 col-md-6 col-lg-6 mb-2">
+                                                        <p><span class="text-secondary font-weight-normal">E-mail:</span> nome@emailvalido.com.br</p>
+                                                    </div>
+                                                    <div class="col-12 col-md-6 col-lg-6 mb-2">
+                                                        <p><span class="text-secondary font-weight-normal">Telefone:</span> (43) 99999-9999</p>
+                                                    </div>
+                                                    <div class="col-12 col-md-6 col-lg-6 mb-2">
+                                                        <p><span class="text-secondary font-weight-normal">CPF:</span> 999.999.99-99</p>
+                                                    </div>
+                                                </div>   
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div role="tabpanel" class="tab-pane fade" id="tab-novo-cardapio">
+                                        <input type="text" class="form-control search" placeholder="Pesquisar...">
+                                        
+                                        <div id="accordion-1" class="mb-4 pb-4">
+                                            <ul class="list-group list-group-flush">
+                                                <li id="categoria01" class="list-group-item active px-0">
+                                                    <div class="row" data-toggle="collapse" data-target="#collapse01-1" aria-expanded="true" aria-controls="collapse01-1">
+                                                        <div class="col text-left align-self-center">
+                                                            <h6 class="mb-0">Entradas</h6>
+                                                        </div>
+                                                        <div class="col-auto text-right align-self-center">
+                                                            <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">expand_more</i></button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <div id="collapse01-1" class="collapse" data-parent="#accordion-1">
+                                                    <div class="d-inline-block mb-2">
+                                                        <p class="small text-secondary">1 item(s)</p>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-6 col-md-6 col-lg-4 mb-3 px-2">
+                                                            <a href="#" data-toggle="modal" data-target="#adicionar-sacola">
+                                                                <div class="card border-1">
+                                                                    <div class="card-body text-center">
+                                                                        <div class="row">
+                                                                            <div class="col col-sm-auto col-md-3 align-self-center d-none d-sm-block pr-1">
+                                                                                <figure class="product-image h-auto my-0"><img src="img/prato-07.png" alt="" class="vm list-crop"></figure>
+                                                                            </div>
+                                                                            <div class="col col-md-9 align-self-center text-sm-left">
+                                                                                <h6 class="text-dark text-ellipsis my-1">Ceviche de Tilápia</h6>
+                                                                                <h6 class="text-success font-weight-normal mt-1 mb-0">R$ 24,00</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ul>
+
+                                            <ul class="list-group list-group-flush">
+                                                <li id="categoria02" class="list-group-item active px-0">
+                                                    <div class="row" data-toggle="collapse" data-target="#collapse02-1" aria-expanded="true" aria-controls="collapse02-1">
+                                                        <div class="col text-left align-self-center">
+                                                            <h6 class="mb-0">Saladas</h6>
+                                                        </div>
+                                                        <div class="col-auto text-right align-self-center">
+                                                            <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">expand_more</i></button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <div id="collapse02-1" class="collapse" data-parent="#accordion-1">
+                                                    <div class="d-inline-block mb-2">
+                                                        <p class="small text-secondary">1 item(s)</p>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-6 col-md-6 col-lg-4 mb-3 px-2">
+                                                            <a href="#" data-toggle="modal" data-target="#adicionar-sacola">
+                                                                <div class="card border-1">
+                                                                    <div class="card-body text-center">
+                                                                        <div class="row">
+                                                                            <div class="col col-sm-auto col-md-3 align-self-center d-none d-sm-block pr-1">
+                                                                                <figure class="product-image h-auto my-0"><img src="img/prato-05.png" alt="" class="vm list-crop"></figure>
+                                                                            </div>
+                                                                            <div class="col col-md-9 align-self-center text-sm-left">
+                                                                                <h6 class="text-dark text-ellipsis my-1">Salada Metropolitana</h6>
+                                                                                <h6 class="text-success font-weight-normal mt-1 mb-0">R$ 20,00</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ul>
+
+                                            <ul class="list-group list-group-flush">
+                                                <li id="categoria03" class="list-group-item active px-0">
+                                                    <div class="row" data-toggle="collapse" data-target="#collapse03-1" aria-expanded="true" aria-controls="collapse03-1">
+                                                        <div class="col text-left align-self-center">
+                                                            <h6 class="mb-0">Pratos Quentes</h6>
+                                                        </div>
+                                                        <div class="col-auto text-right align-self-center">
+                                                            <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">expand_more</i></button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <div id="collapse03-1" class="collapse" data-parent="#accordion-1">
+                                                    <div class="d-inline-block mb-2">
+                                                        <p class="small text-secondary">4 item(s)</p>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-6 col-md-6 col-lg-4 mb-3 px-2">
+                                                            <a href="#" data-toggle="modal" data-target="#adicionar-sacola">
+                                                                <div class="card border-1">
+                                                                    <div class="card-body text-center">
+                                                                        <div class="row">
+                                                                            <div class="col col-sm-auto col-md-3 align-self-center d-none d-sm-block pr-1">
+                                                                                <figure class="product-image h-auto my-0"><img src="img/prato-01.png" alt="" class="vm list-crop"></figure>
+                                                                            </div>
+                                                                            <div class="col col-md-9 align-self-center text-sm-left">
+                                                                                <h6 class="text-dark text-ellipsis my-1">Filés de Frango</h6>
+                                                                                <h6 class="text-success font-weight-normal mt-1 mb-0">R$ 22,00</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="col-6 col-md-6 col-lg-4 mb-3 px-2">
+                                                            <a href="#" data-toggle="modal" data-target="#adicionar-sacola">
+                                                                <div class="card border-1">
+                                                                    <div class="card-body text-center">
+                                                                        <div class="row">
+                                                                            <div class="col col-sm-auto col-md-3 align-self-center d-none d-sm-block pr-1">
+                                                                                <figure class="product-image h-auto my-0"><img src="img/prato-02.png" alt="" class="vm list-crop"></figure>
+                                                                            </div>
+                                                                            <div class="col col-md-9 align-self-center text-sm-left">
+                                                                                <h6 class="text-dark text-ellipsis my-1">Badejo Grelhado</h6>
+                                                                                <h6 class="text-success font-weight-normal mt-1 mb-0">R$ 28,00</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="col-6 col-md-6 col-lg-4 mb-3 px-2">
+                                                            <a href="#" data-toggle="modal" data-target="#adicionar-sacola">
+                                                                <div class="card border-1">
+                                                                    <div class="card-body text-center">
+                                                                        <div class="row">
+                                                                            <div class="col col-sm-auto col-md-3 align-self-center d-none d-sm-block pr-1">
+                                                                                <figure class="product-image h-auto my-0"><img src="img/prato-03.png" alt="" class="vm list-crop"></figure>
+                                                                            </div>
+                                                                            <div class="col col-md-9 align-self-center text-sm-left">
+                                                                                <h6 class="text-dark text-ellipsis my-1">Linguado Assado</h6>
+                                                                                <h6 class="text-success font-weight-normal mt-1 mb-0">R$ 32,00</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="col-6 col-md-6 col-lg-4 mb-3 px-2">
+                                                            <a href="#" data-toggle="modal" data-target="#adicionar-sacola">
+                                                                <div class="card border-1">
+                                                                    <div class="card-body text-center">
+                                                                        <div class="row">
+                                                                            <div class="col col-sm-auto col-md-3 align-self-center d-none d-sm-block pr-1">
+                                                                                <figure class="product-image h-auto my-0"><img src="img/prato-04.png" alt="" class="vm list-crop"></figure>
+                                                                            </div>
+                                                                            <div class="col col-md-9 align-self-center text-sm-left">
+                                                                                <h6 class="text-dark text-ellipsis my-1">Spaguete ao Sugo</h6>
+                                                                                <h6 class="text-success font-weight-normal mt-1 mb-0">R$ 18,00</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ul>
+
+                                            <ul class="list-group list-group-flush">
+                                                <li id="categoria04" class="list-group-item active px-0">
+                                                    <div class="row" data-toggle="collapse" data-target="#collapse04-1" aria-expanded="true" aria-controls="collapse04-1">
+                                                        <div class="col text-left align-self-center">
+                                                            <h6 class="mb-0">Bebidas</h6>
+                                                        </div>
+                                                        <div class="col-auto text-right align-self-center">
+                                                            <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">expand_more</i></button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <div id="collapse04-1" class="collapse" data-parent="#accordion-1">
+                                                    <div class="d-inline-block mb-2">
+                                                        <p class="small text-secondary">3 item(s)</p>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-6 col-md-6 col-lg-4 mb-3 px-2">
+                                                            <a href="#" data-toggle="modal" data-target="#adicionar-sacola">
+                                                                <div class="card border-1">
+                                                                    <div class="card-body text-center">
+                                                                        <div class="row">
+                                                                            <div class="col col-sm-auto col-md-3 align-self-center d-none d-sm-block pr-1">
+                                                                                <figure class="product-image h-auto my-0"><img src="img/bebida-06.png" alt="" class="vm list-crop"></figure>
+                                                                            </div>
+                                                                            <div class="col col-md-9 align-self-center text-sm-left">
+                                                                                <h6 class="text-dark text-ellipsis my-1">PEPSI Lata</h6>
+                                                                                <h6 class="text-success font-weight-normal mt-1 mb-0">R$ 3,50</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="col-6 col-md-6 col-lg-4 mb-3 px-2">
+                                                            <a href="#" data-toggle="modal" data-target="#adicionar-sacola">
+                                                                <div class="card border-1">
+                                                                    <div class="card-body text-center">
+                                                                        <div class="row">
+                                                                            <div class="col col-sm-auto col-md-3 align-self-center d-none d-sm-block pr-1">
+                                                                                <figure class="product-image h-auto my-0"><img src="img/bebida-07.png" alt="" class="vm list-crop"></figure>
+                                                                            </div>
+                                                                            <div class="col col-md-9 align-self-center text-sm-left">
+                                                                                <h6 class="text-dark text-ellipsis my-1">Guaraná Antarctica Lata</h6>
+                                                                                <h6 class="text-success font-weight-normal mt-1 mb-0">R$ 3,50</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="col-6 col-md-6 col-lg-4 mb-3 px-2">
+                                                            <a href="#" data-toggle="modal" data-target="#adicionar-sacola">
+                                                                <div class="card border-1">
+                                                                    <div class="card-body text-center">
+                                                                        <div class="row">
+                                                                            <div class="col col-sm-auto col-md-3 align-self-center d-none d-sm-block pr-1">
+                                                                                <figure class="product-image h-auto my-0"><img src="img/bebida-04.png" alt="" class="vm list-crop"></figure>
+                                                                            </div>
+                                                                            <div class="col col-md-9 align-self-center text-sm-left">
+                                                                                <h6 class="text-dark text-ellipsis my-1">Cerveja Brahma Chopp</h6>
+                                                                                <h6 class="text-success font-weight-normal mt-1 mb-0">R$ 6,00</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ul>
+                                            <div class="mb-4"></div>
+                                        </div>  
+                                    </div>
+                                    
+                                    <div role="tabpanel" class="tab-pane fade" id="tab-novo-sacola">
+                                        <p>Verifique se os itens estão de acordo:</p>
+
+                                        <div class="row mb-4 pb-4">
+                                            <div class="col-12">
+                                                <ul class="list-group list-group-flush mb-4">
+                                                    <li class="list-group-item">
+                                                        <div class="row">
+                                                            <div class="col-auto align-self-center pl-0">
+                                                                <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">remove_circle</i></button>
+                                                            </div>
+                                                            <div class="col align-self-center px-0">
+                                                                <h6 class="text-dark my-1">Filés de Frango</h6>
+                                                                <h5 class="text-success font-weight-normal small my-1">R$ 22,00 + R$ 4,00</h5>
+                                                                <p class="text-secondary text-mute small mb-0">2x - Molho Rosê</p>
+                                                            </div>
+                                                            <div class="col-auto align-self-center px-0">
+                                                                <div class="input-group input-group-sm">
+                                                                    <div class="input-group-prepend">
+                                                                        <button class="btn btn-light br-30 px-1" type="button"><i class="material-icons">remove</i></button>
+                                                                    </div>
+                                                                    <input type="text" class="form-control w-35 border-0" placeholder="" value="1">
+                                                                    <div class="input-group-append">
+                                                                        <button class="btn btn-light br-30 px-1" type="button"><i class="material-icons">add</i></button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    
+                                                    <li class="list-group-item">
+                                                        <div class="row">
+                                                            <div class="col-auto align-self-center pl-0">
+                                                                <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">remove_circle</i></button>
+                                                            </div>
+                                                            <div class="col align-self-center px-0">
+                                                                <h6 class="text-dark my-1">Badejo Grelhado</h6>
+                                                                <h5 class="text-success font-weight-normal small my-1">R$ 28,00 + R$ 4,00</h5>
+                                                                <p class="text-secondary text-mute small mb-0">1x - Molho Rosê</p>
+                                                                <p class="text-secondary text-mute small mb-0">1x - Molho Ervas Finas</p>
+                                                            </div>
+                                                            <div class="col-auto align-self-center px-0">
+                                                                <div class="input-group input-group-sm">
+                                                                    <div class="input-group-prepend">
+                                                                        <button class="btn btn-light br-30 px-1" type="button"><i class="material-icons">remove</i></button>
+                                                                    </div>
+                                                                    <input type="text" class="form-control w-35 border-0" placeholder="" value="1">
+                                                                    <div class="input-group-append">
+                                                                        <button class="btn btn-light br-30 px-1" type="button"><i class="material-icons">add</i></button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+
+                                                    <li class="list-group-item px-0">
+                                                        <div class="form-group float-label mt-2">
+                                                            <input type="text" class="form-control" value="" placeholder="Ex.: Sem catchup, tirar a cebola, ...">
+                                                            <label class="form-control-label">Alguma Observação?</label>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col align-self-center">
+                                                                <h6 class="text-secondary mb-0">Subtotal Pedido(s):</h6>
+                                                            </div>
+                                                            <div class="col-auto text-right align-self-center">
+                                                                <h3 class="text-success mb-0">R$ 58,00</h3>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="mb-4"></div>
+                                    </div>
+                                </div>
+                                <div class="bg-white text-center py-4 fixed-bottom">
+                                    <button class="btn btn-lg btn-outline-secondary btn-rounded btnPrev">Voltar</button>
+                                    <button class="btn btn-lg btn-outline-secondary btn-rounded btnNext">Próximo</button>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Adicionar Pedido -->
+    <div class="modal fade" id="adicionar-pedido" role="dialog" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-xf" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header fixed-top bg-white">
+                    <h5 class="header-title text-secondary mb-0">Adicionar Pedido</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body p-4 mt-5">
+                    <div class="row">
+                        <div class="col-12">
+                            <div id="abas-adicionar-pedido">
+                                <ul class="nav nav-tabs tabs-bordered d-flex nav-justified mb-4" role="tablist">
+                                    <li>
+                                        <a href="#tab-cardapio" aria-controls="tab-cardapio" class="active show" role="tab" data-toggle="tab">Adicionar Item(s)</a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab-sacola" aria-controls="tab-sacola" role="tab" data-toggle="tab">Sacola <span class="badge badge-default">02</span></a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane fade active show" id="tab-cardapio">
+                                        <input type="text" class="form-control search" placeholder="Pesquisar...">
+                                        
+                                        <div id="accordion-2" class="mb-4 pb-4">
+                                            <ul class="list-group list-group-flush">
+                                                <li id="categoria01" class="list-group-item active px-0">
+                                                    <div class="row" data-toggle="collapse" data-target="#collapse01-2" aria-expanded="true" aria-controls="collapse01-2">
+                                                        <div class="col text-left align-self-center">
+                                                            <h6 class="mb-0">Entradas</h6>
+                                                        </div>
+                                                        <div class="col-auto text-right align-self-center">
+                                                            <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">expand_more</i></button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <div id="collapse01-2" class="collapse" data-parent="#accordion-2">
+                                                    <div class="d-inline-block mb-2">
+                                                        <p class="small text-secondary">1 item(s)</p>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-6 col-md-6 col-lg-3 mb-3 px-2">
+                                                            <a href="#" data-toggle="modal" data-target="#adicionar-sacola">
+                                                                <div class="card border-1">
+                                                                    <div class="card-body text-center">
+                                                                        <div class="row">
+                                                                            <div class="col col-sm-auto col-md-3 align-self-center d-none d-sm-block pr-1">
+                                                                                <figure class="product-image h-auto my-0"><img src="img/prato-07.png" alt="" class="vm list-crop"></figure>
+                                                                            </div>
+                                                                            <div class="col col-md-9 align-self-center text-sm-left">
+                                                                                <h6 class="text-dark text-ellipsis my-1">Ceviche de Tilápia</h6>
+                                                                                <h6 class="text-success font-weight-normal mt-1 mb-0">R$ 24,00</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ul>
+
+                                            <ul class="list-group list-group-flush">
+                                                <li id="categoria02" class="list-group-item active px-0">
+                                                    <div class="row" data-toggle="collapse" data-target="#collapse02-2" aria-expanded="true" aria-controls="collapse02-2">
+                                                        <div class="col text-left align-self-center">
+                                                            <h6 class="mb-0">Saladas</h6>
+                                                        </div>
+                                                        <div class="col-auto text-right align-self-center">
+                                                            <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">expand_more</i></button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <div id="collapse02-2" class="collapse" data-parent="#accordion-2">
+                                                    <div class="d-inline-block mb-2">
+                                                        <p class="small text-secondary">1 item(s)</p>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-6 col-md-6 col-lg-3 mb-3 px-2">
+                                                            <a href="#" data-toggle="modal" data-target="#adicionar-sacola">
+                                                                <div class="card border-1">
+                                                                    <div class="card-body text-center">
+                                                                        <div class="row">
+                                                                            <div class="col col-sm-auto col-md-3 align-self-center d-none d-sm-block pr-1">
+                                                                                <figure class="product-image h-auto my-0"><img src="img/prato-05.png" alt="" class="vm list-crop"></figure>
+                                                                            </div>
+                                                                            <div class="col col-md-9 align-self-center text-sm-left">
+                                                                                <h6 class="text-dark text-ellipsis my-1">Salada Metropolitana</h6>
+                                                                                <h6 class="text-success font-weight-normal mt-1 mb-0">R$ 20,00</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ul>
+
+                                            <ul class="list-group list-group-flush">
+                                                <li id="categoria03" class="list-group-item active px-0">
+                                                    <div class="row" data-toggle="collapse" data-target="#collapse03-2" aria-expanded="true" aria-controls="collapse03-2">
+                                                        <div class="col text-left align-self-center">
+                                                            <h6 class="mb-0">Pratos Quentes</h6>
+                                                        </div>
+                                                        <div class="col-auto text-right align-self-center">
+                                                            <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">expand_more</i></button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <div id="collapse03-2" class="collapse" data-parent="#accordion-2">
+                                                    <div class="d-inline-block mb-2">
+                                                        <p class="small text-secondary">4 item(s)</p>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-6 col-md-6 col-lg-3 mb-3 px-2">
+                                                            <a href="#" data-toggle="modal" data-target="#adicionar-sacola">
+                                                                <div class="card border-1">
+                                                                    <div class="card-body text-center">
+                                                                        <div class="row">
+                                                                            <div class="col col-sm-auto col-md-3 align-self-center d-none d-sm-block pr-1">
+                                                                                <figure class="product-image h-auto my-0"><img src="img/prato-01.png" alt="" class="vm list-crop"></figure>
+                                                                            </div>
+                                                                            <div class="col col-md-9 align-self-center text-sm-left">
+                                                                                <h6 class="text-dark text-ellipsis my-1">Filés de Frango</h6>
+                                                                                <h6 class="text-success font-weight-normal mt-1 mb-0">R$ 22,00</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="col-6 col-md-6 col-lg-3 mb-3 px-2">
+                                                            <a href="#" data-toggle="modal" data-target="#adicionar-sacola">
+                                                                <div class="card border-1">
+                                                                    <div class="card-body text-center">
+                                                                        <div class="row">
+                                                                            <div class="col col-sm-auto col-md-3 align-self-center d-none d-sm-block pr-1">
+                                                                                <figure class="product-image h-auto my-0"><img src="img/prato-02.png" alt="" class="vm list-crop"></figure>
+                                                                            </div>
+                                                                            <div class="col col-md-9 align-self-center text-sm-left">
+                                                                                <h6 class="text-dark text-ellipsis my-1">Badejo Grelhado</h6>
+                                                                                <h6 class="text-success font-weight-normal mt-1 mb-0">R$ 28,00</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="col-6 col-md-6 col-lg-3 mb-3 px-2">
+                                                            <a href="#" data-toggle="modal" data-target="#adicionar-sacola">
+                                                                <div class="card border-1">
+                                                                    <div class="card-body text-center">
+                                                                        <div class="row">
+                                                                            <div class="col col-sm-auto col-md-3 align-self-center d-none d-sm-block pr-1">
+                                                                                <figure class="product-image h-auto my-0"><img src="img/prato-03.png" alt="" class="vm list-crop"></figure>
+                                                                            </div>
+                                                                            <div class="col col-md-9 align-self-center text-sm-left">
+                                                                                <h6 class="text-dark text-ellipsis my-1">Linguado Assado</h6>
+                                                                                <h6 class="text-success font-weight-normal mt-1 mb-0">R$ 32,00</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="col-6 col-md-6 col-lg-3 mb-3 px-2">
+                                                            <a href="#" data-toggle="modal" data-target="#adicionar-sacola">
+                                                                <div class="card border-1">
+                                                                    <div class="card-body text-center">
+                                                                        <div class="row">
+                                                                            <div class="col col-sm-auto col-md-3 align-self-center d-none d-sm-block pr-1">
+                                                                                <figure class="product-image h-auto my-0"><img src="img/prato-04.png" alt="" class="vm list-crop"></figure>
+                                                                            </div>
+                                                                            <div class="col col-md-9 align-self-center text-sm-left">
+                                                                                <h6 class="text-dark text-ellipsis my-1">Spaguete ao Sugo</h6>
+                                                                                <h6 class="text-success font-weight-normal mt-1 mb-0">R$ 18,00</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </ul>
+
+                                            <ul class="list-group list-group-flush">
+                                                <li id="categoria04" class="list-group-item active px-0">
+                                                    <div class="row" data-toggle="collapse" data-target="#collapse04-2" aria-expanded="true" aria-controls="collapse04-2">
+                                                        <div class="col text-left align-self-center">
+                                                            <h6 class="mb-0">Bebidas</h6>
+                                                        </div>
+                                                        <div class="col-auto text-right align-self-center">
+                                                            <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">expand_more</i></button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <div id="collapse04-2" class="collapse" data-parent="#accordion-2">
+                                                    <div class="d-inline-block mb-2">
+                                                        <p class="small text-secondary">3 item(s)</p>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-6 col-md-6 col-lg-3 mb-3 px-2">
+                                                            <a href="#" data-toggle="modal" data-target="#adicionar-sacola">
+                                                                <div class="card border-1">
+                                                                    <div class="card-body text-center">
+                                                                        <div class="row">
+                                                                            <div class="col col-sm-auto col-md-3 align-self-center d-none d-sm-block pr-1">
+                                                                                <figure class="product-image h-auto my-0"><img src="img/bebida-06.png" alt="" class="vm list-crop"></figure>
+                                                                            </div>
+                                                                            <div class="col col-md-9 align-self-center text-sm-left">
+                                                                                <h6 class="text-dark text-ellipsis my-1">PEPSI Lata</h6>
+                                                                                <h6 class="text-success font-weight-normal mt-1 mb-0">R$ 3,50</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="col-6 col-md-6 col-lg-3 mb-3 px-2">
+                                                            <a href="#" data-toggle="modal" data-target="#adicionar-sacola">
+                                                                <div class="card border-1">
+                                                                    <div class="card-body text-center">
+                                                                        <div class="row">
+                                                                            <div class="col col-sm-auto col-md-3 align-self-center d-none d-sm-block pr-1">
+                                                                                <figure class="product-image h-auto my-0"><img src="img/bebida-07.png" alt="" class="vm list-crop"></figure>
+                                                                            </div>
+                                                                            <div class="col col-md-9 align-self-center text-sm-left">
+                                                                                <h6 class="text-dark text-ellipsis my-1">Guaraná Antarctica Lata</h6>
+                                                                                <h6 class="text-success font-weight-normal mt-1 mb-0">R$ 3,50</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="col-6 col-md-6 col-lg-3 mb-3 px-2">
+                                                            <a href="#" data-toggle="modal" data-target="#adicionar-sacola">
+                                                                <div class="card border-1">
+                                                                    <div class="card-body text-center">
+                                                                        <div class="row">
+                                                                            <div class="col col-sm-auto col-md-3 align-self-center d-none d-sm-block pr-1">
+                                                                                <figure class="product-image h-auto my-0"><img src="img/bebida-04.png" alt="" class="vm list-crop"></figure>
+                                                                            </div>
+                                                                            <div class="col col-md-9 align-self-center text-sm-left">
+                                                                                <h6 class="text-dark text-ellipsis my-1">Cerveja Brahma Chopp</h6>
+                                                                                <h6 class="text-success font-weight-normal mt-1 mb-0">R$ 6,00</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ul>
+                                            <div class="mb-4"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div role="tabpanel" class="tab-pane fade" id="tab-sacola">
+                                        <p>Verifique se os itens estão de acordo:</p>
+
+                                        <div class="row mb-4 pb-4">
+                                            <div class="col-12">
+                                                <ul class="list-group list-group-flush mb-4">
+                                                    <li class="list-group-item">
+                                                        <div class="row">
+                                                            <div class="col-auto align-self-center pl-0">
+                                                                <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">remove_circle</i></button>
+                                                            </div>
+                                                            <div class="col align-self-center px-0">
+                                                                <h6 class="text-dark my-1">Filés de Frango</h6>
+                                                                <h5 class="text-success font-weight-normal small my-1">R$ 22,00 + R$ 4,00</h5>
+                                                                <p class="text-secondary text-mute small mb-0">2x - Molho Rosê</p>
+                                                            </div>
+                                                            <div class="col-auto align-self-center px-0">
+                                                                <div class="input-group input-group-sm">
+                                                                    <div class="input-group-prepend">
+                                                                        <button class="btn btn-light br-30 px-1" type="button"><i class="material-icons">remove</i></button>
+                                                                    </div>
+                                                                    <input type="text" class="form-control w-35 border-0" placeholder="" value="1">
+                                                                    <div class="input-group-append">
+                                                                        <button class="btn btn-light br-30 px-1" type="button"><i class="material-icons">add</i></button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    
+                                                    <li class="list-group-item">
+                                                        <div class="row">
+                                                            <div class="col-auto align-self-center pl-0">
+                                                                <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">remove_circle</i></button>
+                                                            </div>
+                                                            <div class="col align-self-center px-0">
+                                                                <h6 class="text-dark my-1">Badejo Grelhado</h6>
+                                                                <h5 class="text-success font-weight-normal small my-1">R$ 28,00 + R$ 4,00</h5>
+                                                                <p class="text-secondary text-mute small mb-0">1x - Molho Rosê</p>
+                                                                <p class="text-secondary text-mute small mb-0">1x - Molho Ervas Finas</p>
+                                                            </div>
+                                                            <div class="col-auto align-self-center px-0">
+                                                                <div class="input-group input-group-sm">
+                                                                    <div class="input-group-prepend">
+                                                                        <button class="btn btn-light br-30 px-1" type="button"><i class="material-icons">remove</i></button>
+                                                                    </div>
+                                                                    <input type="text" class="form-control w-35 border-0" placeholder="" value="1">
+                                                                    <div class="input-group-append">
+                                                                        <button class="btn btn-light br-30 px-1" type="button"><i class="material-icons">add</i></button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+
+                                                    <li class="list-group-item px-0">
+                                                        <div class="form-group float-label mt-2">
+                                                            <input type="text" class="form-control" value="" placeholder="Ex.: Sem catchup, tirar a cebola, ...">
+                                                            <label class="form-control-label">Alguma Observação?</label>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col align-self-center">
+                                                                <h6 class="text-secondary mb-0">Subtotal Pedido(s):</h6>
+                                                            </div>
+                                                            <div class="col-auto text-right align-self-center">
+                                                                <h3 class="text-success mb-0">R$ 58,00</h3>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="mb-4"></div>
+                                    </div>
+                                </div>
+                                <div class="bg-white text-center py-4 fixed-bottom">
+                                    <button class="btn btn-lg btn-outline-secondary btn-rounded btnPrev">Voltar</button>
+                                    <button class="btn btn-lg btn-outline-secondary btn-rounded btnNext">Próximo</button>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Adicionar Cliente -->
+    <div class="modal fade" id="adicionar-cliente" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="header-title mb-0">Adicionar Cliente</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group float-label">
+                                <input type="text" class="form-control" value="" placeholder="Nome Sobrenome" required>
+                                <label class="form-control-label">Nome Completo</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group float-label">
+                                <input type="email" class="form-control" value="" placeholder="E-mail válido" required>
+                                <label class="form-control-label">E-mail</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group float-label">
+                                <input type="tel" class="form-control" value="" placeholder="(99) 99999-9999" required>
+                                <label class="form-control-label">Telefone</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group float-label">
+                                <input type="tel" class="form-control" value="" placeholder="999.999.99-99" required>
+                                <label class="form-control-label">CPF</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-2">
+                        <button class="btn btn-lg btn-secondary btn-rounded" data-dismiss="modal">Fechar</button>
+                        <button class="btn btn-lg btn-success btn-rounded" data-dismiss="modal">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Adicionar Sacola -->
+    <div class="modal fade" id="adicionar-sacola" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-xf" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header fixed-top bg-white">
+                    <h5 class="header-title text-secondary mb-0">Detalhes do Pedido</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body mt-5">
+                     <div class="row">
+                        <div class="col-12 px-0 mb-5 pb-5">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-12 align-self-center mb-1">
+                                            <a href="#" class="h5 text-dark font-weight-normal mb-1 d-block">Filés de Frango</a>
+                                            <p class="text-secondary small text-mute mb-0">2 pessoas <span class="text-success ml-2">10% Desc.</span></p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                            <div class="border-top">
+                                <div class="modal-header bg-light border-0">
+                                    <h6 class="header-title mb-0">Adicionais</h6>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-auto align-self-center">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="complemento-1">
+                                                    <label class="custom-control-label" for="complemento-1"></label>
+                                                </div>
+                                            </div>
+                                            <div class="col align-self-center px-0">
+                                                <span class="text-dark mb-1 d-block">Molho Rosê</span>
+                                                <h6 class="text-success font-weight-normal mb-0">R$ 4<sup>,00</sup></h6>
+                                            </div>
+                                            <div class="col-auto align-self-center">
+                                                <div class="input-group input-group-sm">
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn btn-light br-30 px-1" type="button"><i class="material-icons">remove</i></button>
+                                                    </div>
+                                                    <input type="text" class="form-control w-35 border-0 border-0 border-0" placeholder="" value="1">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-light br-30 px-1" type="button"><i class="material-icons">add</i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-auto align-self-center">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="complemento-2">
+                                                    <label class="custom-control-label" for="complemento-2"></label>
+                                                </div>
+                                            </div>
+                                            <div class="col align-self-center px-0">
+                                                <span class="text-dark mb-1 d-block">Molho Ervas Finas</span>
+                                                <h6 class="text-success font-weight-normal mb-0">R$ 4<sup>,00</sup></h6>
+                                            </div>
+                                            <div class="col-auto align-self-center">
+                                                <div class="input-group input-group-sm">
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn btn-light br-30 px-1" type="button"><i class="material-icons">remove</i></button>
+                                                    </div>
+                                                    <input type="text" class="form-control w-35 border-0 border-0 border-0" placeholder="" value="1">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-light br-30 px-1" type="button"><i class="material-icons">add</i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-auto align-self-center">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="complemento-3">
+                                                    <label class="custom-control-label" for="complemento-3"></label>
+                                                </div>
+                                            </div>
+                                            <div class="col align-self-center px-0">
+                                                <span class="text-dark mb-1 d-block">Molho Barbecue</span>
+                                                <h6 class="text-success font-weight-normal mb-0">R$ 6<sup>,00</sup></h6>
+                                            </div>
+                                            <div class="col-auto align-self-center">
+                                                <div class="input-group input-group-sm">
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn btn-light br-30 px-1" type="button"><i class="material-icons">remove</i></button>
+                                                    </div>
+                                                    <input type="text" class="form-control w-35 border-0 border-0 border-0" placeholder="" value="1">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-light br-30 px-1" type="button"><i class="material-icons">add</i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>                   
+
+                    <div class="bg-white py-4 px-3 fixed-bottom">
+                        <div class="row">
+                            <div class="col-auto align-self-center pr-0">
+                                <div class="input-group input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <button class="btn btn-light br-30 px-1" type="button"><i class="material-icons">remove</i></button>
+                                    </div>
+                                    <input type="text" class="form-control w-35 border-0 border-0 border-0" placeholder="" value="1">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-light br-30 px-1" type="button"><i class="material-icons">add</i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col align-self-center">
+                                <button class="btn btn-lg btn-success btn-rounded btn-block col" data-dismiss="modal">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center text-left">
+                                            Adicionar
+                                        </div>
+                                        <div class="col align-self-center text-right">
+                                            <span class="h5">R$ 22<sup>,00</sup></span>
+                                        </div>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Visualizar Comanda -->
+    <div class="modal fade" id="visualizar-comanda" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-xf" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header clean">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body clean p-4">
+                     
+                    <div class="row">
+                        <div class="col-auto align-self-center text-right">
+                            <figure class="avatar avatar-120 mt-2">
+                                <img src="img/pedidos.svg" alt="">
+                            </figure>
+                        </div>
+                        <div class="col align-self-center text-left pl-2">
+                            <h5 class="mt-2">Comanda: <b>0009</b></h5>
+                            <h6 class="mb-0">MESA: <b>01</b></h6>
+                            <span class="d-block">Jefferson Soares Antunes</span>
+                            <span class="d-block"><i class="material-icons">perm_phone_msg</i> <a class="text-secondary" target="_blank" href="https://wa.me/5543999885377">(43) 99988-5377</a></span>
+                            <span class="text-secondary small">Pagamento:</span>
+                            <span class="badge badge-default text-white">Aberto</span>
+                            <span class="badge badge-light text-default"><b>Nenhum</b></span>
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mt-4 mb-4 pb-4">
+                            <div id="accordion">
+                                <ul class="list-group list-group-flush">
+                                    <li id="pedido00481" class="list-group-item active">
+                                        <div class="row" data-toggle="collapse" data-target="#collapse00481" aria-expanded="true" aria-controls="collapse00481">
+                                            <div class="col text-left align-self-center pl-0">
+                                                <h6 class="mb-0">30 de Julho 2020</h6>
+                                                <span class="text-mute small">às 21:02:37</span>
+                                            </div>
+                                            <div class="col-auto text-right align-self-center pr-0">
+                                                <h6 class="text-success font-weight-normal mb-0">Pedido: <b>00481</b></h6>
+                                                <span class="badge badge-warning text-white">Aguardando...</span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <div id="collapse00481" class="collapse" data-parent="#accordion">
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-auto align-self-center pl-0">
+                                                    <figure class="product-image h-auto"><img src="img/prato-01.png" alt="" class="vm list-crop"></figure>
+                                                </div>
+                                                <div class="col align-self-center px-0">
+                                                    <h6 class="text-dark my-1">1x - Filés de Frango</h6>
+                                                    <p class="text-secondary text-mute small mb-0">1x - Molho Rosê</p>
+                                                    <p class="text-secondary text-mute small mb-0">1x - Molho Barbecue</p>
+                                                </div>
+                                                <div class="col-auto align-self-center pr-0">
+                                                    <h5 class="text-success font-weight-normal small my-1">R$ 22,00</h5>
+                                                    <p class="text-success small mb-0">R$ 4,00</p>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-auto align-self-center pl-0">
+                                                    <figure class="product-image h-auto"><img src="img/prato-02.png" alt="" class="vm list-crop"></figure>
+                                                </div>
+                                                <div class="col align-self-center px-0">
+                                                    <h6 class="text-dark my-1">1x - Badejo Grelhado</h6>
+                                                    <p class="text-secondary text-mute small mb-0">1x - Molho Rosê</p>
+                                                    <p class="text-secondary text-mute small mb-0">1x - Molho Ervas Finas</p>
+                                                </div>
+                                                <div class="col-auto align-self-center pr-0">
+                                                    <h5 class="text-success font-weight-normal small my-1">R$ 28,00</h5>
+                                                    <p class="text-success small mb-0">R$ 4,00</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col text-left align-self-center pl-0">
+                                                    <h6 class="mb-1">Alguma observação?</h6>
+                                                    <p class="text-secondary text-bold small mb-0">Obs.: Filés de Frango sem pimenta e bem passado os filés. Badejo Grelhado sem cebola.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col align-self-center pl-0">
+                                                    <p class="text-secondary mb-0 small">Total:</p>
+                                                </div>
+                                                <div class="col text-right align-self-center pr-0">
+                                                    <h6 class="mb-0">R$ 58,00</h6>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </div>
+                                </ul>
+
+                                <ul class="list-group list-group-flush">
+                                    <li id="pedido00479" class="list-group-item active">
+                                        <div class="row" data-toggle="collapse" data-target="#collapse00479" aria-expanded="true" aria-controls="collapse00481">
+                                            <div class="col text-left align-self-center pl-0">
+                                                <h6 class="mb-0">30 de Julho 2020</h6>
+                                                <span class="text-mute small">às 21:00:14</span>
+                                            </div>
+                                            <div class="col-auto text-right align-self-center pr-0">
+                                                <h6 class="text-success font-weight-normal mb-0">Pedido: <b>00479</b></h6>
+                                                <span class="badge badge-warning text-white">Aguardando...</span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <div id="collapse00479" class="collapse" data-parent="#accordion">
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-auto align-self-center pl-0">
+                                                    <figure class="product-image h-auto"><img src="img/prato-01.png" alt="" class="vm list-crop"></figure>
+                                                </div>
+                                                <div class="col align-self-center px-0">
+                                                    <h6 class="text-dark my-1">1x - Filés de Frango</h6>
+                                                    <p class="text-secondary text-mute small mb-0">1x - Molho Rosê</p>
+                                                    <p class="text-secondary text-mute small mb-0">1x - Molho Barbecue</p>
+                                                </div>
+                                                <div class="col-auto align-self-center pr-0">
+                                                    <h5 class="text-success font-weight-normal small my-1">R$ 22,00</h5>
+                                                    <p class="text-success small mb-0">R$ 4,00</p>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-auto align-self-center pl-0">
+                                                    <figure class="product-image h-auto"><img src="img/prato-02.png" alt="" class="vm list-crop"></figure>
+                                                </div>
+                                                <div class="col align-self-center px-0">
+                                                    <h6 class="text-dark my-1">1x - Badejo Grelhado</h6>
+                                                    <p class="text-secondary text-mute small mb-0">1x - Molho Rosê</p>
+                                                    <p class="text-secondary text-mute small mb-0">1x - Molho Ervas Finas</p>
+                                                </div>
+                                                <div class="col-auto align-self-center pr-0">
+                                                    <h5 class="text-success font-weight-normal small my-1">R$ 28,00</h5>
+                                                    <p class="text-success small mb-0">R$ 4,00</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col text-left align-self-center pl-0">
+                                                    <h6 class="mb-1">Alguma observação?</h6>
+                                                    <p class="text-secondary text-bold small mb-0">Obs.: Filés de Frango sem pimenta e bem passado os filés. Badejo Grelhado sem cebola.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col align-self-center pl-0">
+                                                    <p class="text-secondary mb-0 small">Total:</p>
+                                                </div>
+                                                <div class="col text-right align-self-center pr-0">
+                                                    <h6 class="mb-0">R$ 58,00</h6>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </div>
+                                </ul>
+                                
+                                <ul class="list-group list-group-flush mb-4">
+                                    <li class="list-group-item border-0">
+                                        <div class="row">
+                                            <div class="col align-self-center pl-0">
+                                                <h6 class="text-secondary mb-0">Subtotal Pedido(s):</h6>
+                                            </div>
+                                            <div class="col text-right align-self-center pr-0">
+                                                <h3 class="text-success mb-0">R$ 116,00</h3>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white text-center py-4 fixed-bottom">
+                        <button class="btn btn-lg btn-secondary btn-rounded" data-dismiss="modal">Fechar</button>
+                        <button class="btn btn-lg btn-success btn-rounded" type="submit" data-dismiss="modal">Enviar para o Caixa</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Editar Comanda -->
+    <div class="modal fade" id="editar-comanda" role="dialog" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-xf" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header clean">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body clean p-4">
+                    <div class="row">
+                        <div class="col-auto align-self-center text-right">
+                            <figure class="avatar avatar-120 mt-2">
+                                <img src="img/pedidos.svg" alt="">
+                            </figure>
+                        </div>
+                        <div class="col align-self-center text-left pl-2">
+                            <h5 class="mt-2">Comanda: <b>0009</b></h5>
+                            <div class="form-group float-label w-10 mb-2">
+                                <select class="custom-select selectpicker" data-live-search="true" data-live-search-placeholder="Pesquisar..." required>
+                                    <option value="01" selected>MESA: 01</option>
+                                    <option value="02">MESA: 02</option>
+                                    <option value="03">MESA: 03</option>
+                                    <option value="04">MESA: 04</option>
+                                </select>
+                                <label class="form-control-label">Alterar Mesa</label>
+                            </div>
+                            <span class="d-block">Jefferson Soares Antunes</span>
+                            <span class="text-secondary small">Pagamento:</span>
+                            <span class="badge badge-default text-white">Aberto</span>
+                            <span class="badge badge-light text-default"><b>Nenhum</b></span>
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mt-4 mb-4 pb-4">
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col text-left align-self-center pl-0">
+                                            <h6 class="mb-0">30 de Julho 2020</h6>
+                                            <span class="text-mute small">às 21:02:37</span>
+                                        </div>
+                                        <div class="col-auto text-right align-self-center pr-0">
+                                            <h6 class="text-success font-weight-normal mb-0">Pedido: <b>00481</b></h6>
+                                            <div class="form-group float-label w-35 border-0 m-0 p-0">
+                                                <select class="custom-select selectpicker" required>
+                                                    <option value="Aguardando..." selected>Aguardando...</option>
+                                                    <option value="Em Preparação">Em Preparação</option>
+                                                    <option value="Finalizado">Finalizado</option>
+                                                    <option value="Servido">Servido</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center pl-0">
+                                            <button class="btn btn-sm btn-link p-0 float-right" disabled><i class="material-icons">remove_circle</i></button>
+                                        </div>
+                                        <div class="col-auto align-self-center pl-0">
+                                            <figure class="product-image h-auto"><img src="img/prato-01.png" alt="" class="vm list-crop"></figure>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h6 class="text-dark my-1">1x - Filés de Frango</h6>
+                                            <p class="text-secondary text-mute small mb-0">1x - Molho Rosê</p>
+                                            <p class="text-secondary text-mute small mb-0">1x - Molho Barbecue</p>
+                                        </div>
+                                        <div class="col-auto align-self-center pr-0">
+                                            <h5 class="text-success font-weight-normal small my-1">R$ 22,00</h5>
+                                            <p class="text-success small mb-0">R$ 4,00</p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center pl-0">
+                                            <button class="btn btn-sm btn-link p-0 float-right" disabled><i class="material-icons">remove_circle</i></button>
+                                        </div>
+                                        <div class="col-auto align-self-center pl-0">
+                                            <figure class="product-image h-auto"><img src="img/prato-02.png" alt="" class="vm list-crop"></figure>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h6 class="text-dark my-1">1x - Badejo Grelhado</h6>
+                                            <p class="text-secondary text-mute small mb-0">1x - Molho Rosê</p>
+                                            <p class="text-secondary text-mute small mb-0">1x - Molho Ervas Finas</p>
+                                        </div>
+                                        <div class="col-auto align-self-center pr-0">
+                                            <h5 class="text-success font-weight-normal small my-1">R$ 28,00</h5>
+                                            <p class="text-success small mb-0">R$ 4,00</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col text-left align-self-center pl-0">
+                                            <h6 class="mb-1">Alguma observação?</h6>
+                                            <p class="text-secondary text-bold small mb-0">Obs.: Filés de Frango sem pimenta e bem passado os filés. Badejo Grelhado sem cebola.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col align-self-center pl-0">
+                                            <p class="text-secondary mb-0 small">Subtotal:</p>
+                                        </div>
+                                        <div class="col text-right align-self-center pr-0">
+                                            <h6 class="mb-0">R$ 58,00</h6>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col text-left align-self-center pl-0">
+                                            <h6 class="mb-0">30 de Julho 2020</h6>
+                                            <span class="text-mute small">às 21:00:14</span>
+                                        </div>
+                                        <div class="col-auto text-right align-self-center pr-0">
+                                            <h6 class="text-success font-weight-normal mb-0">Pedido: <b>00479</b></h6>
+                                            <div class="form-group float-label w-35 border-0 m-0 p-0">
+                                                <select class="custom-select selectpicker" required>
+                                                    <option value="Aguardando..." selected>Aguardando...</option>
+                                                    <option value="Em Preparação">Em Preparação</option>
+                                                    <option value="Finalizado">Finalizado</option>
+                                                    <option value="Servido">Servido</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center pl-0">
+                                            <button class="btn btn-sm btn-link p-0 float-right" disabled><i class="material-icons">remove_circle</i></button>
+                                        </div>
+                                        <div class="col-auto align-self-center pl-0">
+                                            <figure class="product-image h-auto"><img src="img/prato-01.png" alt="" class="vm list-crop"></figure>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h6 class="text-dark my-1">1x - Filés de Frango</h6>
+                                            <p class="text-secondary text-mute small mb-0">1x - Molho Rosê</p>
+                                            <p class="text-secondary text-mute small mb-0">1x - Molho Barbecue</p>
+                                        </div>
+                                        <div class="col-auto align-self-center pr-0">
+                                            <h5 class="text-success font-weight-normal small my-1">R$ 22,00</h5>
+                                            <p class="text-success small mb-0">R$ 4,00</p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center pl-0">
+                                            <button class="btn btn-sm btn-link p-0 float-right" disabled><i class="material-icons">remove_circle</i></button>
+                                        </div>
+                                        <div class="col-auto align-self-center pl-0">
+                                            <figure class="product-image h-auto"><img src="img/prato-02.png" alt="" class="vm list-crop"></figure>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h6 class="text-dark my-1">1x - Badejo Grelhado</h6>
+                                            <p class="text-secondary text-mute small mb-0">1x - Molho Rosê</p>
+                                            <p class="text-secondary text-mute small mb-0">1x - Molho Ervas Finas</p>
+                                        </div>
+                                        <div class="col-auto align-self-center pr-0">
+                                            <h5 class="text-success font-weight-normal small my-1">R$ 28,00</h5>
+                                            <p class="text-success small mb-0">R$ 4,00</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col text-left align-self-center pl-0">
+                                            <h6 class="mb-1">Alguma observação?</h6>
+                                            <p class="text-secondary text-bold small mb-0">Obs.: Filés de Frango sem pimenta e bem passado os filés. Badejo Grelhado sem cebola.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col align-self-center pl-0">
+                                            <p class="text-secondary mb-0 small">Subtotal:</p>
+                                        </div>
+                                        <div class="col text-right align-self-center pr-0">
+                                            <h6 class="mb-0">R$ 58,00</h6>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item border-0">
+                                    <div class="row">
+                                        <div class="col align-self-center pl-0">
+                                            <p class="text-secondary mb-0 small">Subtotal:</p>
+                                            <p class="text-secondary mb-0 small">Taxa/Serviço:</p>
+                                            <p class="text-secondary mb-0 small">Descontos:</p>
+                                            <p class="text-secondary mb-0 small">Couvert:</p>
+                                            <p class="text-secondary mb-0 small">Taxa/entrega:</p>
+
+                                            <h6 class="text-secondary mb-0">Total:</h6>
+                                        </div>
+                                        <div class="col text-right align-self-center pr-0">
+                                            <h6 class="mb-0">R$ 116,00</h6>
+                                            <p class="text-secondary mb-0 small">10% (R$11,60)</p>
+                                            <p class="text-secondary mb-0 small">R$ 10,00</p>
+                                            <p class="text-secondary mb-0 small">R$ 5,00</p>
+                                            <p class="text-secondary mb-0 small">R$ 7,00</p>
+
+                                            <h3 class="text-success mb-0">R$ 129,60</h3>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-white text-center py-4 fixed-bottom">
+                        <button class="btn btn-lg btn-secondary btn-rounded" data-dismiss="modal">Fechar</button>
+                        <button class="btn btn-lg btn-success btn-rounded" data-dismiss="modal">Salvar</button>
+                        <button class="btn btn-default button-rounded-42 float-right mr-4" data-toggle="modal" data-target="#confirmar-cancelamento"><i class="material-icons md-24">delete_forever</i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Editar Perfil -->
+    <div class="modal fade" id="editar-perfil" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header clean">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body clean text-center p-4">
+                    <figure class="avatar avatar-120 mt-2">
+                        <img src="img/garcom.svg" alt="">
+                    </figure>
+                    <h5 class="my-3">Editar Perfil</h5> 
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group float-label">
+                                <input type="text" class="form-control" value="" placeholder="Nome Sobrenome" required>
+                                <label class="form-control-label">Nome Completo</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group float-label">
+                                <input type="email" class="form-control" value="" placeholder="E-mail válido" required>
+                                <label class="form-control-label">E-mail</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group float-label">
+                                <input type="password" class="form-control" value="" placeholder="" required>
+                                <label class="form-control-label">Senha</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group float-label">
+                                <input type="password" class="form-control" value="" placeholder="" required>
+                                <label class="form-control-label">Confirmar Senha</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-2">
+                        <button class="btn btn-lg btn-secondary btn-rounded" data-dismiss="modal">Fechar</button>
+                        <button class="btn btn-lg btn-success btn-rounded" data-dismiss="modal">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Notificações Pedidos / Diversos -->
+    <div class="modal fade" id="notificacoes" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="header-title mb-0">Notificações</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                     
+                    <div class="row">
+                        <div class="col-12 px-0">
+                            <div class="modal-header">
+                                <h5 class="header-title mb-0">Pedido(s) <span class="badge badge-default">2</span></h5>
+                            </div>
+                            <ul class="list-group list-group-flush mb-2">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center">
+                                            <span class="btn btn-success p-3 btn-rounded-15">
+                                                <p class="small mb-0">MESA</p>
+                                                <h2 class="mb-0">01</h2>
+                                            </span>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h5 class="text-dark mb-1 d-block">
+                                                <i class="material-icons md-16">schedule</i> 21:02:37
+                                            </h5>
+                                            <p class="text-secondary text-ellipsis text-mute small mb-1">Jefferson Soares Antunes</p>
+                                            <span class="badge badge-light text-secondary">Pedido: <b>00481</b></span>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <span class="badge badge-default text-white">Aberto</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center">
+                                            <span class="btn btn-success p-3 btn-rounded-15">
+                                                <p class="small mb-0">MESA</p>
+                                                <h2 class="mb-0">01</h2>
+                                            </span>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h5 class="text-dark mb-1 d-block">
+                                                <i class="material-icons md-16">schedule</i> 21:00:14
+                                            </h5>
+                                            <p class="text-secondary text-ellipsis text-mute small mb-1">Carlos Eduardo Souza Filho</p>
+                                            <span class="badge badge-light text-secondary">Pedido: <b>00480</b></span>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <span class="badge badge-default text-white">Aberto</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Notificações Garçom -->
+    <div class="modal fade" id="notificacoes-garcom" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="header-title mb-0">Notificações</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                     
+                    <div class="row">
+                        <div class="col-12 px-0">
+                            <div class="modal-header">
+                                <h5 class="header-title mb-0">Chamando Garçom <span class="badge badge-default">1</span></h5>
+                            </div>
+                            <ul class="list-group list-group-flush mb-2">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center">
+                                            <span class="btn btn-success p-3 btn-rounded-15">
+                                                <p class="small mb-0">MESA</p>
+                                                <h2 class="mb-0">01</h2>
+                                            </span>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h5 class="text-dark mb-1 d-block">
+                                                <i class="material-icons md-16">schedule</i> 21:02:37
+                                            </h5>
+                                            <p class="text-secondary text-ellipsis text-mute small mb-1">Jefferson Soares Antunes</p>
+                                            <span class="badge badge-warning text-white">Aguardando...</span>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <button class="btn btn-sm btn-link text-success p-0 float-right"><i class="material-icons">done</i></button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-12 px-0 mb-3">
+                            <div class="modal-header">
+                                <h5 class="header-title mb-0">Alteração de Mesa <span class="badge badge-default">0</span></h5>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        
+                                    </div>
+                                </li>
+                            </ul>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Jquery / Popper / Bootstrap JS -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap-select.js"></script>
+    
+    <!-- Swiper JS -->
+    <script src="vendor/swiper/js/swiper.min.js"></script>
+    
+    <!-- Moment JS -->
+    <script src="vendor/moment/moment.js"></script>
+    
+    <!-- Slimscroll JS -->
+    <script src="vendor/slimscroll/slimscroll.min.js"></script>
+    
+    <!-- Tabs Wizard JS -->
+    <script src="vendor/tabs-wizard/tabs-wizard.js"></script>
+    
+    <!-- Daterange JS -->
+    <script src="vendor/datarange/daterange.js"></script>
+    
+    <!-- Datatables JS -->
+    <script src="vendor/datatables/datatables.min.js"></script>
+    <script src="vendor/datatables/dataTables.responsive.min.js"></script>
+    
+    <!-- Lobipanel JS -->
+    <script src="vendor/lobipanel/lobipanel.js"></script>
+    
+    <!-- ApexCharts JS -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    
+    <!-- Customização JS -->
+    <script src="js/main.js"></script>
+    
+    <!-- Scripts -->
+    <script>
+        $(window).on('load', function() {
+            
+        });
+        
+        /* Aba Adicionar Pedido */
+        $(document).ready(function() {
+            $('#abas-adicionar-novo-pedido').TabWizard({
+                nextButtonClass: '.btnNext',
+                previousButtonClass: '.btnPrev',
+                finishButtonText: 'Fazer Pedido',
+                onFinish: function () {
+                    $("[data-dismiss=modal]").trigger({ type: "click" });
+                },
+            });
+            $('#abas-adicionar-pedido').TabWizard({
+                nextButtonClass: '.btnNext',
+                previousButtonClass: '.btnPrev',
+                finishButtonText: 'Fazer Pedido',
+                onFinish: function () {
+                    $("[data-dismiss=modal]").trigger({ type: "click" });
+                },
+            });
+        });
+        
+        /* Multi-Modal */
+        $(document).ready(function() {
+            (function($, window) {
+                'use strict';
+                var MultiModal = function(element) {
+                    this.$element = $(element);
+                    this.modalCount = 0;
+                };
+                MultiModal.BASE_ZINDEX = 1040;
+                MultiModal.prototype.show = function(target) {
+                    var that = this;
+                    var $target = $(target);
+                    var modalIndex = that.modalCount++;
+                    $target.css('z-index', MultiModal.BASE_ZINDEX + (modalIndex * 20) + 10);
+                    window.setTimeout(function() {
+                        if(modalIndex > 0)
+                            $('.modal-backdrop').not(':first').addClass('hidden');
+                        that.adjustBackdrop();
+                    });
+                };
+                MultiModal.prototype.hidden = function(target) {
+                    this.modalCount--;
+                    if(this.modalCount) {
+                       this.adjustBackdrop();
+                        $('body').addClass('modal-open');
+                    }
+                };
+                MultiModal.prototype.adjustBackdrop = function() {
+                    var modalIndex = this.modalCount - 1;
+                    $('.modal-backdrop:first').css('z-index', MultiModal.BASE_ZINDEX + (modalIndex * 20));
+                };
+                function Plugin(method, target) {
+                    return this.each(function() {
+                        var $this = $(this);
+                        var data = $this.data('multi-modal-plugin');
+                        if(!data)
+                            $this.data('multi-modal-plugin', (data = new MultiModal(this)));
+                        if(method)
+                            data[method](target);
+                    });
+                }
+                $.fn.multiModal = Plugin;
+                $.fn.multiModal.Constructor = MultiModal;
+                $(document).on('show.bs.modal', function(e) {
+                    $(document).multiModal('show', e.target);
+                });
+                $(document).on('hidden.bs.modal', function(e) {
+                    $(document).multiModal('hidden', e.target);
+                });
+            }(jQuery, window));
+        });
+
+    </script>
+
+</body>
+
+</html>

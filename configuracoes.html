@@ -1,0 +1,971 @@
+<!doctype html>
+<html lang="pt-br" class="menon">
+
+<head>
+    
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#E93D25">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="description" content="O seu cardápio digital">
+
+    <title>Menon - Painel Administrativo</title>
+    
+    <!-- Icones / Favicon -->
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="icon" href="img/favicon.png">
+
+    <!-- Icones CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap-4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-4.3.1/css/bootstrap-select.css">
+
+    <!-- Swiper Slide CSS -->
+    <link rel="stylesheet" href="vendor/swiper/css/swiper.min.css">
+    
+     <!-- Progress Wizard CSS -->
+    <link rel="stylesheet" href="vendor/progress-wizard/css/progress-wizard.min.css">
+    
+    <!-- DateRange CSS -->
+	<link rel="stylesheet" href="vendor/datarange/daterange.css">
+    
+    <!-- Datatables CSS -->
+	<link rel="stylesheet" href="vendor/datatables/datatables.min.css">
+    <link rel="stylesheet" href="vendor/datatables/responsive.dataTables.min.css">
+    
+    <!-- Lobipanel css -->
+    <link rel="stylesheet" href="vendor/lobipanel/lobipanel.css">
+
+    <!-- Estilo CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="row no-gutters vh-100 loader-screen">
+        <div class="col align-self-center text-white text-center">
+            <img src="img/logo.svg" alt="logo">
+            <div></div>
+            <div class="laoderhorizontal"><div></div><div></div><div></div><div></div></div>
+        </div>
+    </div>
+    
+    <!-- Menu Lateral -->
+    <div class="sidebar">
+        <div class="text-center">
+            <div class="figure-menu shadow">
+                <figure><img src="img/usuario.svg" alt=""></figure>
+            </div>
+            <h5 class="mb-1 ">Nome Sobrenome</h5>
+            <p class="text-mute small">Função | Restaurante</p>
+        </div>
+        <div class="row mx-0">
+            <div class="col">
+                <div class="list-group main-menu">
+                    <a href="painel.html" class="list-group-item list-group-item-action"><i class="material-icons">multiline_chart</i> Painel</a>
+                    <a href="cardapios.html" class="list-group-item list-group-item-action"><i class="material-icons">fastfood</i> Cardápios</a>
+                    <a href="pedidos.html" class="list-group-item list-group-item-action"><i class="material-icons">receipt_long</i> Pedidos</a>
+                    <a href="mesas.html" class="list-group-item list-group-item-action"><i class="material-icons">view_module</i> Mesas</a>
+                    <a href="cupom.html" class="list-group-item list-group-item-action"><i class="material-icons">local_activity</i> Cupom</a>
+                    <a href="usuarios.html" class="list-group-item list-group-item-action"><i class="material-icons">account_circle</i> Usuários</a>
+                    <a href="financeiro.html" class="list-group-item list-group-item-action"><i class="material-icons">payments</i> Financeiro</a>
+                    <a href="relatorios.html" class="list-group-item list-group-item-action"><i class="material-icons">bar_chart</i> Relatórios</a>
+                    <a href="configuracoes.html" class="list-group-item list-group-item-action active"><i class="material-icons">settings</i> Configurações</a>
+                    <a href="index.html" class="list-group-item list-group-item-action"><i class="material-icons">exit_to_app</i> Sair</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="wrapper">
+        
+        <!-- Cabeçalho -->
+        <div class="header">
+            <div class="row no-gutters">
+                <div class="col text-left">
+                    <button class="btn btn-link text-secondary menu-btn"><i class="material-icons">apps</i></button>
+                </div>
+                <div class="col text-center"><img src="img/logo-menon-h.svg" alt="" class="header-logo"></div>
+                <div class="col text-right">
+                    <a href="" class="btn-link text-secondary table-btn small" data-toggle="modal" data-target="#notificacoes"><i class="material-icons">notifications_active</i></a> 
+                    <a href="" class="btn-link text-secondary table-btn small" data-toggle="modal" data-target="#notificacoes-garcom"><i class="material-icons">emoji_people</i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Configurações -->
+        <div class="container-fluid">
+            <div class="mb-2">
+                <div class="row">
+                    <div class="col-auto align-self-center pr-0">
+                         <i class="material-icons md-48 text-default">settings</i>
+                    </div>
+                    <div class="col-auto align-self-center px-2">
+                         <h6 class="mb-0">Configurações</h6>
+                         <span class="text-secondary text-bold small">Configurações do Restaurante</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-8 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 col-md-12 col-lg-4 mb-4">
+                                    <div class="figure-profile my-2">
+                                        <figure><img src="img/logo-restaurante.svg" alt=""></figure>
+                                        <div class="btn btn-dark text-white floating-btn">
+                                            <i class="material-icons">camera_alt</i>
+                                            <input type="file" class="float-file">
+                                        </div>
+                                    </div>
+                                    <h5 class="text-center mt-4">Restaurante Modelo</h5>
+                                    <p class="text-center text-secondary mb-2">99.999.999/9999-99</p>
+                                    <div class="text-center">
+                                        <span class="text-secondary small">Status:</span>
+                                        <span class="badge badge-success text-white">Aberto</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12 col-md-12 col-lg-8">
+                                    <ul class="nav nav-tabs tabs-bordered d-flex nav-justified mt-4 mb-4" role="tablist">
+                                        <li>
+                                            <a href="#tab1-dados" aria-controls="tab1-dados" class="active show" role="tab" data-toggle="tab">Editar Dados</a>
+                                        </li>
+                                        <li>
+                                            <a href="#tab2-funcionamento" aria-controls="tab2-funcionamento" role="tab" data-toggle="tab">Funcionamento</a>
+                                        </li>
+                                        <li>
+                                            <a href="#tab3-integracoes" aria-controls="tab3-integracoes" role="tab" data-toggle="tab">Integrações</a>
+                                        </li>
+                                    </ul>
+                                    
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade active show" id="tab1-dados">
+                                            <h6 class="subtitle">Editar Dados</h6>
+                                            <div class="row">
+                                                <div class="col-12 col-lg-4">
+                                                    <div class="form-group float-label">
+                                                        <input type="text" class="form-control" value="" placeholder="Restaurante Modelo" required>
+                                                        <label class="form-control-label">Estabelecimento</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-4">
+                                                    <div class="form-group float-label">
+                                                        <input type="tel" class="form-control" value="" placeholder="99.999.999/9999-99" required>
+                                                        <label class="form-control-label">CNPJ</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-4">
+                                                    <div class="form-group float-label">
+                                                        <input type="tel" class="form-control" value="" placeholder="99 99999-9999">
+                                                        <label class="form-control-label">Telefone</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-6">
+                                                    <div class="form-group float-label">
+                                                        <input type="text" class="form-control" value="" placeholder="Av. Higienópolis, 1100. Centro.">
+                                                        <label class="form-control-label">Endereço Completo</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 col-lg-4">
+                                                    <div class="form-group float-label">
+                                                        <input type="text" class="form-control" value="" placeholder="Cidade" required>
+                                                        <label class="form-control-label">Cidade</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 col-lg-2">
+                                                    <div class="form-group float-label">
+                                                        <input type="text" class="form-control" value="" placeholder="UF" required>
+                                                        <label class="form-control-label">Estado</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-4">
+                                                    <div class="form-group float-label">
+                                                        <select class="custom-select selectpicker" title="Selecione..." required>
+                                                            <option value="cartao">Apenas App</option>
+                                                            <option value="caixa">Apenas Caixa</option>
+                                                            <option value="todos">App e Caixa</option>
+                                                        </select>
+                                                        <label class="form-control-label">Pagamento</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-8">
+                                                    <div class="form-group float-label">
+                                                        <select class="custom-select selectpicker" title="Selecione..." required>
+                                                            <option value="pre-fechamento">Pagamento após realizar o pedido</option>
+                                                            <option value="pos-fechamento">Pagamento após o fechamento da conta</option>
+                                                        </select>
+                                                        <label class="form-control-label">Método de Fechamento da Conta</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4 col-lg-4">
+                                                    <div class="form-group float-label">
+                                                        <input type="tel" class="form-control" value="" placeholder="Valor">
+                                                        <label class="form-control-label">Valor Mínimo</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4 col-lg-4">
+                                                    <div class="form-group float-label">
+                                                        <input type="tel" class="form-control" value="" placeholder="Valor">
+                                                        <label class="form-control-label">Couvert</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4 col-lg-4">
+                                                    <div class="form-group float-label">
+                                                        <input type="tel" class="form-control" value="" placeholder="Percentual">
+                                                        <label class="form-control-label">Taxa de Serviço</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-7 col-lg-6 col-xl-4">
+                                                    <div class="form-group float-label">
+                                                        <div class="row mt-2">
+                                                            <div class="col-auto">
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" name="taxa-entrega" class="custom-control-input" id="ativo">
+                                                                    <label class="custom-control-label" for="ativo">Ativo</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" name="taxa-entrega" class="custom-control-input" id="inativo" checked>
+                                                                    <label class="custom-control-label" for="inativo">Inativo</label>
+                                                                </div>
+                                                            </div>    
+                                                        </div>    
+                                                        <label class="form-control-label">Taxa de Entrega (Link)</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-5 col-lg-6 col-xl-4">
+                                                    <div class="form-group float-label">
+                                                        <input type="tel" class="form-control" value="" placeholder="Valor">
+                                                        <label class="form-control-label">Valor da Taxa</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-12 col-xl-4">
+                                                    <div class="form-group float-label">
+                                                        <select class="custom-select selectpicker" title="Local do Beep" multiple>
+                                                            <option value="mesa">Mesa Numerada</option>
+                                                            <option value="unica">Mesa Única</option>
+                                                            <option value="ticket">Ticket</option>
+                                                        </select>
+                                                        <label class="form-control-label">Beep (Pedidos)</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div role="tabpanel" class="tab-pane fade" id="tab2-funcionamento">
+                                            <h6 class="subtitle">Horário de Funcionamento (Sistema)</h6>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group float-label">
+                                                        <div class="row">
+                                                            <div class="col-11 col-md-11 col-lg">
+                                                                <div class="input-group float-label">
+                                                                    <select class="custom-select selectpicker" aria-describedby="inputGroupPrepend" title="Dia" required>
+                                                                        <option value="seg">Segunda</option>
+                                                                        <option value="ter">Terça</option>
+                                                                        <option value="qua">Quarta</option>
+                                                                        <option value="qui">Quinta</option>
+                                                                        <option value="sex">Sexta</option>
+                                                                        <option value="sab">Sábado</option>
+                                                                        <option value="dom">Domingo</option>
+                                                                    </select>
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text px-2" id="inputGroupPrepend">
+                                                                            <p>à</p>
+                                                                        </span>
+                                                                    </div>
+                                                                    <select class="custom-select selectpicker" aria-describedby="inputGroupPrepend" title="Dia" required>
+                                                                        <option value="seg">Segunda</option>
+                                                                        <option value="ter">Terça</option>
+                                                                        <option value="qua">Quarta</option>
+                                                                        <option value="qui">Quinta</option>
+                                                                        <option value="sex">Sexta</option>
+                                                                        <option value="sab">Sábado</option>
+                                                                        <option value="dom">Domingo</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-11 col-md-11 col-lg">
+                                                                <div class="input-group float-label">
+                                                                    <input type="tel" class="form-control" placeholder="HH:MM" aria-describedby="inputGroupPrepend3" required="">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text px-2" id="inputGroupPrepend">
+                                                                            <p>às</p>
+                                                                        </span>
+                                                                    </div>
+                                                                    <input type="tel" class="form-control" placeholder="HH:MM" aria-describedby="inputGroupPrepend" required="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-1 col-md-1 col-lg-auto align-self-center pl-0">
+                                                                <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">add_circle</i></button>
+                                                            </div>
+                                                        </div>
+                                                        <label class="form-control-label">Período</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <h6 class="subtitle">Horário de Atendimento (Entrega)</h6>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group float-label">
+                                                        <div class="row">
+                                                            <div class="col-11 col-md-11 col-lg">
+                                                                <div class="input-group float-label">
+                                                                    <select class="custom-select selectpicker" aria-describedby="inputGroupPrepend" title="Dia" required>
+                                                                        <option value="seg">Segunda</option>
+                                                                        <option value="ter">Terça</option>
+                                                                        <option value="qua">Quarta</option>
+                                                                        <option value="qui">Quinta</option>
+                                                                        <option value="sex">Sexta</option>
+                                                                        <option value="sab">Sábado</option>
+                                                                        <option value="dom">Domingo</option>
+                                                                    </select>
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text px-2" id="inputGroupPrepend">
+                                                                            <p>à</p>
+                                                                        </span>
+                                                                    </div>
+                                                                    <select class="custom-select selectpicker" aria-describedby="inputGroupPrepend" title="Dia" required>
+                                                                        <option value="seg">Segunda</option>
+                                                                        <option value="ter">Terça</option>
+                                                                        <option value="qua">Quarta</option>
+                                                                        <option value="qui">Quinta</option>
+                                                                        <option value="sex">Sexta</option>
+                                                                        <option value="sab">Sábado</option>
+                                                                        <option value="dom">Domingo</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-11 col-md-11 col-lg">
+                                                                <div class="input-group float-label">
+                                                                    <input type="tel" class="form-control" placeholder="HH:MM" aria-describedby="inputGroupPrepend3" required="">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text px-2" id="inputGroupPrepend">
+                                                                            <p>às</p>
+                                                                        </span>
+                                                                    </div>
+                                                                    <input type="tel" class="form-control" placeholder="HH:MM" aria-describedby="inputGroupPrepend" required="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-1 col-md-1 col-lg-auto align-self-center pl-0">
+                                                                <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons">add_circle</i></button>
+                                                            </div>
+                                                        </div>
+                                                        <label class="form-control-label">Período</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div role="tabpanel" class="tab-pane fade" id="tab3-integracoes">
+                                            <h6 class="subtitle">Integrações</h6>
+                                            <div class="row">    
+                                                <div class="col-12 col-lg-3">
+                                                    <div class="form-group float-label">
+                                                        <select class="custom-select selectpicker" title="Selecione..." required>
+                                                            <option value="sim">Sim</option>
+                                                            <option value="nao" selected>Não</option>
+                                                        </select>
+                                                        <label class="form-control-label">iFood <button class="btn btn-link p-0 text-secondary" data-toggle="modal" data-target="#info-ifood"><i class="material-icons md-14">help_outline</i></button></label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-3">
+                                                    <div class="form-group float-label">
+                                                        <div class="btn-group w-100 py-1">
+                                                            <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#visualizar-fechamento-caixa"><i class="material-icons">link</i></button>
+                                                            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <span class="sr-only">Toggle Dropdown</span>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-right rounded my-2">
+                                                                <button class="btn btn-link text-secondary text-capitalize font-weight-normal dropdown-item" id="btn-print"><i class="material-icons">open_in_new</i> Portal iFood</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg">
+                                                    <div class="form-group float-label">
+                                                        <input type="text" class="form-control" value="" placeholder="ID Restaurante iFood">
+                                                        <label class="form-control-label">Código Autenticação</label>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                            <div class="row">  
+                                                <div class="col-12 col-lg-3">
+                                                    <div class="form-group float-label">
+                                                        <select class="custom-select selectpicker" title="Selecione..." required>
+                                                            <option value="sim">Sim</option>
+                                                            <option value="nao" selected>Não</option>
+                                                        </select>
+                                                        <label class="form-control-label">Emitir NFC-e</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg">
+                                                    <div class="form-group float-label">
+                                                        <input type="text" class="form-control" value="" placeholder="Token Focus NFe">
+                                                        <label class="form-control-label">Token (Homologação)</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg">
+                                                    <div class="form-group float-label">
+                                                        <input type="text" class="form-control" value="" placeholder="Token Focus NFe">
+                                                        <label class="form-control-label">Token (Produção)</label>
+                                                    </div>
+                                                </div>
+                                            </div>   
+                                            <div class="row">    
+                                                <div class="col-12 col-lg-3">
+                                                    <div class="form-group float-label">
+                                                        <select class="custom-select selectpicker" title="Selecione..." required>
+                                                            <option value="sim">Sim</option>
+                                                            <option value="nao" selected>Não</option>
+                                                        </select>
+                                                        <label class="form-control-label">Omie</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg">
+                                                    <div class="form-group float-label">
+                                                        <input type="text" class="form-control" value="" placeholder="Token Omie">
+                                                        <label class="form-control-label">Token ID</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12 col-lg-3">
+                                                    <div class="form-group float-label">
+                                                        <select class="custom-select selectpicker" title="Selecione..." required>
+                                                            <option value="sim">Sim</option>
+                                                            <option value="nao" selected>Não</option>
+                                                        </select>
+                                                        <label class="form-control-label">Vuupt</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-11 col-md-11 col-lg">
+                                                    <div class="form-group float-label">
+                                                        <input type="text" class="form-control" value="" placeholder="Token de Acesso Vuupt">
+                                                        <label class="form-control-label">Token ID</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-1 col-md-1 col-lg-auto align-self-center pl-0">
+                                                    <button class="btn btn-sm btn-link text-secondary p-0 float-right" data-toggle="modal" data-target="#configurar-vuupt"><i class="material-icons">settings</i></button>
+                                                </div>
+                                            </div>    
+                                            <div class="row">
+                                                <div class="col-12 col-lg-3">
+                                                    <div class="form-group float-label">
+                                                        <select class="custom-select selectpicker" title="Selecione..." required>
+                                                            <option value="sim">Sim</option>
+                                                            <option value="nao" selected>Não</option>
+                                                        </select>
+                                                        <label class="form-control-label">Machine</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-11 col-md-11 col-lg">
+                                                    <div class="form-group float-label">
+                                                        <input type="text" class="form-control" value="" placeholder="Chave de Acesso Machine">
+                                                        <label class="form-control-label">Key ID</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-1 col-md-1 col-lg-auto align-self-center pl-0">
+                                                    <button class="btn btn-sm btn-link text-secondary p-0 float-right" data-toggle="modal" data-target="#configurar-machine"><i class="material-icons">settings</i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="float-right mt-2 mb-2">
+                                        <button class="btn btn-lg btn-secondary btn-rounded" type="reset">Resetar</button>
+                                        <button class="btn btn-lg btn-success btn-rounded" type="submit">Salvar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <h6 class="subtitle mt-1">QR Code</h6>
+                            <div class="row">
+                                <div class="col-12 col-md-12 col-lg-4">
+                                    <div class="text-center">
+                                        <img class="img-fluid" src="img/qr-code-menon.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-12 col-lg-8">
+                                    <p>O próximo passo é gerar e imprimir os QR Codes.</p>
+                                    <p>Você irá disponibilizá-los da forma que achar melhor.</p>
+                                </div>
+                                <div class="col-12 mt-4 mb-2">
+                                    <h5>Vamos começar?</h5>
+                                    <ul class="nav nav-tabs tabs-bordered d-flex nav-justified mt-4 mb-4" role="tablist">
+                                        <li>
+                                            <a href="#tab1-mesa" aria-controls="tab1-mesa" class="active show" role="tab" data-toggle="tab">Mesa</a>
+                                        </li>
+                                        <li>
+                                            <a href="#tab2-unico" aria-controls="tab2-unico" role="tab" data-toggle="tab">Único</a>
+                                        </li>
+                                        <li>
+                                            <a href="#tab3-ticket" aria-controls="tab3-ticket" role="tab" data-toggle="tab">Ticket</a>
+                                        </li>
+                                        <li>
+                                            <a href="#tab4-link" aria-controls="tab4-link" role="tab" data-toggle="tab">Link</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade active show" id="tab1-mesa">
+                                            <p>Nesta opção os QR Codes serão configurados conforme os dados selecionados na configuração ao lado e pelo critério abaixo:</p>
+                                            <span class="d-block text-secondary"><i class="material-icons md-16 text-success">check</i> Quantidade de mesas cadastradas.</span>
+                                            <div class="text-center mt-4">
+                                                <button class="btn btn-lg btn-default btn-rounded" type="button">Gerar QR Code</button>
+                                            </div>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="tab2-unico">
+                                            <p>Nesta opção o QR Code será configurado conforme os dados selecionados na configuração ao lado e pelo critério abaixo:</p>
+                                            <span class="d-block text-secondary"><i class="material-icons md-16 text-success">check</i> Um único QR Code para realizar o pedido.</span>
+                                            <div class="text-center mt-4">
+                                                <button class="btn btn-lg btn-default btn-rounded" type="button">Gerar QR Code</button>
+                                            </div>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="tab3-ticket">
+                                            <p>Nesta opção os QR Codes serão configurados como um evento à parte, seguindo os critérios abaixo:</p>
+                                            <span class="d-block text-secondary"><i class="material-icons md-16 text-success">check</i> Pagamento depois de realizar o pedido;</span>
+                                            <span class="d-block text-secondary"><i class="material-icons md-16 text-success">check</i> Pagamento apenas com Cartão via App.</span>
+                                            <div class="text-center mt-4">
+                                                <div class="row">
+                                                    <div class="col align-self-center">
+                                                        <div class="form-group float-label mb-0">
+                                                            <input type="tel" class="form-control" value="" placeholder="Tickets">
+                                                            <label class="form-control-label">Quantidade</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto align-self-center mt-3">
+                                                        <button class="btn btn-lg btn-default btn-rounded" type="button">Gerar QR Code</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="tab4-link">
+                                            <p>Nesta opção o LINK será configurado para envio externo, seguindo os critérios abaixo:</p>
+                                            <span class="d-block text-secondary"><i class="material-icons md-16 text-success">check</i> Pagamento depois de realizar o pedido;</span>
+                                            <span class="d-block text-secondary"><i class="material-icons md-16 text-success">check</i> Pagamento apenas com Cartão via App e Local.</span>
+                                            <div class="text-center mt-4">
+                                                <button class="btn btn-lg btn-default btn-rounded" type="button">Gerar Link</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>      
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Informações iFood -->
+    <div class="modal fade" id="info-ifood" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-body text-center pr-4 pl-4">
+                    <h5 class="my-3">Configurar iFood</h5>
+                    <div class="text-center mb-4">
+                        <p class="text-secondary">Clique no botão à direita "<i class="material-icons">link</i>" para <b>gerar o link de integração iFood</b>. Após isso, basta <b>clicar na seta</b> para ter acesso ao <b>Portal iFood</b>.</p>
+                    </div>
+                    
+                    <div class="text-center mb-2">
+                        <button class="btn btn-default btn-rounded btn-block col" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Configurar Vuupt -->
+    <div class="modal fade" id="configurar-vuupt" role="dialog" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-xf" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header fixed-top bg-white">
+                    <h5 class="header-title text-secondary mb-0">Configurar Serviço de Entrega</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body p-4 mt-5">
+                    <div class="row">
+                        <div class="col-12">
+                            <div id="abas-configurar-vuupt">
+                                <ul class="nav nav-tabs tabs-bordered d-flex nav-justified mb-4" role="tablist">
+                                    <li>
+                                        <a href="#tab-novo-cliente" aria-controls="tab-cliente" class="active show" role="tab" data-toggle="tab">Cadastrar Entregadores</a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab-novo-cardapio" aria-controls="tab-cardapio" role="tab" data-toggle="tab">Planejar Rotas</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane fade active show" id="tab-novo-cliente">
+                                        <p>Selecionar entregadores ou crie um novo:</p>
+                                        
+                                        <div class="row">
+                                            <div class="col-12 col-lg-4">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group float-label">
+                                                        <select class="custom-select selectpicker" title="Entregadores" multiple>
+                                                            <option value="carlos">Carlos Alberto</option>
+                                                            <option value="jose">José da Silva</option>
+                                                            <option value="wilson">Wilson Nunes</option>
+                                                        </select>
+                                                        <label class="form-control-label">Selecionar Entregador</label>
+                                                    </div>
+                                                    </div>
+                                                    <div class="col-auto align-self-center pl-0">
+                                                        <button class="btn btn-sm btn-link p-0 float-right" data-toggle="modal" data-target="#adicionar-entregador"><i class="material-icons">add_circle</i></button>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group float-label">
+                                                    <select class="custom-select selectpicker" data-live-search="true" data-live-search-placeholder="Pesquisar..." title="Selecione..." required>
+                                                        <option value="00" selected>BALCÃO</option>
+                                                        <option value="01">MESA: 01</option>
+                                                        <option value="02">MESA: 02</option>
+                                                        <option value="03">MESA: 03</option>
+                                                        <option value="04">MESA: 04</option>
+                                                    </select>
+                                                    <label class="form-control-label">Selecionar Local/Mesa</label>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="col-12 col-lg-8 mt-2 mb-4">
+                                                <div class="row border rounded m-0 px-2 py-4 mb-4">
+                                                    <div class="col-12 col-lg-6 my-2">
+                                                        <p><span class="text-secondary font-weight-normal"><i class="material-icons">person</i> Nome:</span> Nome Sobrenome</p>
+                                                    </div>
+                                                    <div class="col-12 col-lg-6 my-2">
+                                                        <p><span class="text-secondary font-weight-normal"><i class="material-icons">email</i> E-mail:</span> nome@emailvalido.com.br</p>
+                                                    </div>
+                                                    <div class="col-12 col-lg-6 my-2">
+                                                        <p><span class="text-secondary font-weight-normal"><i class="material-icons">phone</i> Tel:</span> (43) 99999-9999</p>
+                                                    </div>
+                                                    <div class="col-12 col-lg-6 my-2">
+                                                        <p><span class="text-secondary font-weight-normal"><i class="material-icons">assignment_ind</i> CPF:</span> 999.999.99-99</p>
+                                                    </div>
+                                                    <div class="col-12 col-lg-6 my-2">
+                                                        <p><span class="text-secondary font-weight-normal"><i class="material-icons">pin</i> CEP:</span> 99.999-999</p>
+                                                    </div>
+                                                    <div class="col-12 col-lg-6 my-2">
+                                                        <p><span class="text-secondary font-weight-normal"><i class="material-icons">room</i>  End:</span> Nome da Rua, 999, Jd. Qualquer</p>
+                                                    </div>
+                                                    <div class="col-12 col-lg-6 my-2">
+                                                        <p><span class="text-secondary font-weight-normal"><i class="material-icons">flag</i> Cidade/UF:</span> Londrina | PR</p>
+                                                    </div>
+                                                    <div class="col-12 col-lg-6 my-2">
+                                                        <p><span class="text-secondary font-weight-normal"><i class="material-icons">info</i> Compl.:</span> Nenhum</p>
+                                                    </div>
+                                                </div>   
+                                            </div>
+                                            <div class="col-12 mb-4"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div role="tabpanel" class="tab-pane fade" id="tab-novo-cardapio">
+                                        <div class="row">
+                                            <div class="col-12 col-md-7 col-lg-8 mb-4">
+                                                
+
+                                            </div>
+                                            
+                                            <div class="col-12 col-md-5 col-lg-4 mb-4">
+                                                
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white text-center py-4 fixed-bottom">
+                                    <button class="btn btn-lg btn-outline-secondary btn-rounded btnPrev">Voltar</button>
+                                    <button class="btn btn-lg btn-outline-secondary btn-rounded btnNext">Próximo</button>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+    
+    <!-- Modal Adicionar Entregador -->
+    <div class="modal fade" id="adicionar-entregador" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="header-title mb-0">Adicionar Entregador</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group float-label">
+                                <input type="text" class="form-control" value="" placeholder="Nome Sobrenome" required>
+                                <label class="form-control-label">Nome Completo *</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group float-label">
+                                <input type="email" class="form-control" value="" placeholder="E-mail válido">
+                                <label class="form-control-label">E-mail</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group float-label">
+                                <input type="tel" class="form-control" value="" placeholder="(99) 99999-9999" required>
+                                <label class="form-control-label">Telefone *</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group float-label">
+                                <input type="tel" class="form-control" value="" placeholder="999.999.99-99">
+                                <label class="form-control-label">CPF</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group float-label">
+                                <input type="tel" class="form-control" value="" placeholder="99.999-999">
+                                <label class="form-control-label">CEP</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group float-label">
+                                <input type="text" class="form-control" value="" placeholder="Nome da Rua">
+                                <label class="form-control-label">Rua</label>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-group float-label">
+                                <input type="tel" class="form-control" value="" placeholder="999">
+                                <label class="form-control-label">Número</label>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-group float-label">
+                                <input type="text" class="form-control" value="" placeholder="Bairro">
+                                <label class="form-control-label">Bairro</label>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group float-label">
+                                <input type="text" class="form-control" value="" placeholder="Cidade">
+                                <label class="form-control-label">Cidade</label>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group float-label">
+                                <input type="text" class="form-control" value="" placeholder="UF">
+                                <label class="form-control-label">UF</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group float-label">
+                                <input type="text" class="form-control" value="" placeholder="Complemento">
+                                <label class="form-control-label">Complemento</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-2">
+                        <button class="btn btn-lg btn-secondary btn-rounded" data-dismiss="modal">Fechar</button>
+                        <button class="btn btn-lg btn-success btn-rounded" data-dismiss="modal">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    
+    <!-- Modal Notificações Pedidos / Diversos -->
+    <div class="modal fade" id="notificacoes" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="header-title mb-0">Notificações</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                     
+                    <div class="row">
+                        <div class="col-12 px-0">
+                            <div class="modal-header">
+                                <h5 class="header-title mb-0">Pedido(s) <span class="badge badge-default">0</span></h5>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Notificações Garçom -->
+    <div class="modal fade" id="notificacoes-garcom" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full modal-lg" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="header-title mb-0">Notificações</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                     
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-6 px-0">
+                            <div class="modal-header">
+                                <h5 class="header-title mb-0">Chamando Garçom <span class="badge badge-default">0</span></h5>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-12 col-lg-6 px-0 mb-3">
+                            <div class="modal-header">
+                                <h5 class="header-title mb-0">Alteração de Mesa <span class="badge badge-default">0</span></h5>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Jquery / Popper / Bootstrap JS -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap-select.js"></script>
+    
+    <!-- Swiper JS -->
+    <script src="vendor/swiper/js/swiper.min.js"></script>
+    
+    <!-- Moment JS -->
+    <script src="vendor/moment/moment.js"></script>
+    
+    <!-- Slimscroll JS -->
+    <script src="vendor/slimscroll/slimscroll.min.js"></script>
+    
+    <!-- Tabs Wizard JS -->
+    <script src="vendor/tabs-wizard/tabs-wizard.js"></script>
+    
+    <!-- Daterange JS -->
+    <script src="vendor/datarange/daterange.js"></script>
+    
+    <!-- Datatables JS -->
+    <script src="vendor/datatables/datatables.min.js"></script>
+    <script src="vendor/datatables/dataTables.responsive.min.js"></script>
+    
+    <!-- Lobipanel JS -->
+    <script src="vendor/lobipanel/lobipanel.js"></script>
+    
+    <!-- ApexCharts JS -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    
+    <!-- Customização JS -->
+    <script src="js/main.js"></script>
+    
+    <!-- Scripts -->
+    <script>
+        /* Aba Configurar Serviços de Entregas */
+        $(document).ready(function() {
+            $('#abas-configurar-menon-delivery').TabWizard({
+                nextButtonClass: '.btnNext',
+                previousButtonClass: '.btnPrev',
+                finishButtonText: 'Salvar',
+                onFinish: function () {
+                    $("[data-dismiss=modal]").trigger({ type: "click" });
+                },
+            });
+            $('#abas-configurar-vuupt').TabWizard({
+                nextButtonClass: '.btnNext',
+                previousButtonClass: '.btnPrev',
+                finishButtonText: 'Salvar',
+                onFinish: function () {
+                    $("[data-dismiss=modal]").trigger({ type: "click" });
+                },
+            });
+            $('#abas-configurar-machine').TabWizard({
+                nextButtonClass: '.btnNext',
+                previousButtonClass: '.btnPrev',
+                finishButtonText: 'Salvar',
+                onFinish: function () {
+                    $("[data-dismiss=modal]").trigger({ type: "click" });
+                },
+            });
+        });
+        
+        /* Multi-Modal */
+        $(document).ready(function() {
+            (function($, window) {
+                'use strict';
+                var MultiModal = function(element) {
+                    this.$element = $(element);
+                    this.modalCount = 0;
+                };
+                MultiModal.BASE_ZINDEX = 1040;
+                MultiModal.prototype.show = function(target) {
+                    var that = this;
+                    var $target = $(target);
+                    var modalIndex = that.modalCount++;
+                    $target.css('z-index', MultiModal.BASE_ZINDEX + (modalIndex * 20) + 10);
+                    window.setTimeout(function() {
+                        if(modalIndex > 0)
+                            $('.modal-backdrop').not(':first').addClass('hidden');
+                        that.adjustBackdrop();
+                    });
+                };
+                MultiModal.prototype.hidden = function(target) {
+                    this.modalCount--;
+                    if(this.modalCount) {
+                       this.adjustBackdrop();
+                        $('body').addClass('modal-open');
+                    }
+                };
+                MultiModal.prototype.adjustBackdrop = function() {
+                    var modalIndex = this.modalCount - 1;
+                    $('.modal-backdrop:first').css('z-index', MultiModal.BASE_ZINDEX + (modalIndex * 20));
+                };
+                function Plugin(method, target) {
+                    return this.each(function() {
+                        var $this = $(this);
+                        var data = $this.data('multi-modal-plugin');
+                        if(!data)
+                            $this.data('multi-modal-plugin', (data = new MultiModal(this)));
+                        if(method)
+                            data[method](target);
+                    });
+                }
+                $.fn.multiModal = Plugin;
+                $.fn.multiModal.Constructor = MultiModal;
+                $(document).on('show.bs.modal', function(e) {
+                    $(document).multiModal('show', e.target);
+                });
+                $(document).on('hidden.bs.modal', function(e) {
+                    $(document).multiModal('hidden', e.target);
+                });
+            }(jQuery, window));
+        });
+
+    </script>
+
+</body>
+
+</html>

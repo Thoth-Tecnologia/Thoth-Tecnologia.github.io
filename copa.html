@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="pt-br" class="menon">
+
+<head>
+    
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#E93D25">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="description" content="O seu cardápio digital">
+
+    <title>Menon - Painel Administrativo</title>
+    
+    <!-- Icones / Favicon -->
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="icon" href="img/favicon.png">
+
+    <!-- Icones CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap-4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-4.3.1/css/bootstrap-select.css">
+
+    <!-- Swiper Slide CSS -->
+    <link rel="stylesheet" href="vendor/swiper/css/swiper.min.css">
+    
+     <!-- Progress Wizard CSS -->
+    <link rel="stylesheet" href="vendor/progress-wizard/css/progress-wizard.min.css">
+    
+    <!-- DateRange CSS -->
+	<link rel="stylesheet" href="vendor/datarange/daterange.css">
+    
+    <!-- Datatables CSS -->
+	<link rel="stylesheet" href="vendor/datatables/datatables.min.css">
+    <link rel="stylesheet" href="vendor/datatables/responsive.dataTables.min.css">
+    
+    <!-- Lobipanel css -->
+    <link rel="stylesheet" href="vendor/lobipanel/lobipanel.css">
+
+    <!-- Estilo CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="row no-gutters vh-100 loader-screen">
+        <div class="col align-self-center text-white text-center">
+            <img src="img/logo.svg" alt="logo">
+            <div></div>
+            <div class="laoderhorizontal"><div></div><div></div><div></div><div></div></div>
+        </div>
+    </div>
+    
+    <div class="wrapper">
+        
+        <!-- Cabeçalho -->
+        <div class="header">
+            <div class="row no-gutters">
+                <div class="col text-left">
+                    <a href="perfil.html" class="btn btn-link text-secondary small dropdown-toggle ml-2" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">settings</i></a>
+                    <div class="dropdown-menu">
+                        <a href=""class="dropdown-item text-secondary" data-toggle="modal" data-target="#editar-ajustes"><i class="material-icons">edit_attributes</i> Ajustes</a>
+                        <a href="index.html" class="dropdown-item text-secondary"><i class="material-icons">exit_to_app</i> Sair</a>
+                    </div>
+                </div>
+                <div class="col text-center"><img src="img/logo-menon-h.svg" alt="" class="header-logo"></div>
+                <div class="col text-right">
+                    <button class="btn btn-link text-secondary table-btn small" onclick="play()"><i class="material-icons">room_service</i></button>
+                    <a href="" class="btn-link text-success table-btn small" data-toggle="modal" data-target="#notificacoes"><i class="material-icons">notifications_active</i><span class="badge badge-default small">01</span></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Painel de Pedidos Bar -->
+        <div class="container-fluid">
+            <div class="mb-2">
+                <div class="row">
+                    <div class="col-auto align-self-center pr-0">
+                         <i class="material-icons md-48 text-default">receipt_long</i>
+                    </div>
+                    <div class="col-auto align-self-center px-2">
+                         <h6 class="mb-0">Painel de Pedidos</h6>
+                         <span class="text-secondary text-bold small">Lista de pedidos | Copa</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+                    <div class="card shadow-sm border border-secondary drag-drop-pedido">
+                        <div class="card-body card-drag-drop">
+                            <div class="row">
+                                <div class="col-auto text-left">
+                                    <span class="badge badge-success text-white">Mesa: <b>01</b></span>
+                                    <span class="badge badge-light">Pedido: <b>00480</b></span>
+                                </div>
+                                <div class="col text-right">
+                                    <span class="text-bold small"><i class="material-icons md-16">schedule</i> 21:00:14</span>
+                                </div>
+                                <div class="col-12 mt-2 my-4">
+                                    <div class="overflow-auto h-115">
+                                        <ul class="list-group-activity">
+                                            <li class="list-group-item-activity">
+                                                <div class="detail-info">
+                                                    <h6 class="mb-0">1x - Cerveja Brahma Chop 600ml</h6>
+                                                </div>
+                                            </li>
+                                            
+                                            <hr>
+                                            
+                                            <li class="list-group-item-activity">
+                                                <div class="detail-info">
+                                                    <h6 class="mb-0">1x - Coca-Cola Lata 350ml</h6>
+                                                    <span class="small d-block">Copo com Limão + Gelo</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col align-self-center">
+                                    <button class="btn btn-default btn-block btn-rounded">Preparar</button>
+                                </div>
+                                <div class="col-auto align-self-center pl-0">
+                                    <button class="btn btn-sm btn-link text-secondary"><i class="material-icons">print</i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+                    <div class="card shadow-sm border border-secondary drag-drop-pedido">
+                        <div class="card-body card-drag-drop">
+                            <div class="row">
+                                <div class="col-auto text-left">
+                                    <span class="badge badge-success text-white">Mesa: <b>01</b></span>
+                                    <span class="badge badge-light">Pedido: <b>00481</b></span>
+                                </div>
+                                <div class="col text-right">
+                                    <span class="text-bold small"><i class="material-icons md-16">schedule</i> 21:02:37</span>
+                                </div>
+                                <div class="col-12 mt-2 my-4">
+                                    <div class="overflow-auto h-115">
+                                        <ul class="list-group-activity">
+                                            <li class="list-group-item-activity">
+                                                <div class="detail-info">
+                                                    <h6 class="mb-0">1x - Gin Tônica 150ml</h6>
+                                                </div>
+                                            </li>
+                                            
+                                            <li class="list-group-item-activity">
+                                                <div class="detail-info">
+                                                    <h6 class="mb-0">1x - Água com Gás 500ml</h6>
+                                                    <span class="small d-block">Copo com Limão</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col align-self-center">
+                                    <button class="btn btn-default btn-block btn-rounded">Preparar</button>
+                                </div>
+                                <div class="col-auto align-self-center pl-0">
+                                    <button class="btn btn-sm btn-link text-secondary"><i class="material-icons">print</i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Editar Ajustes -->
+    <div class="modal fade" id="editar-ajustes" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header clean">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body clean text-center p-4">
+                    <h5 class="my-3">Ajustes</h5> 
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group float-label">
+                                <select class="custom-select selectpicker" title="Selecione..." required>
+                                    <option value="sim">Sim</option>
+                                    <option value="nao">Não</option>
+                                </select>
+                                <label class="form-control-label">Imprimir Comanda</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-2">
+                        <button class="btn btn-lg btn-secondary btn-rounded" data-dismiss="modal">Fechar</button>
+                        <button class="btn btn-lg btn-success btn-rounded" data-dismiss="modal">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Notificações Pedidos / Diversos -->
+    <div class="modal fade" id="notificacoes" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="header-title mb-0">Notificações</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                     
+                    <div class="row">
+                        <div class="col-12 px-0">
+                            <div class="modal-header">
+                                <h5 class="header-title mb-0">Pedido(s) <span class="badge badge-default">2</span></h5>
+                            </div>
+                            <ul class="list-group list-group-flush mb-2">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center">
+                                            <span class="btn btn-success p-3 btn-rounded-15">
+                                                <p class="small mb-0">MESA</p>
+                                                <h2 class="mb-0">01</h2>
+                                            </span>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h5 class="text-dark mb-1 d-block">
+                                                <i class="material-icons md-16">schedule</i> 21:02:37
+                                            </h5>
+                                            <p class="text-secondary text-ellipsis text-mute small mb-1">Jefferson Soares Antunes</p>
+                                            <span class="badge badge-light text-secondary">Pedido: <b>00481</b></span>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <span class="badge badge-default text-white">Aberto</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto align-self-center">
+                                            <span class="btn btn-success p-3 btn-rounded-15">
+                                                <p class="small mb-0">MESA</p>
+                                                <h2 class="mb-0">01</h2>
+                                            </span>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <h5 class="text-dark mb-1 d-block">
+                                                <i class="material-icons md-16">schedule</i> 21:00:14
+                                            </h5>
+                                            <p class="text-secondary text-ellipsis text-mute small mb-1">Carlos Eduardo Souza Filho</p>
+                                            <span class="badge badge-light text-secondary">Pedido: <b>00480</b></span>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <span class="badge badge-default text-white">Aberto</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Jquery / Popper / Bootstrap JS -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap-select.js"></script>
+    
+    <!-- Swiper JS -->
+    <script src="vendor/swiper/js/swiper.min.js"></script>
+    
+    <!-- Moment JS -->
+    <script src="vendor/moment/moment.js"></script>
+    
+    <!-- Tabs Wizard JS -->
+    <script src="vendor/tabs-wizard/tabs-wizard.js"></script>
+    
+    <!-- Daterange JS -->
+    <script src="vendor/datarange/daterange.js"></script>
+    
+    <!-- Datatables JS -->
+    <script src="vendor/datatables/datatables.min.js"></script>
+    <script src="vendor/datatables/dataTables.responsive.min.js"></script>
+    
+    <!-- Lobipanel JS -->
+    <script src="vendor/lobipanel/lobipanel.js"></script>
+    
+    <!-- ApexCharts JS -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    
+    <!-- Customização JS -->
+    <script src="js/main.js"></script>
+    
+    <!-- Scripts -->
+    <script>
+        $(window).on('load', function() {
+            
+        });
+        
+        /* Beep Pedido Pronto */
+        function play() { 
+            var audio = new Audio( 
+                'sounds/beep.mp3'); 
+            audio.play(); 
+        }
+        
+        /* Drag Drop Cartão Pedidos */
+        $(function(){
+            $('.drag-drop-pedido').lobiPanel({
+                sortable: true,
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
